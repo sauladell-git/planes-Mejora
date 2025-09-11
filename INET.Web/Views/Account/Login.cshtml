@@ -1,0 +1,35 @@
+﻿@model INET.Services.DTO.LoginModel
+
+@{
+    ViewBag.Title = "Log in";    
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/js/login.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<div class="message-wrapper">
+    <div id="msg-login"></div>
+</div>
+
+<div class="content">
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+
+    <div class="login">
+         <form method="post" action="~/Account/Login/Default.aspx">
+            @Html.LabelFor(m => m.UserName, new { @class = "label" })            
+            @Html.TextBoxFor(m => m.UserName, new { @class = "input" })
+
+            @Html.LabelFor(m => m.Password, new { @class = "label" })
+            @Html.PasswordFor(m => m.Password, new { @class = "input" })
+
+            <input type="submit" value="Ingresar" class="btn" />
+            <a href="@Url.Action("ForgotPassword")" class="btn btn-sm">Recuperar clave</a>
+        </form>
+    </div>
+}
+</div>
+
+@Html.Partial("_MessageResult")

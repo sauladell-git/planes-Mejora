@@ -1,0 +1,195 @@
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Import2014.exe.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Import2014.exe
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Import2014.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\ClosedXML.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\EntityFramework.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\Excel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Data.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Import.exe
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Services.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Utils.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\log4net.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\EntityFramework.Extended.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\itextsharp.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\System.Web.Mvc.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\WebMatrix.WebData.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\OpenPop.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\System.Web.Razor.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\System.Web.WebPages.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\WebMatrix.Data.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\System.Web.Helpers.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\stdole.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Data.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Data.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Import.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Import.exe.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Services.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Services.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Utils.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\INET.Utils.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\ClosedXML.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\EntityFramework.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\Excel.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\log4net.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\EntityFramework.Extended.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\bin\Debug\itextsharp.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\obj\Debug\INET.Import2014.csprojResolveAssemblyReference.cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\obj\Debug\INET.Import2014.ImportForm.resources
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\obj\Debug\INET.Import2014.Properties.Resources.resources
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\obj\Debug\INET.Import2014.csproj.GenerateResource.Cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\obj\Debug\INET.Import2014.exe
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Import2014\obj\Debug\INET.Import2014.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.exe.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.exe
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\log4net.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\EntityFramework.Extended.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\itextsharp.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.Shared.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.Mvc.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\itextsharp.xmlworker.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\WebMatrix.WebData.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\OpenPop.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\ExcelNumberFormat.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\FastMember.Signed.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.Razor.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Core.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.ImportForm.resources
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.Properties.Resources.resources
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.GenerateResource.Cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.exe
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csprojAssemblyReference.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.CopyComplete
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.exe.config
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.exe
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.pdb
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Core.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\log4net.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\EntityFramework.Extended.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\itextsharp.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.Shared.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.Mvc.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\itextsharp.xmlworker.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\WebMatrix.WebData.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\OpenPop.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\ExcelNumberFormat.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\FastMember.Signed.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.Razor.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.Razor.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Core.pdb
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.pdb
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.dll.config
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.pdb
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.dll.config
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.pdb
+C:\GIT\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.dll.config
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csprojAssemblyReference.cache
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.ImportForm.resources
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.Properties.Resources.resources
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.GenerateResource.cache
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.CoreCompileInputs.cache
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.CopyComplete
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.exe
+C:\GIT\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.exe.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.exe
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Import2014.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Core.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\log4net.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\EntityFramework.Extended.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\itextsharp.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.Shared.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.Mvc.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\itextsharp.xmlworker.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\WebMatrix.WebData.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\OpenPop.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\ExcelNumberFormat.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\FastMember.Signed.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.Razor.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.Razor.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\stdole.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Core.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Data.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Services.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\INET.Utils.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csprojAssemblyReference.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.ImportForm.resources
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.Properties.Resources.resources
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.GenerateResource.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.CoreCompileInputs.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.csproj.CopyComplete
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.exe
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\obj\Debug\INET.Import2014.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Import2014\bin\Debug\Microsoft.Web.Infrastructure.dll

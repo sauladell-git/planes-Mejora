@@ -1,0 +1,1 @@
+insert into TemplateTypeBlocks (TemplateTypeId, Block, Description) values (4, '{RESUMEN_POR_EXPEDIENTE}', 'Resumen por expediente, con total de cada uno.');

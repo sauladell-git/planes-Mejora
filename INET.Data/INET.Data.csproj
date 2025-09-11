@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F246D8D-7692-4DF3-AEB1-79EAB7D976F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INET.Data</RootNamespace>
+    <AssemblyName>INET.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountRendering.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Budget.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Budgets_216.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dictum.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DictumType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Document.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Documents_TMP.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentVariable.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELMAH_Error.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenditureObjectType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenditureType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\Dictum.cs" />
+    <Compile Include="Extensions\Document.cs" />
+    <Compile Include="Extensions\ImprovementPlan.cs" />
+    <Compile Include="Extensions\Incidence.cs" />
+    <Compile Include="Extensions\Resolution.cs" />
+    <Compile Include="Extensions\Solicitude.cs" />
+    <Compile Include="Extensions\UserProfile.cs" />
+    <Compile Include="Field.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FileNumber.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImprovementPlan.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImprovementPlansType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Incidence.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IncidenceType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INET.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INET.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INET.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INET.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INET.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Institution.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstitutionLevel.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Line.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lines_22.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurementUnit.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelatedLines_22.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resolution.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolYear.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitude.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudeType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatusCriterion.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubField.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateType.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateTypeBlock.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateTypeField.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateVariable.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Membership.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_OAuthMembership.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Permissions.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_RolePermissionStatuses.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Roles.cs">
+      <DependentUpon>INET.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="INET.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>INET.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="INET.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>INET.edmx</DependentUpon>
+      <LastGenOutput>INET.Context.cs</LastGenOutput>
+    </None>
+    <None Include="INET.edmx.diagram">
+      <DependentUpon>INET.edmx</DependentUpon>
+    </None>
+    <None Include="INET.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>INET.edmx</DependentUpon>
+      <LastGenOutput>INET.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INET.Core\INET.Core.csproj">
+      <Project>{3c04f780-125f-4318-9500-474e76614e7f}</Project>
+      <Name>INET.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

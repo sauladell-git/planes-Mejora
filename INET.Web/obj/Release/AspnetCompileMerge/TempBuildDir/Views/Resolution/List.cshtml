@@ -1,0 +1,57 @@
+﻿@model INET.Services.DTO.ResolutionListDTO
+@using INET.Utils.Helpers
+@{
+    ViewBag.Title = "Disposiciones";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/globalize")    
+    @Scripts.Render("~/scripts/js/search.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+    @*@Scripts.Render("~/scripts/lib/tinymce/tinymce.min.js")*@
+    @Scripts.Render("~/scripts/js/resolutionsActions.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)    
+    @Scripts.Render("~/scripts/js/resolutionsList.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)    
+}
+
+<div class="search">
+    <ul class="tabs">
+        <li class="search-opener" title="Buscar Disposiciones"></li>
+    </ul>
+    <div class="search-close" title="Cerrar Panel de Búsqueda"></div>    
+    <h2>Filtrar resultados</h2>
+    <div id="msg-search"></div>
+    <form id="frmSearchResolutions" action="#">
+        <div class="column1">
+            @Html.Label("Estado:", new { @class = "label" }) 
+            @Html.DropDownListFor(x => x.Filters.StatusId, new SelectList(Model.Filters.Status, "Id", "Description"), "Todos", new { @class = "input" })
+
+            @Html.Label("Número de Dictamen:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.Dictum, new { @class = "input", maxLength = "20" })
+
+            @Html.Label("Ejes:", new { @class = "label" }) 
+            @Html.DropDownListFor(x => x.Filters.FieldId, new SelectList(Model.Filters.Fields, "Id", "Description"), "Todos", new { @class = "input" })
+
+            @Html.Label("ID de Disposición:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.ResolutionId, new { @class = "input", maxLength = "20" })
+        </div>
+            
+        <div class="column2">
+            @Html.Label("CUE:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.CUE, new { @class = "input", maxLength = "50" })
+
+            @Html.Label("Número de Disposición:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.Resolution, new { @class = "input", maxLength = "50" })
+
+            @Html.Label("Número de Plan:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.ImprovementPlanIdentifier, new { @class = "input", maxLength = "50" })
+        </div>
+        <div class="button">
+            <input type="submit" value="Buscar" class="search-resolutions"/>
+        </div>
+    </form>
+</div>
+
+<div class="resolutions">@Html.Partial("_List", Model.Resolutions)</div>
+@Html.Partial("_ResolutionDialogs", Model.ResolutionDTO)
+@Html.Partial("_Preview")
+@Html.Partial("_MessageResult")

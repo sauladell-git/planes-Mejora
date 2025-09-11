@@ -1,0 +1,1877 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INET.Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountRendering">
+    <Key>
+      <PropertyRef Name="AccountingRenderingID" />
+    </Key>
+    <Property Name="AccountingRenderingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DictumId" Type="int" />
+    <Property Name="ExpenditureObjectTypeId" Type="int" Nullable="false" />
+    <Property Name="ImprovementPlanId" Type="int" Nullable="false" />
+    <Property Name="AprovedAmount" Type="decimal" Precision="20" Scale="4" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="200" />
+    <Property Name="RejectedAmount" Type="decimal" Precision="20" Scale="4" />
+  </EntityType>
+  <EntityType Name="Audits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+    <Property Name="EntityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PropertyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImprovementPlanId" Type="int" />
+    <Property Name="AdditionalData" Type="nvarchar" MaxLength="50" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="OriginalValue" Type="nvarchar" MaxLength="500" />
+    <Property Name="CurrentValue" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Budgets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchoolYearId" Type="int" Nullable="false" />
+    <Property Name="ProvinceId" Type="int" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="Ammount" Type="decimal" Precision="20" Scale="4" />
+  </EntityType>
+  <EntityType Name="Budgets_216">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchoolYearId" Type="int" Nullable="false" />
+    <Property Name="ProvinceId" Type="int" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="Ammount" Type="decimal" Precision="20" Scale="4" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IncludeInDictum" Type="bit" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments_ImprovementPlans">
+    <Key>
+      <PropertyRef Name="ImprovementPlanId" />
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="ImprovementPlanId" Type="int" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments_Incidences">
+    <Key>
+      <PropertyRef Name="IncidenceId" />
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="IncidenceId" Type="int" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments_Solicitudes">
+    <Key>
+      <PropertyRef Name="SolicitudeId" />
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="SolicitudeId" Type="int" Nullable="false" />
+    <Property Name="CommentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dictums">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EligibilityRequired" Type="bit" Nullable="false" />
+    <Property Name="EligibilityStatusId" Type="int" />
+    <Property Name="EligibilityExternalNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ElegibilityExternalEntity" Type="nvarchar" MaxLength="100" />
+    <Property Name="Locked" Type="bit" Nullable="false" />
+    <Property Name="FileNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ammount" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="Balance" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="DictumNumber" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Dictums_Solicitudes">
+    <Key>
+      <PropertyRef Name="DictumId" />
+      <PropertyRef Name="SolicitudeId" />
+    </Key>
+    <Property Name="DictumId" Type="int" Nullable="false" />
+    <Property Name="SolicitudeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DictumTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="TemplateId" Type="int" Nullable="false" />
+    <Property Name="ImprovementPlanId" Type="int" />
+    <Property Name="CreationUserId" Type="int" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="EmissionDate" Type="datetime" />
+    <Property Name="SignatureDate" Type="datetime" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="PDF" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserBody" Type="nvarchar(max)" />
+    <Property Name="SignedDocument" Type="nvarchar" MaxLength="200" />
+    <Property Name="PDF_Annex" Type="nvarchar" MaxLength="200" />
+    <Property Name="PDF_Annex_extra" Type="nvarchar" MaxLength="200" />
+    <Property Name="AnnexDocument" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'INET_PROD_V2.dbo.Documents_TMP' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Documents_TMP">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="EmissionDate" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EmissionDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentVariables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="TemplateVariableId" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Application" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Host" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusCode" Type="int" Nullable="false" />
+    <Property Name="TimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="Sequence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AllXml" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpenditureObjectTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ExpenditureTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fields">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Management" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileNumbers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastFileNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImprovementPlans">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImprovementPlanTypeId" Type="int" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="SchoolYearId" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="Identifier" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CUE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceptionDate" Type="datetime" Nullable="false" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="EvaluatorUserId" Type="int" />
+    <Property Name="FieldDate" Type="datetime" />
+    <Property Name="InstitutionName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Location" Type="nvarchar" MaxLength="250" />
+    <Property Name="Department" Type="nvarchar" MaxLength="250" />
+    <Property Name="Attachment" Type="nvarchar" MaxLength="200" />
+    <Property Name="Documentation" Type="nvarchar" MaxLength="200" />
+    <Property Name="InstitutionLevel" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstitutionLevelInt" Type="int" />
+    <Property Name="Dependence" Type="nvarchar" MaxLength="100" />
+    <Property Name="Articulator" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ArticulatorExp" Type="nvarchar" MaxLength="200" />
+    <Property Name="AttachmentAdd" Type="nvarchar" MaxLength="200" />
+    <Property Name="LineId" Type="int" />
+    <Property Name="SubFieldId" Type="int" />
+    <Property Name="Line_22_Id" Type="int" />
+    <Property Name="Pronafe" Type="bit" />
+    <Property Name="ArticulatorLineId" Type="int" />
+    <Property Name="ArticulatorImprovementPlanId" Type="int" />
+  </EntityType>
+  <EntityType Name="ImprovementPlansTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Incidences">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImprovementPlanId" Type="int" Nullable="false" />
+    <Property Name="SolicitudeId" Type="int" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IncidentTypeId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Details" Type="nvarchar" MaxLength="2000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IncidenceTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstitutionLevels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Institutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Locality" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Scope" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Orientation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InstitutionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lines">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="title_xls" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lines_22">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubFieldId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="title_xls" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MeasurementUnits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provinces">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="MinistryName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RelatedLines_22">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImprovementPlanId" Type="int" />
+    <Property Name="Line22Id" Type="int" />
+    <Property Name="CUE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImprovementPlanId_Link" Type="int" />
+  </EntityType>
+  <EntityType Name="ResolutionDictums">
+    <Key>
+      <PropertyRef Name="ResolutionId" />
+      <PropertyRef Name="DictumId" />
+    </Key>
+    <Property Name="ResolutionId" Type="int" Nullable="false" />
+    <Property Name="DictumId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resolutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="ProtocolizedDate" Type="datetime" />
+    <Property Name="AmountExecuted" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="Annex" Type="nvarchar" MaxLength="200" />
+    <Property Name="ResolutionNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="AnnexSignatureDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SchoolYears">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cycle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Solicitudes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchoolYearId" Type="int" Nullable="false" />
+    <Property Name="MeasurementUnitId" Type="int" Nullable="false" />
+    <Property Name="SolicitudeTypeId" Type="int" />
+    <Property Name="ExpenditureTypeId" Type="int" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="ImprovementPlanId" Type="int" Nullable="false" />
+    <Property Name="LineId" Type="int" />
+    <Property Name="ReassignedId" Type="int" />
+    <Property Name="ReassignedRequestedTotal" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="ReassignedGrantedTotal" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="CUE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="FileNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Locked" Type="bit" Nullable="false" />
+    <Property Name="Specialization" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RequestedAmount" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="RequestedPriceUnit" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="ApprovedAmount" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="ApprovedPriceUnit" Type="decimal" Precision="20" Scale="4" />
+    <Property Name="Level" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Management" Type="varchar" MaxLength="3" />
+    <Property Name="Line_22_Id" Type="int" />
+    <Property Name="Field_Id" Type="int" />
+    <Property Name="SubField_Id" Type="int" />
+    <Property Name="ExpenditureObjectTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="SolicitudeTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusCriterionId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusCriterions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubFields">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Management" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TemplateField">
+    <Key>
+      <PropertyRef Name="Templates_Id" />
+      <PropertyRef Name="Fields_Id" />
+    </Key>
+    <Property Name="Templates_Id" Type="int" Nullable="false" />
+    <Property Name="Fields_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Templates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateTypeId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="marginLeft" Type="float" />
+    <Property Name="marginRight" Type="float" />
+    <Property Name="marginTop" Type="float" />
+    <Property Name="marginBottom" Type="float" />
+    <Property Name="SignatureImagePath" Type="nvarchar" MaxLength="200" />
+    <Property Name="Header" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TemplateTypeBlocks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateTypeId" Type="int" Nullable="false" />
+    <Property Name="Block" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TemplateTypeFields">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateTypeId" Type="int" Nullable="false" />
+    <Property Name="Field" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TemplateTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Eligibility" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TemplateVariables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateId" Type="int" Nullable="false" />
+    <Property Name="Variable" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="56" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="Province_Id" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserProfile_Fields">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="FieldId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserProfile_InstitutionLevels">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="InstitutionLevelId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="InstitutionLevelId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserProfile_Provinces">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ProvincesId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ProvincesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsConfirmed" Type="bit" />
+    <Property Name="LastPasswordFailureDate" Type="datetime" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordChangedDate" Type="datetime" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Permissions">
+    <Key>
+      <PropertyRef Name="PermissionId" />
+    </Key>
+    <Property Name="PermissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="PermissionCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Permissions_StatusCriterions">
+    <Key>
+      <PropertyRef Name="PermissionId" />
+      <PropertyRef Name="StatusCriterionId" />
+    </Key>
+    <Property Name="PermissionId" Type="int" Nullable="false" />
+    <Property Name="StatusCriterionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_RolePermissionStatuses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AccountRendering_Dictums">
+    <End Role="Dictums" Type="Self.Dictums" Multiplicity="0..1" />
+    <End Role="AccountRendering" Type="Self.AccountRendering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dictums">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountRendering">
+        <PropertyRef Name="DictumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountRendering_ExpenditureObjectTypes">
+    <End Role="ExpenditureObjectTypes" Type="Self.ExpenditureObjectTypes" Multiplicity="1" />
+    <End Role="AccountRendering" Type="Self.AccountRendering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenditureObjectTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountRendering">
+        <PropertyRef Name="ExpenditureObjectTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountRendering_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="1" />
+    <End Role="AccountRendering" Type="Self.AccountRendering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountRendering">
+        <PropertyRef Name="ImprovementPlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Audits_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Audits" Type="Self.Audits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Audits">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets_216_Provinces">
+    <End Role="Provinces" Type="Self.Provinces" Multiplicity="1" />
+    <End Role="Budgets_216" Type="Self.Budgets_216" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets_216">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets_216_SchoolYears">
+    <End Role="SchoolYears" Type="Self.SchoolYears" Multiplicity="1" />
+    <End Role="Budgets_216" Type="Self.Budgets_216" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SchoolYears">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets_216">
+        <PropertyRef Name="SchoolYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets_Fields">
+    <End Role="Fields" Type="Self.Fields" Multiplicity="1" />
+    <End Role="Budgets" Type="Self.Budgets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets_Lines">
+    <End Role="Lines" Type="Self.Lines" Multiplicity="1" />
+    <End Role="Budgets" Type="Self.Budgets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lines">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets">
+        <PropertyRef Name="LineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets_Provinces">
+    <End Role="Provinces" Type="Self.Provinces" Multiplicity="1" />
+    <End Role="Budgets" Type="Self.Budgets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets_SchoolYears">
+    <End Role="SchoolYears" Type="Self.SchoolYears" Multiplicity="1" />
+    <End Role="Budgets" Type="Self.Budgets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SchoolYears">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets">
+        <PropertyRef Name="SchoolYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets216_Fields">
+    <End Role="SubFields" Type="Self.SubFields" Multiplicity="1" />
+    <End Role="Budgets_216" Type="Self.Budgets_216" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubFields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets_216">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Budgets216_Lines22">
+    <End Role="Lines_22" Type="Self.Lines_22" Multiplicity="1" />
+    <End Role="Budgets_216" Type="Self.Budgets_216" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lines_22">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Budgets_216">
+        <PropertyRef Name="LineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_ImprovementPlans_Comments">
+    <End Role="Comments" Type="Self.Comments" Multiplicity="1" />
+    <End Role="Comments_ImprovementPlans" Type="Self.Comments_ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments_ImprovementPlans">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_ImprovementPlans_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="1" />
+    <End Role="Comments_ImprovementPlans" Type="Self.Comments_ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments_ImprovementPlans">
+        <PropertyRef Name="ImprovementPlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Incidences_Comments">
+    <End Role="Comments" Type="Self.Comments" Multiplicity="1" />
+    <End Role="Comments_Incidences" Type="Self.Comments_Incidences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments_Incidences">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Incidences_Incidences">
+    <End Role="Incidences" Type="Self.Incidences" Multiplicity="1" />
+    <End Role="Comments_Incidences" Type="Self.Comments_Incidences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incidences">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments_Incidences">
+        <PropertyRef Name="IncidenceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Solicitudes_Comments">
+    <End Role="Comments" Type="Self.Comments" Multiplicity="1" />
+    <End Role="Comments_Solicitudes" Type="Self.Comments_Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments_Solicitudes">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Solicitudes_Solicitudes">
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1" />
+    <End Role="Comments_Solicitudes" Type="Self.Comments_Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitudes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments_Solicitudes">
+        <PropertyRef Name="SolicitudeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dictums_Solicitudes_Dictums">
+    <End Role="Dictums" Type="Self.Dictums" Multiplicity="1" />
+    <End Role="Dictums_Solicitudes" Type="Self.Dictums_Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dictums">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dictums_Solicitudes">
+        <PropertyRef Name="DictumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dictums_Solicitudes_Solicitudes">
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1" />
+    <End Role="Dictums_Solicitudes" Type="Self.Dictums_Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitudes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dictums_Solicitudes">
+        <PropertyRef Name="SolicitudeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="0..1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="ImprovementPlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="CreationUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentVariables_Documents">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="DocumentVariables" Type="Self.DocumentVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentVariables">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentVariables_TemplateTypeVariables">
+    <End Role="TemplateVariables" Type="Self.TemplateVariables" Multiplicity="1" />
+    <End Role="DocumentVariables" Type="Self.DocumentVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TemplateVariables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentVariables">
+        <PropertyRef Name="TemplateVariableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FieldStatus">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Fields" Type="Self.Fields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fields">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImprovementPlans_Fields">
+    <End Role="Fields" Type="Self.Fields" Multiplicity="1" />
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImprovementPlans">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImprovementPlans_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="0..1" />
+    <End Role="ImprovementPlans1" Type="Self.ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImprovementPlans1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImprovementPlans_ImprovementPlansTypes">
+    <End Role="ImprovementPlansTypes" Type="Self.ImprovementPlansTypes" Multiplicity="1" />
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlansTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImprovementPlans">
+        <PropertyRef Name="ImprovementPlanTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImprovementPlans_SchoolYears">
+    <End Role="SchoolYears" Type="Self.SchoolYears" Multiplicity="1" />
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SchoolYears">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImprovementPlans">
+        <PropertyRef Name="SchoolYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImprovementPlans_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImprovementPlans">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImprovementPlans_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ImprovementPlans">
+        <PropertyRef Name="EvaluatorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidences_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="1" />
+    <End Role="Incidences" Type="Self.Incidences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incidences">
+        <PropertyRef Name="ImprovementPlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidences_IncidenceTypes">
+    <End Role="IncidenceTypes" Type="Self.IncidenceTypes" Multiplicity="1" />
+    <End Role="Incidences" Type="Self.Incidences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncidenceTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incidences">
+        <PropertyRef Name="IncidentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidences_Solicitudes">
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="0..1" />
+    <End Role="Incidences" Type="Self.Incidences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitudes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incidences">
+        <PropertyRef Name="SolicitudeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidences_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Incidences" Type="Self.Incidences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Incidences">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_22_Lines">
+    <End Role="Lines" Type="Self.Lines" Multiplicity="1" />
+    <End Role="Lines_22" Type="Self.Lines_22" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lines">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lines_22">
+        <PropertyRef Name="LineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_22_SubFields">
+    <End Role="SubFields" Type="Self.SubFields" Multiplicity="1" />
+    <End Role="Lines_22" Type="Self.Lines_22" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubFields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lines_22">
+        <PropertyRef Name="SubFieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Fields">
+    <End Role="Fields" Type="Self.Fields" Multiplicity="1" />
+    <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lines">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelatedLines_22_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="0..1" />
+    <End Role="RelatedLines_22" Type="Self.RelatedLines_22" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelatedLines_22">
+        <PropertyRef Name="ImprovementPlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelatedLines_22_Lines_22">
+    <End Role="Lines_22" Type="Self.Lines_22" Multiplicity="0..1" />
+    <End Role="RelatedLines_22" Type="Self.RelatedLines_22" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lines_22">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelatedLines_22">
+        <PropertyRef Name="Line22Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResolutionDictums_Dictums">
+    <End Role="Dictums" Type="Self.Dictums" Multiplicity="1" />
+    <End Role="ResolutionDictums" Type="Self.ResolutionDictums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dictums">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResolutionDictums">
+        <PropertyRef Name="DictumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResolutionDictums_Resolutions">
+    <End Role="Resolutions" Type="Self.Resolutions" Multiplicity="1" />
+    <End Role="ResolutionDictums" Type="Self.ResolutionDictums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resolutions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResolutionDictums">
+        <PropertyRef Name="ResolutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resolutions_Documents">
+    <End Role="Documents" Type="Self.Documents" Multiplicity="1" />
+    <End Role="Resolutions" Type="Self.Resolutions" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resolutions">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RoleId">
+    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermissionStatuses_webpages_Roles">
+    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_RolePermissionStatuses" Type="Self.webpages_RolePermissionStatuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_RolePermissionStatuses">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_ExpenditureObjectTypes">
+    <End Role="ExpenditureObjectTypes" Type="Self.ExpenditureObjectTypes" Multiplicity="0..1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenditureObjectTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="ExpenditureObjectTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_ExpenditureTypes">
+    <End Role="ExpenditureTypes" Type="Self.ExpenditureTypes" Multiplicity="0..1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenditureTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="ExpenditureTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_ImprovementPlans">
+    <End Role="ImprovementPlans" Type="Self.ImprovementPlans" Multiplicity="1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImprovementPlans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="ImprovementPlanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_Lines">
+    <End Role="Lines" Type="Self.Lines" Multiplicity="0..1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lines">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="LineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_Lines_22">
+    <End Role="Lines_22" Type="Self.Lines_22" Multiplicity="0..1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lines_22">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="Line_22_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_MeasurementUnits">
+    <End Role="MeasurementUnits" Type="Self.MeasurementUnits" Multiplicity="1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeasurementUnits">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="MeasurementUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_SchoolYears">
+    <End Role="SchoolYears" Type="Self.SchoolYears" Multiplicity="1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SchoolYears">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="SchoolYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_Solicitudes1">
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1" />
+    <End Role="Solicitudes1" Type="Self.Solicitudes" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitudes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_SolicitudeTypes">
+    <End Role="SolicitudeTypes" Type="Self.SolicitudeTypes" Multiplicity="0..1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudeTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="SolicitudeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitudes_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_StatusCriterions">
+    <End Role="StatusCriterions" Type="Self.StatusCriterions" Multiplicity="1" />
+    <End Role="Status" Type="Self.Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusCriterions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Status">
+        <PropertyRef Name="StatusCriterionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubFields_Fields">
+    <End Role="Fields" Type="Self.Fields" Multiplicity="1" />
+    <End Role="SubFields" Type="Self.SubFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubFields">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubFieldStatus">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="SubFields" Type="Self.SubFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubFields">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateField_Field">
+    <End Role="Fields" Type="Self.Fields" Multiplicity="1" />
+    <End Role="TemplateField" Type="Self.TemplateField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TemplateField">
+        <PropertyRef Name="Fields_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateField_Template">
+    <End Role="Templates" Type="Self.Templates" Multiplicity="1" />
+    <End Role="TemplateField" Type="Self.TemplateField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Templates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TemplateField">
+        <PropertyRef Name="Templates_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Templates_TemplateTypes">
+    <End Role="TemplateTypes" Type="Self.TemplateTypes" Multiplicity="1" />
+    <End Role="Templates" Type="Self.Templates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TemplateTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Templates">
+        <PropertyRef Name="TemplateTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateTypeBlocks_TemplateTypes">
+    <End Role="TemplateTypes" Type="Self.TemplateTypes" Multiplicity="1" />
+    <End Role="TemplateTypeBlocks" Type="Self.TemplateTypeBlocks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TemplateTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TemplateTypeBlocks">
+        <PropertyRef Name="TemplateTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateTypeFields_TemplateTypes">
+    <End Role="TemplateTypes" Type="Self.TemplateTypes" Multiplicity="1" />
+    <End Role="TemplateTypeFields" Type="Self.TemplateTypeFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TemplateTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TemplateTypeFields">
+        <PropertyRef Name="TemplateTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateTypeVariables_Templates">
+    <End Role="Templates" Type="Self.Templates" Multiplicity="1" />
+    <End Role="TemplateVariables" Type="Self.TemplateVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Templates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TemplateVariables">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UserId">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_Fields_Fields">
+    <End Role="Fields" Type="Self.Fields" Multiplicity="1" />
+    <End Role="UserProfile_Fields" Type="Self.UserProfile_Fields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fields">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile_Fields">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_Fields_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="UserProfile_Fields" Type="Self.UserProfile_Fields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserProfile_Fields">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_InstitutionLevels_InstitutionLevels">
+    <End Role="InstitutionLevels" Type="Self.InstitutionLevels" Multiplicity="1" />
+    <End Role="UserProfile_InstitutionLevels" Type="Self.UserProfile_InstitutionLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstitutionLevels">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile_InstitutionLevels">
+        <PropertyRef Name="InstitutionLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_InstitutionLevels_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="UserProfile_InstitutionLevels" Type="Self.UserProfile_InstitutionLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserProfile_InstitutionLevels">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_Provinces_Provinces">
+    <End Role="Provinces" Type="Self.Provinces" Multiplicity="1" />
+    <End Role="UserProfile_Provinces" Type="Self.UserProfile_Provinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile_Provinces">
+        <PropertyRef Name="ProvincesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_Provinces_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="UserProfile_Provinces" Type="Self.UserProfile_Provinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserProfile_Provinces">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_webpages_Permissions_StatusCriterions_PermissionId">
+    <End Role="webpages_Permissions" Type="Self.webpages_Permissions" Multiplicity="1" />
+    <End Role="webpages_Permissions_StatusCriterions" Type="Self.webpages_Permissions_StatusCriterions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Permissions">
+        <PropertyRef Name="PermissionId" />
+      </Principal>
+      <Dependent Role="webpages_Permissions_StatusCriterions">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_webpages_Permissions_StatusCriterions_StatusCriterionsId">
+    <End Role="StatusCriterions" Type="Self.StatusCriterions" Multiplicity="1" />
+    <End Role="webpages_Permissions_StatusCriterions" Type="Self.webpages_Permissions_StatusCriterions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusCriterions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="webpages_Permissions_StatusCriterions">
+        <PropertyRef Name="StatusCriterionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webpages_RolePermissionStatuses_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="webpages_RolePermissionStatuses" Type="Self.webpages_RolePermissionStatuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="webpages_RolePermissionStatuses">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_webpages_RolePermissionStatuses_webpages_Permissions">
+    <End Role="webpages_Permissions" Type="Self.webpages_Permissions" Multiplicity="1" />
+    <End Role="webpages_RolePermissionStatuses" Type="Self.webpages_RolePermissionStatuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Permissions">
+        <PropertyRef Name="PermissionId" />
+      </Principal>
+      <Dependent Role="webpages_RolePermissionStatuses">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="INETDataStoreContainer">
+    <EntitySet Name="AccountRendering" EntityType="Self.AccountRendering" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Audits" EntityType="Self.Audits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Budgets" EntityType="Self.Budgets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Budgets_216" EntityType="Self.Budgets_216" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments_ImprovementPlans" EntityType="Self.Comments_ImprovementPlans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments_Incidences" EntityType="Self.Comments_Incidences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments_Solicitudes" EntityType="Self.Comments_Solicitudes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dictums" EntityType="Self.Dictums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dictums_Solicitudes" EntityType="Self.Dictums_Solicitudes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DictumTypes" EntityType="Self.DictumTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentVariables" EntityType="Self.DocumentVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenditureObjectTypes" EntityType="Self.ExpenditureObjectTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenditureTypes" EntityType="Self.ExpenditureTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fields" EntityType="Self.Fields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileNumbers" EntityType="Self.FileNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImprovementPlans" EntityType="Self.ImprovementPlans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImprovementPlansTypes" EntityType="Self.ImprovementPlansTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Incidences" EntityType="Self.Incidences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncidenceTypes" EntityType="Self.IncidenceTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstitutionLevels" EntityType="Self.InstitutionLevels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institutions" EntityType="Self.Institutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lines" EntityType="Self.Lines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lines_22" EntityType="Self.Lines_22" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MeasurementUnits" EntityType="Self.MeasurementUnits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provinces" EntityType="Self.Provinces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelatedLines_22" EntityType="Self.RelatedLines_22" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResolutionDictums" EntityType="Self.ResolutionDictums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resolutions" EntityType="Self.Resolutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SchoolYears" EntityType="Self.SchoolYears" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SolicitudeTypes" EntityType="Self.SolicitudeTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusCriterions" EntityType="Self.StatusCriterions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubFields" EntityType="Self.SubFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplateField" EntityType="Self.TemplateField" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Templates" EntityType="Self.Templates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplateTypeBlocks" EntityType="Self.TemplateTypeBlocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplateTypeFields" EntityType="Self.TemplateTypeFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplateTypes" EntityType="Self.TemplateTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplateVariables" EntityType="Self.TemplateVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile_Fields" EntityType="Self.UserProfile_Fields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile_InstitutionLevels" EntityType="Self.UserProfile_InstitutionLevels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile_Provinces" EntityType="Self.UserProfile_Provinces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_Permissions" EntityType="Self.webpages_Permissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_Permissions_StatusCriterions" EntityType="Self.webpages_Permissions_StatusCriterions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_RolePermissionStatuses" EntityType="Self.webpages_RolePermissionStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents_TMP" EntityType="Self.Documents_TMP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Documents_TMP].[Id] AS [Id], 
+    [Documents_TMP].[EmissionDate] AS [EmissionDate]
+    FROM [dbo].[Documents_TMP] AS [Documents_TMP]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AccountRendering_Dictums" Association="Self.FK_AccountRendering_Dictums">
+      <End Role="Dictums" EntitySet="Dictums" />
+      <End Role="AccountRendering" EntitySet="AccountRendering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountRendering_ExpenditureObjectTypes" Association="Self.FK_AccountRendering_ExpenditureObjectTypes">
+      <End Role="ExpenditureObjectTypes" EntitySet="ExpenditureObjectTypes" />
+      <End Role="AccountRendering" EntitySet="AccountRendering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountRendering_ImprovementPlans" Association="Self.FK_AccountRendering_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="AccountRendering" EntitySet="AccountRendering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Audits_UserProfile" Association="Self.FK_Audits_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Audits" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets_216_Provinces" Association="Self.FK_Budgets_216_Provinces">
+      <End Role="Provinces" EntitySet="Provinces" />
+      <End Role="Budgets_216" EntitySet="Budgets_216" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets_216_SchoolYears" Association="Self.FK_Budgets_216_SchoolYears">
+      <End Role="SchoolYears" EntitySet="SchoolYears" />
+      <End Role="Budgets_216" EntitySet="Budgets_216" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets_Fields" Association="Self.FK_Budgets_Fields">
+      <End Role="Fields" EntitySet="Fields" />
+      <End Role="Budgets" EntitySet="Budgets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets_Lines" Association="Self.FK_Budgets_Lines">
+      <End Role="Lines" EntitySet="Lines" />
+      <End Role="Budgets" EntitySet="Budgets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets_Provinces" Association="Self.FK_Budgets_Provinces">
+      <End Role="Provinces" EntitySet="Provinces" />
+      <End Role="Budgets" EntitySet="Budgets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets_SchoolYears" Association="Self.FK_Budgets_SchoolYears">
+      <End Role="SchoolYears" EntitySet="SchoolYears" />
+      <End Role="Budgets" EntitySet="Budgets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets216_Fields" Association="Self.FK_Budgets216_Fields">
+      <End Role="SubFields" EntitySet="SubFields" />
+      <End Role="Budgets_216" EntitySet="Budgets_216" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Budgets216_Lines22" Association="Self.FK_Budgets216_Lines22">
+      <End Role="Lines_22" EntitySet="Lines_22" />
+      <End Role="Budgets_216" EntitySet="Budgets_216" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_ImprovementPlans_Comments" Association="Self.FK_Comments_ImprovementPlans_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments_ImprovementPlans" EntitySet="Comments_ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_ImprovementPlans_ImprovementPlans" Association="Self.FK_Comments_ImprovementPlans_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="Comments_ImprovementPlans" EntitySet="Comments_ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Incidences_Comments" Association="Self.FK_Comments_Incidences_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments_Incidences" EntitySet="Comments_Incidences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Incidences_Incidences" Association="Self.FK_Comments_Incidences_Incidences">
+      <End Role="Incidences" EntitySet="Incidences" />
+      <End Role="Comments_Incidences" EntitySet="Comments_Incidences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Solicitudes_Comments" Association="Self.FK_Comments_Solicitudes_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments_Solicitudes" EntitySet="Comments_Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Solicitudes_Solicitudes" Association="Self.FK_Comments_Solicitudes_Solicitudes">
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+      <End Role="Comments_Solicitudes" EntitySet="Comments_Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_UserProfile" Association="Self.FK_Comments_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dictums_Solicitudes_Dictums" Association="Self.FK_Dictums_Solicitudes_Dictums">
+      <End Role="Dictums" EntitySet="Dictums" />
+      <End Role="Dictums_Solicitudes" EntitySet="Dictums_Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dictums_Solicitudes_Solicitudes" Association="Self.FK_Dictums_Solicitudes_Solicitudes">
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+      <End Role="Dictums_Solicitudes" EntitySet="Dictums_Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_ImprovementPlans" Association="Self.FK_Documents_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_UserProfile" Association="Self.FK_Documents_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentVariables_Documents" Association="Self.FK_DocumentVariables_Documents">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="DocumentVariables" EntitySet="DocumentVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentVariables_TemplateTypeVariables" Association="Self.FK_DocumentVariables_TemplateTypeVariables">
+      <End Role="TemplateVariables" EntitySet="TemplateVariables" />
+      <End Role="DocumentVariables" EntitySet="DocumentVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FieldStatus" Association="Self.FK_FieldStatus">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Fields" EntitySet="Fields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImprovementPlans_Fields" Association="Self.FK_ImprovementPlans_Fields">
+      <End Role="Fields" EntitySet="Fields" />
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImprovementPlans_ImprovementPlans" Association="Self.FK_ImprovementPlans_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="ImprovementPlans1" EntitySet="ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImprovementPlans_ImprovementPlansTypes" Association="Self.FK_ImprovementPlans_ImprovementPlansTypes">
+      <End Role="ImprovementPlansTypes" EntitySet="ImprovementPlansTypes" />
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImprovementPlans_SchoolYears" Association="Self.FK_ImprovementPlans_SchoolYears">
+      <End Role="SchoolYears" EntitySet="SchoolYears" />
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImprovementPlans_Status" Association="Self.FK_ImprovementPlans_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImprovementPlans_UserProfile" Association="Self.FK_ImprovementPlans_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidences_ImprovementPlans" Association="Self.FK_Incidences_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="Incidences" EntitySet="Incidences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidences_IncidenceTypes" Association="Self.FK_Incidences_IncidenceTypes">
+      <End Role="IncidenceTypes" EntitySet="IncidenceTypes" />
+      <End Role="Incidences" EntitySet="Incidences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidences_Solicitudes" Association="Self.FK_Incidences_Solicitudes">
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+      <End Role="Incidences" EntitySet="Incidences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidences_UserProfile" Association="Self.FK_Incidences_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Incidences" EntitySet="Incidences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_22_Lines" Association="Self.FK_Lines_22_Lines">
+      <End Role="Lines" EntitySet="Lines" />
+      <End Role="Lines_22" EntitySet="Lines_22" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_22_SubFields" Association="Self.FK_Lines_22_SubFields">
+      <End Role="SubFields" EntitySet="SubFields" />
+      <End Role="Lines_22" EntitySet="Lines_22" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Fields" Association="Self.FK_Lines_Fields">
+      <End Role="Fields" EntitySet="Fields" />
+      <End Role="Lines" EntitySet="Lines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelatedLines_22_ImprovementPlans" Association="Self.FK_RelatedLines_22_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="RelatedLines_22" EntitySet="RelatedLines_22" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelatedLines_22_Lines_22" Association="Self.FK_RelatedLines_22_Lines_22">
+      <End Role="Lines_22" EntitySet="Lines_22" />
+      <End Role="RelatedLines_22" EntitySet="RelatedLines_22" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResolutionDictums_Dictums" Association="Self.FK_ResolutionDictums_Dictums">
+      <End Role="Dictums" EntitySet="Dictums" />
+      <End Role="ResolutionDictums" EntitySet="ResolutionDictums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResolutionDictums_Resolutions" Association="Self.FK_ResolutionDictums_Resolutions">
+      <End Role="Resolutions" EntitySet="Resolutions" />
+      <End Role="ResolutionDictums" EntitySet="ResolutionDictums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resolutions_Documents" Association="Self.FK_Resolutions_Documents">
+      <End Role="Documents" EntitySet="Documents" />
+      <End Role="Resolutions" EntitySet="Resolutions" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermissionStatuses_webpages_Roles" Association="Self.FK_RolePermissionStatuses_webpages_Roles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_RolePermissionStatuses" EntitySet="webpages_RolePermissionStatuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_ExpenditureObjectTypes" Association="Self.FK_Solicitudes_ExpenditureObjectTypes">
+      <End Role="ExpenditureObjectTypes" EntitySet="ExpenditureObjectTypes" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_ExpenditureTypes" Association="Self.FK_Solicitudes_ExpenditureTypes">
+      <End Role="ExpenditureTypes" EntitySet="ExpenditureTypes" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_ImprovementPlans" Association="Self.FK_Solicitudes_ImprovementPlans">
+      <End Role="ImprovementPlans" EntitySet="ImprovementPlans" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_Lines" Association="Self.FK_Solicitudes_Lines">
+      <End Role="Lines" EntitySet="Lines" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_Lines_22" Association="Self.FK_Solicitudes_Lines_22">
+      <End Role="Lines_22" EntitySet="Lines_22" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_MeasurementUnits" Association="Self.FK_Solicitudes_MeasurementUnits">
+      <End Role="MeasurementUnits" EntitySet="MeasurementUnits" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_SchoolYears" Association="Self.FK_Solicitudes_SchoolYears">
+      <End Role="SchoolYears" EntitySet="SchoolYears" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_Solicitudes1" Association="Self.FK_Solicitudes_Solicitudes1">
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+      <End Role="Solicitudes1" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_SolicitudeTypes" Association="Self.FK_Solicitudes_SolicitudeTypes">
+      <End Role="SolicitudeTypes" EntitySet="SolicitudeTypes" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitudes_Status" Association="Self.FK_Solicitudes_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_StatusCriterions" Association="Self.FK_Status_StatusCriterions">
+      <End Role="StatusCriterions" EntitySet="StatusCriterions" />
+      <End Role="Status" EntitySet="Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubFields_Fields" Association="Self.FK_SubFields_Fields">
+      <End Role="Fields" EntitySet="Fields" />
+      <End Role="SubFields" EntitySet="SubFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubFieldStatus" Association="Self.FK_SubFieldStatus">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SubFields" EntitySet="SubFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateField_Field" Association="Self.FK_TemplateField_Field">
+      <End Role="Fields" EntitySet="Fields" />
+      <End Role="TemplateField" EntitySet="TemplateField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateField_Template" Association="Self.FK_TemplateField_Template">
+      <End Role="Templates" EntitySet="Templates" />
+      <End Role="TemplateField" EntitySet="TemplateField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Templates_TemplateTypes" Association="Self.FK_Templates_TemplateTypes">
+      <End Role="TemplateTypes" EntitySet="TemplateTypes" />
+      <End Role="Templates" EntitySet="Templates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateTypeBlocks_TemplateTypes" Association="Self.FK_TemplateTypeBlocks_TemplateTypes">
+      <End Role="TemplateTypes" EntitySet="TemplateTypes" />
+      <End Role="TemplateTypeBlocks" EntitySet="TemplateTypeBlocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateTypeFields_TemplateTypes" Association="Self.FK_TemplateTypeFields_TemplateTypes">
+      <End Role="TemplateTypes" EntitySet="TemplateTypes" />
+      <End Role="TemplateTypeFields" EntitySet="TemplateTypeFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateTypeVariables_Templates" Association="Self.FK_TemplateTypeVariables_Templates">
+      <End Role="Templates" EntitySet="Templates" />
+      <End Role="TemplateVariables" EntitySet="TemplateVariables" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UserId" Association="Self.fk_UserId">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_Fields_Fields" Association="Self.FK_UserProfile_Fields_Fields">
+      <End Role="Fields" EntitySet="Fields" />
+      <End Role="UserProfile_Fields" EntitySet="UserProfile_Fields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_Fields_UserProfile" Association="Self.FK_UserProfile_Fields_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="UserProfile_Fields" EntitySet="UserProfile_Fields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_InstitutionLevels_InstitutionLevels" Association="Self.FK_UserProfile_InstitutionLevels_InstitutionLevels">
+      <End Role="InstitutionLevels" EntitySet="InstitutionLevels" />
+      <End Role="UserProfile_InstitutionLevels" EntitySet="UserProfile_InstitutionLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_InstitutionLevels_UserProfile" Association="Self.FK_UserProfile_InstitutionLevels_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="UserProfile_InstitutionLevels" EntitySet="UserProfile_InstitutionLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_Provinces_Provinces" Association="Self.FK_UserProfile_Provinces_Provinces">
+      <End Role="Provinces" EntitySet="Provinces" />
+      <End Role="UserProfile_Provinces" EntitySet="UserProfile_Provinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_Provinces_UserProfile" Association="Self.FK_UserProfile_Provinces_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="UserProfile_Provinces" EntitySet="UserProfile_Provinces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_webpages_Permissions_StatusCriterions_PermissionId" Association="Self.fk_webpages_Permissions_StatusCriterions_PermissionId">
+      <End Role="webpages_Permissions" EntitySet="webpages_Permissions" />
+      <End Role="webpages_Permissions_StatusCriterions" EntitySet="webpages_Permissions_StatusCriterions" />
+    </AssociationSet>
+    <AssociationSet Name="fk_webpages_Permissions_StatusCriterions_StatusCriterionsId" Association="Self.fk_webpages_Permissions_StatusCriterions_StatusCriterionsId">
+      <End Role="StatusCriterions" EntitySet="StatusCriterions" />
+      <End Role="webpages_Permissions_StatusCriterions" EntitySet="webpages_Permissions_StatusCriterions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webpages_RolePermissionStatuses_Status" Association="Self.FK_webpages_RolePermissionStatuses_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="webpages_RolePermissionStatuses" EntitySet="webpages_RolePermissionStatuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_webpages_RolePermissionStatuses_webpages_Permissions" Association="Self.FK_webpages_RolePermissionStatuses_webpages_Permissions">
+      <End Role="webpages_Permissions" EntitySet="webpages_Permissions" />
+      <End Role="webpages_RolePermissionStatuses" EntitySet="webpages_RolePermissionStatuses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

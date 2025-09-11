@@ -1,0 +1,53 @@
+﻿@model INET.Data.Resolution
+@using INET.Core.Constants
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Enums
+@using INET.Core.Constants
+@{
+    var fieldsIds = Model.Dictums.Select(x => x.ImprovementPlan.FieldId).ToList();
+    var levelsIds = Model.Dictums.Where(x => x.ImprovementPlan.InstitutionLevelInt.HasValue).Select(x => x.ImprovementPlan.InstitutionLevelInt.Value).ToList();
+    var provincesNumbers = Model.Dictums.Select(x => x.ImprovementPlan.CUE.Substring(0, 2)).ToList();
+}
+
+<a href="#"><img src="~/Img/icons/icon-view.png" data-documentId="@Model.Id" data-improvementPlanId="@Model.ImprovementPlanId" data-templateId="@Model.TemplateId" class="view-resolution" title="Ver"></a>
+
+@if (ResolutionPermissions.CanEdit(Model.StatusId, fieldsIds, levelsIds, provincesNumbers))
+{
+    <a href="#"><img src="~/Img/icons/icon-edit.png" data-documentId="@Model.Id" data-improvementPlanId="@Model.ImprovementPlanId" data-templateId="@Model.TemplateId" title="Editar" class="edit-resolution"></a>
+}
+
+@if (ResolutionPermissions.CanDelete(Model.StatusId, fieldsIds, levelsIds, provincesNumbers))
+{
+    <a href="#"><img src="~/Img/icons/icon-delete.png" data-documentId="@Model.Id" title="Eliminar" class="delete-resolution"></a>
+}
+
+@if (ResolutionPermissions.CanBlock(Model.StatusId, fieldsIds, levelsIds, provincesNumbers))
+{
+    <a href="#"><img src="~/Img/icons/icon-close.png" data-documentId="@Model.Id" title="Anular" class="block-resolution"></a>
+}
+
+@if ((Model.StatusId == ResolutionStatusEnum.Firmado.ToInt() || Model.StatusId == ResolutionStatusEnum.Protocolizado.ToInt()) && !String.IsNullOrEmpty(Model.Annex))
+{
+    <a href="~/annex/@Model.Annex" target="_blank"><img src="~/Img/icons/icon-resolution.png" title="Anexo" class="grid-icon annex"></a>
+}
+
+@if (!String.IsNullOrEmpty(Model.PDF) && ((Model.StatusId == ResolutionStatusEnum.Emitido.ToInt() && !SessionHelper.HasRole(RoleConstants.OPERADOR_PROVINCIAL)) || Model.StatusId == ResolutionStatusEnum.Firmado.ToInt() || Model.StatusId == ResolutionStatusEnum.Protocolizado.ToInt()))
+{
+    <a href="~/Docs/@Model.PDF" target="_blank"><img src="~/Img/icons/icon-export-plan.png" title="Descargar PDF" class="grid-icon"></a>
+}
+
+@if (!String.IsNullOrEmpty(Model.PDF_Annex) && ((Model.StatusId == ResolutionStatusEnum.Emitido.ToInt() && !SessionHelper.HasRole(RoleConstants.OPERADOR_PROVINCIAL)) || Model.StatusId == ResolutionStatusEnum.Firmado.ToInt() || Model.StatusId == ResolutionStatusEnum.Protocolizado.ToInt()))
+{
+    <a href="~/Docs/@Model.PDF_Annex" target="_blank"><img src="~/Img/icons/icon-resolution.png" title="Descargar Anexo Docx" class="grid-icon"></a>
+}
+
+@if (!String.IsNullOrEmpty(Model.PDF_Annex_extra) && ((Model.StatusId == ResolutionStatusEnum.Emitido.ToInt() && !SessionHelper.HasRole(RoleConstants.OPERADOR_PROVINCIAL)) || Model.StatusId == ResolutionStatusEnum.Firmado.ToInt() || Model.StatusId == ResolutionStatusEnum.Protocolizado.ToInt()))
+{
+    <a href="~/Docs/@Model.PDF_Annex_extra" target="_blank"><img src="~/Img/icons/icon-resolution.png" title="Descargar Anexo XLSX" class="grid-icon"></a>
+}
+
+@if (Model.StatusId == ResolutionStatusEnum.Firmado.ToInt() && !String.IsNullOrEmpty(Model.SignedDocument))
+{
+    <a href="~/Docs/@ConfigConstants.SIGNED_RESOLUTIONS_PATH/@System.Uri.EscapeDataString(Model.SignedDocument)" target="_blank"><img src="~/Img/icons/icon-signed.png" title="Documento Firmado Digitalmente" class="grid-icon"></a>
+}

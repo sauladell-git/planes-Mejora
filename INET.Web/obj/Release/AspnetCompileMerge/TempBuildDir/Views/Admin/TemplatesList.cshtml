@@ -1,0 +1,48 @@
+﻿@model List<INET.Data.Template>
+@{
+    ViewBag.Title = "Plantillas de Documentos";
+}
+
+@section scripts {
+    @Scripts.Render("~/scripts/js/templatesList.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)    
+}
+
+@Html.Partial("_MenuAdmin")
+
+<div class="table-float">    
+    <div id="msg-list-templates"></div>
+    <a href="@Url.Action("TemplateEditor")"><div class="nuevo-template" id="nuevo-usuario">Nueva Plantilla</div></a>
+    <table cellpadding="0" cellspacing="1" class="list" id="list">        
+        <thead>
+            <tr>
+                <td width="90px" valign="middle">Acciones</td>                
+                <td>Nombre</td>
+                <td>Tipo de Plantilla</td>
+                <td>Activo</td>                    
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var template in Model)
+            {
+                <tr data-templateId="@template.Id">
+                    <td align="center" class="actions">
+                        <a href="@Url.Action("TemplateEditor", "Admin", new { id = template.Id } )"><img src="~/Img/icons/icon-edit.png" title="Editar"></a>                        
+                        <img src="~/img/icons/icon-delete.png" title="Eliminar" class="delete">
+                    </td>                    
+                    <td>@template.Name</td>
+                    <td>@template.TemplateType.Description</td>
+                    <td>@(template.Active ? "Sí" : "No")</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>
+
+<div id="delete-confirm" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea eliminar la Plantilla?</p>
+</div>
+
+@Html.Partial("_MessageResult")

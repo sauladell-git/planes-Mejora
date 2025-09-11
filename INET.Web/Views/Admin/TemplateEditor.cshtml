@@ -1,0 +1,161 @@
+﻿@model INET.Services.DTO.TemplateDTO
+@using System.Configuration;
+@{
+    ViewBag.Title = "Plantillas de documentos";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/lib/tinymce/tinymce.min.js")
+    @Scripts.Render("~/scripts/js/template-editor.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<div class="search">
+    <ul class="tabs">
+        <a href="@Url.Action("TemplatesList", "Admin")"><li class="back" title="Volver"></li></a>
+        @if (Model.Id > 0 && Model.CanDeleteTemplate)
+        {
+            <li class="delete" title="Eliminar" id="delete"></li>
+        }
+    </ul>
+</div>
+
+@using (Html.BeginForm("TemplateEditor", "Admin", FormMethod.Post, new { id = "frmTemplate" }))
+{
+    <div class="template-container scroll">
+        <div id="msg-template"></div>
+        <div id="plan-detail">
+            <ul>
+                <li><a href="#tabs-1">Detalle de la Plantilla</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="add-new-plan">
+                    @Html.Label("Nombre", new { @class = "label" })
+                    @Html.TextBoxFor(x => x.Name, new { @class = "input", maxLength = "200" })
+
+                    @Html.Label("Tipo", new { @class = "label" })
+                    @Html.DropDownListFor(x => x.TemplateTypeId, new SelectList(Model.TemplateTypes, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+
+                    <legend>Ejes</legend>
+                    @foreach (var field in Model.Fields)
+                    {
+                        <div>
+                            <input type="checkbox" id="SelectedFieldsIds_@field.Id" name="SelectedFieldsIds" checked="@(Model.SelectedFieldsIds.Where(x => x == field.Id).Count() > 0?true:false)" value="@field.Id" class="checkbox" />
+                            <label for="SelectedFieldsIds_@field.Id">@field.Description</label>
+                        </div>
+                    }
+
+                    @Html.Label("Habilitado", new { @class = "label" })
+                    @Html.CheckBoxFor(x => x.Active, new { @class = "checkbox" })
+                </div>
+                <div id="SignaturesLabel">
+                    <label><strong>Utilice, si lo desea, las siguientes Palabras Clave (incluyendo corchetes) para la muestra de FIRMA en documentos emitidos:</strong></label>
+                </div>
+                <div id="signaturesBlock" class="add-new-plan">
+                    <label class="label">[FIRMA_1] =&gt; <a href="@ConfigurationManager.AppSettings.Get("SignaturePath_1")" target="_blank">@ConfigurationManager.AppSettings.Get("SignaturePath_1")</a></label>
+                    <label class="label">[FIRMA_2] =&gt; <a href="@ConfigurationManager.AppSettings.Get("SignaturePath_2")" target="_blank">@ConfigurationManager.AppSettings.Get("SignaturePath_2")</a></label>
+                    <label class="label">[FIRMA_3] =&gt; <a href="@ConfigurationManager.AppSettings.Get("SignaturePath_3")" target="_blank">@ConfigurationManager.AppSettings.Get("SignaturePath_3")</a></label>
+                    <label class="label">[FIRMA_4] =&gt; <a href="@ConfigurationManager.AppSettings.Get("SignaturePath_4")" target="_blank">@ConfigurationManager.AppSettings.Get("SignaturePath_4")</a></label>
+                    <label class="label">[FIRMA_5] =&gt; <a href="@ConfigurationManager.AppSettings.Get("SignaturePath_5")" target="_blank">@ConfigurationManager.AppSettings.Get("SignaturePath_5")</a></label>
+                    <label class="label">[FIRMA_6] =&gt; <a href="@ConfigurationManager.AppSettings.Get("SignaturePath_6")" target="_blank">@ConfigurationManager.AppSettings.Get("SignaturePath_6")</a></label>
+                </div>
+                <div class="hidden" id="keyWordsLabel">
+                    <label><strong>Utilice, si lo desea, las siguientes Palabras Clave (incluyendo corchetes) para la creación de la plantilla:</strong></label>
+                </div>
+                <div id="keyWords" class="add-new-plan">
+                </div>
+                <br />
+                <div class="hidden" id="ActionBlocksLabel">
+                    <label><strong>Utilice, si lo desea, los siguientes Bloques de Acción (incluyendo las llaves) para la creación de la plantilla:</strong></label>
+                </div>
+                <div id="ActionBlocks" class="add-new-plan">
+                </div>
+            </div>
+        </div>
+        <div id="solicitados-detail">
+            <ul>
+                <li><a href="#tabs-2">Contenido</a></li>
+                <li><a href="#tabs-3">Variables</a></li>
+                <li><a href="#tabs-4">Propiedades</a></li>
+            </ul>
+            <div id="tabs-2">
+                <div class="resumen">
+                    @Html.TextAreaFor(x => x.Content, new { @class = "textarea" })
+
+                    <div class="button">
+                        <input id="save" type="submit" value="Guardar" class="btn-save">
+                        @if (Model.Id > 0)
+    {
+                    <input id="preview" type="button" value="Visualizar PDF" class="btn-save btn-preview" data-format="pdf">
+                    <input id="preview_docx" type="button" value="Visualizar DOCX" class="btn-save btn-preview" data-format="docx">
+}
+                    </div>
+                </div>
+            </div>
+            <div id="tabs-3">
+                <p>A continuación, puedes definir nuevas variables para ser usadas en la plantilla.</p>
+
+                <div id="template-variables-wrapper">
+                    @foreach (var variable in Model.TemplateVariables)
+                    {
+                        <div class="variable">
+                            <input type="text" class="custom-input" maxlength="100" value="@variable.Variable" data-id="@variable.Id" />
+                            <img src="~/Img/icons/icon-delete.png" title="Eliminar" class="delete-variable">
+                        </div>
+                    }
+                </div>
+                <div id="addTemplateFieldVariable" class="div-button">Agregar Variable</div>
+            </div>
+            <div id="tabs-4">
+                <div class="properties">
+                    <div class="row">
+                        @Html.Label("Margen Izquierdo", new { @class = "label" })
+                        @Html.TextBoxFor(x => x.marginLeft, new { @class = "custom-input", maxLength = "10" })
+                    </div>
+                    <div class="row">
+                        @Html.Label("Margen Derecho", new { @class = "label" })
+                        @Html.TextBoxFor(x => x.marginRight, new { @class = "custom-input", maxLength = "10" })
+                    </div>
+                    <div class="row">
+                        @Html.Label("Margen Superior", new { @class = "label" })
+                        @Html.TextBoxFor(x => x.marginTop, new { @class = "custom-input", maxLength = "10" })
+                    </div>
+                    <div class="row">
+                        @Html.Label("Margen Inferior", new { @class = "label" })
+                        @Html.TextBoxFor(x => x.marginBottom, new { @class = "custom-input", maxLength = "10" })
+                    </div>
+                    @*<div class="row">
+                        @Html.Label("Imagen para la firma", new { @class = "label" })
+                        @Html.TextBoxFor(x => x.SignatureImagePath, new { @class = "custom-input", maxLength = "200" })
+                            </div>*@
+                    <div class="row">
+                        @Html.Label("Encabezado (HTML)", new { @class = "label" })
+                        @Html.TextAreaFor(x => x.Header, new { @class = "textarea" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hidden-templates-variables"></div>
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.FileManagerUrl)
+}
+
+@using (Html.BeginForm("Preview", "Admin", FormMethod.Post, new { id = "frmPreview" }))
+{
+    <input type="hidden" id="prevTemplateId" name="prevTemplateId" />
+    <input type="hidden" id="htmlHeader" name="htmlHeader" />
+    <input type="hidden" id="htmlContent" name="htmlContent" />
+    <input type="hidden" id="htmlFormat" name="htmlFormat" />
+}
+
+<div id="delete-confirm" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea eliminar la Plantilla?</p>
+</div>
+
+<div id="delete-confirm-variable" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea borrar la variable seleccionada?</p>
+</div>
+
+
+@Html.Partial("_MessageResult")

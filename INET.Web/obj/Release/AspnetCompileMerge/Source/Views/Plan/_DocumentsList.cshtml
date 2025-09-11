@@ -1,0 +1,58 @@
+﻿@model List<INET.Data.Document>
+@using INET.Data
+@using INET.Core.Enums
+@using INET.Utils.Helpers
+
+<table cellpadding="0" cellspacing="1" class="list" id="list-documents">
+    <thead>
+        <tr>
+            <td width="110px">Acciones</td>
+            <td>ID</td>
+            <td>Número</td>
+            <td>Tipo</td>
+            <td>Estado</td>
+            <td>Fecha Emisión</td>
+            <td>Fecha Firma</td>
+            <td>Plantilla</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var document in Model)
+            {
+                var disabled = document.StatusId == DictumStatusEnum.Anulado.ToInt();
+                var cssClass = (disabled) ? "gradeU" : "";
+            <tr data-documentId="@document.Id" data-templateId="@document.Template.Id" data-improvementPlanId="@document.ImprovementPlanId" class="@cssClass">
+                <td width="110px" align="center" class="actions">
+                    @if (document is Dictum)
+                    {
+                        @Html.Partial("_DictumActions", document)
+                    }
+
+                    @if (document is Resolution)
+                    {
+                        @Html.Partial("_ResolutionActions", document)
+                    }
+                </td>
+                @if (document is Dictum)
+                {
+                    <td>@(((Dictum)document).Number.ToString())</td>
+                        <td>@(((Dictum)document).DictumNumber)</td>
+                }
+                @if (document is Resolution)
+                {
+                    <td>@(((Resolution)document).Number.ToString())</td>
+                        <td>@(((Resolution)document).ResolutionNumber)</td>
+                }
+
+                <td>@document.Template.TemplateType.Description</td>
+                <td>@document.Status.Description</td>
+                <td>@document.EmissionDate</td>
+                <td>@(document.SignatureDate.HasValue ? document.SignatureDate.Value.ToString("dd/MM/yyyy"):"")</td>
+                <td>@document.Template.Name</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr></tr>
+    </tfoot>
+</table>

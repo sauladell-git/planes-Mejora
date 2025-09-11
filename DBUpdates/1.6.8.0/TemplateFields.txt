@@ -1,0 +1,35 @@
+-- Creating table 'TemplateField'
+CREATE TABLE [dbo].[TemplateField] (
+    [Templates_Id] int  NOT NULL,
+    [Fields_Id] int  NOT NULL
+);
+GO
+
+-- Creating primary key on [Templates_Id], [Fields_Id] in table 'TemplateField'
+ALTER TABLE [dbo].[TemplateField]
+ADD CONSTRAINT [PK_TemplateField]
+    PRIMARY KEY NONCLUSTERED ([Templates_Id], [Fields_Id] ASC);
+GO
+
+-- Creating foreign key on [Templates_Id] in table 'TemplateField'
+ALTER TABLE [dbo].[TemplateField]
+ADD CONSTRAINT [FK_TemplateField_Template]
+    FOREIGN KEY ([Templates_Id])
+    REFERENCES [dbo].[Templates]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Fields_Id] in table 'TemplateField'
+ALTER TABLE [dbo].[TemplateField]
+ADD CONSTRAINT [FK_TemplateField_Field]
+    FOREIGN KEY ([Fields_Id])
+    REFERENCES [dbo].[Fields]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TemplateField_Field'
+CREATE INDEX [IX_FK_TemplateField_Field]
+ON [dbo].[TemplateField]
+    ([Fields_Id]);
+GO

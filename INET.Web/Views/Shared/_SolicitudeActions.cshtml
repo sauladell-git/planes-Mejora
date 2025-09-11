@@ -1,0 +1,35 @@
+﻿@using INET.Core.Enums
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Constants
+@{
+    var showSolicitudesByCUE = Model.ImprovementPlan.ImprovementPlanTypeId == ImprovementPlanTypeEnum.Jurisdiccional.ToInt();
+    var planId = Model.ImprovementPlanId;
+    var planStatusId = Model.ImprovementPlan.StatusId;
+    var evaluatorId = Model.ImprovementPlan.EvaluatorUserId ?? 0;
+
+    var disabled = Model.StatusId == SolicitudeStatusEnum.Anulado.ToInt();
+    var cssClass = (disabled) ? "solicitude-disabled" : "";
+    var canEdit = SolicitudePermissions.CanEdit(Model.StatusId, planStatusId, evaluatorId, Model.Locked);
+}
+
+<img src="~/Img/icons/icon-view.png" data-solicitudeId="@Model.Id" class="solicitude-action-view actionLink @cssClass" title="Ver" />
+@if (!disabled)
+{
+    if (canEdit)
+    {
+        <img src="~/Img/icons/icon-edit.png" data-solicitudeId="@Model.Id" class="solicitude-action-edit actionLink" title="Editar" />
+    }
+
+    <a href="@Url.Action("ExportSolicitudeToPDF", "Plan", new { solicitudeId = Model.Id })"><img src="~/Img/icons/icon-export-plan.png" title="Descargar PDF" class="grid-icon" /></a>
+
+    if (SolicitudePermissions.CanDelete(Model.StatusId, planStatusId, Model.Locked))
+    {
+        <img src="~/Img/icons/icon-delete.png" data-solicitudeId="@Model.Id" class="solicitude-action-delete actionLink" title="Eliminar" />
+    }
+
+    if (SolicitudePermissions.CanBlock(evaluatorId, planStatusId, Model.Locked))
+    {
+        <img src="~/Img/icons/icon-close.png" data-solicitudeId="@Model.Id" class="solicitude-action-block actionLink" title="Anular Solicitud" />
+    }
+}

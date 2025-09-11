@@ -1,0 +1,470 @@
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="INETDataStoreContainer" CdmEntityContainer="INETContext">
+    <EntitySetMapping Name="Audits">
+      <EntityTypeMapping TypeName="INET.Data.Audit">
+        <MappingFragment StoreEntitySet="Audits">
+          <ScalarProperty Name="ImprovementPlanId" ColumnName="ImprovementPlanId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="AdditionalData" ColumnName="AdditionalData" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="OriginalValue" ColumnName="OriginalValue" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Budgets">
+      <EntityTypeMapping TypeName="INET.Data.Budget">
+        <MappingFragment StoreEntitySet="Budgets">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SchoolYearId" ColumnName="SchoolYearId" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="Ammount" ColumnName="Ammount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="INET.Data.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="IncludeInDictum" ColumnName="IncludeInDictum" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DictumTypes">
+      <EntityTypeMapping TypeName="INET.Data.DictumType">
+        <MappingFragment StoreEntitySet="DictumTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="IsTypeOf(INET.Data.Document)">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreationUserId" ColumnName="CreationUserId" />
+          <ScalarProperty Name="ImprovementPlanId" ColumnName="ImprovementPlanId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="SignatureDate" ColumnName="SignatureDate" />
+          <ScalarProperty Name="EmissionDate" ColumnName="EmissionDate" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(INET.Data.Dictum)">
+        <MappingFragment StoreEntitySet="Dictums">
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+          <ScalarProperty Name="ElegibilityExternalEntity" ColumnName="ElegibilityExternalEntity" />
+          <ScalarProperty Name="EligibilityExternalNumber" ColumnName="EligibilityExternalNumber" />
+          <ScalarProperty Name="EligibilityRequired" ColumnName="EligibilityRequired" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Ammount" ColumnName="Ammount" />
+          <ScalarProperty Name="EligibilityStatusId" ColumnName="EligibilityStatusId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(INET.Data.Resolution)">
+        <MappingFragment StoreEntitySet="Resolutions">
+          <ScalarProperty Name="ResolutionNumber" ColumnName="ResolutionNumber" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Annex" ColumnName="Annex" />
+          <ScalarProperty Name="AmountExecuted" ColumnName="AmountExecuted" />
+          <ScalarProperty Name="ProtocolizedDate" ColumnName="ProtocolizedDate" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpenditureTypes">
+      <EntityTypeMapping TypeName="INET.Data.ExpenditureType">
+        <MappingFragment StoreEntitySet="ExpenditureTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fields">
+      <EntityTypeMapping TypeName="INET.Data.Field">
+        <MappingFragment StoreEntitySet="Fields">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Management" ColumnName="Management" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileNumbers">
+      <EntityTypeMapping TypeName="INET.Data.FileNumber">
+        <MappingFragment StoreEntitySet="FileNumbers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastFileNumber" ColumnName="LastFileNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImprovementPlans">
+      <EntityTypeMapping TypeName="INET.Data.ImprovementPlan">
+        <MappingFragment StoreEntitySet="ImprovementPlans">
+          <ScalarProperty Name="FieldDate" ColumnName="FieldDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImprovementPlanTypeId" ColumnName="ImprovementPlanTypeId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="SchoolYearId" ColumnName="SchoolYearId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+          <ScalarProperty Name="CUE" ColumnName="CUE" />
+          <ScalarProperty Name="ReceptionDate" ColumnName="ReceptionDate" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="EvaluatorUserId" ColumnName="EvaluatorUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImprovementPlansTypes">
+      <EntityTypeMapping TypeName="INET.Data.ImprovementPlansType">
+        <MappingFragment StoreEntitySet="ImprovementPlansTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidences">
+      <EntityTypeMapping TypeName="INET.Data.Incidence">
+        <MappingFragment StoreEntitySet="Incidences">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImprovementPlanId" ColumnName="ImprovementPlanId" />
+          <ScalarProperty Name="SolicitudeId" ColumnName="SolicitudeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IncidentTypeId" ColumnName="IncidentTypeId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidenceTypes">
+      <EntityTypeMapping TypeName="INET.Data.IncidenceType">
+        <MappingFragment StoreEntitySet="IncidenceTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institutions">
+      <EntityTypeMapping TypeName="INET.Data.Institution">
+        <MappingFragment StoreEntitySet="Institutions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Locality" ColumnName="Locality" />
+          <ScalarProperty Name="Scope" ColumnName="Scope" />
+          <ScalarProperty Name="Orientation" ColumnName="Orientation" />
+          <ScalarProperty Name="InstitutionType" ColumnName="InstitutionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lines">
+      <EntityTypeMapping TypeName="INET.Data.Line">
+        <MappingFragment StoreEntitySet="Lines">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeasurementUnits">
+      <EntityTypeMapping TypeName="INET.Data.MeasurementUnit">
+        <MappingFragment StoreEntitySet="MeasurementUnits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="INET.Data.Province">
+        <MappingFragment StoreEntitySet="Provinces">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchoolYears">
+      <EntityTypeMapping TypeName="INET.Data.SchoolYear">
+        <MappingFragment StoreEntitySet="SchoolYears">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cycle" ColumnName="Cycle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Solicitudes">
+      <EntityTypeMapping TypeName="INET.Data.Solicitude">
+        <MappingFragment StoreEntitySet="Solicitudes">
+          <ScalarProperty Name="ReassignedGrantedTotal" ColumnName="ReassignedGrantedTotal" />
+          <ScalarProperty Name="ReassignedRequestedTotal" ColumnName="ReassignedRequestedTotal" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SchoolYearId" ColumnName="SchoolYearId" />
+          <ScalarProperty Name="MeasurementUnitId" ColumnName="MeasurementUnitId" />
+          <ScalarProperty Name="SolicitudeTypeId" ColumnName="SolicitudeTypeId" />
+          <ScalarProperty Name="ExpenditureTypeId" ColumnName="ExpenditureTypeId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="ImprovementPlanId" ColumnName="ImprovementPlanId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ReassignedId" ColumnName="ReassignedId" />
+          <ScalarProperty Name="CUE" ColumnName="CUE" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="RequestedAmount" ColumnName="RequestedAmount" />
+          <ScalarProperty Name="RequestedPriceUnit" ColumnName="RequestedPriceUnit" />
+          <ScalarProperty Name="ApprovedAmount" ColumnName="ApprovedAmount" />
+          <ScalarProperty Name="ApprovedPriceUnit" ColumnName="ApprovedPriceUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SolicitudeTypes">
+      <EntityTypeMapping TypeName="INET.Data.SolicitudeType">
+        <MappingFragment StoreEntitySet="SolicitudeTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="INET.Data.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StatusCriterionId" ColumnName="StatusCriterionId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusCriterions">
+      <EntityTypeMapping TypeName="INET.Data.StatusCriterion">
+        <MappingFragment StoreEntitySet="StatusCriterions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Templates">
+      <EntityTypeMapping TypeName="INET.Data.Template">
+        <MappingFragment StoreEntitySet="Templates">
+          <ScalarProperty Name="SignatureImagePath" ColumnName="SignatureImagePath" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="marginBottom" ColumnName="marginBottom" />
+          <ScalarProperty Name="marginTop" ColumnName="marginTop" />
+          <ScalarProperty Name="marginRight" ColumnName="marginRight" />
+          <ScalarProperty Name="marginLeft" ColumnName="marginLeft" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TemplateTypeId" ColumnName="TemplateTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplateTypeFields">
+      <EntityTypeMapping TypeName="INET.Data.TemplateTypeField">
+        <MappingFragment StoreEntitySet="TemplateTypeFields">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TemplateTypeId" ColumnName="TemplateTypeId" />
+          <ScalarProperty Name="Field" ColumnName="Field" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplateTypes">
+      <EntityTypeMapping TypeName="INET.Data.TemplateType">
+        <MappingFragment StoreEntitySet="TemplateTypes">
+          <ScalarProperty Name="Eligibility" ColumnName="Eligibility" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="INET.Data.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="Province_Id" ColumnName="Province_Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Membership">
+      <EntityTypeMapping TypeName="INET.Data.webpages_Membership">
+        <MappingFragment StoreEntitySet="webpages_Membership">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+          <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+          <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_OAuthMembership">
+      <EntityTypeMapping TypeName="INET.Data.webpages_OAuthMembership">
+        <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Roles">
+      <EntityTypeMapping TypeName="INET.Data.webpages_Roles">
+        <MappingFragment StoreEntitySet="webpages_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Comments_ImprovementPlans" TypeName="INET.Data.Comments_ImprovementPlans" StoreEntitySet="Comments_ImprovementPlans">
+      <EndProperty Name="Comments">
+        <ScalarProperty Name="Id" ColumnName="CommentId" />
+      </EndProperty>
+      <EndProperty Name="ImprovementPlans">
+        <ScalarProperty Name="Id" ColumnName="ImprovementPlanId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Comments_Incidences" TypeName="INET.Data.Comments_Incidences" StoreEntitySet="Comments_Incidences">
+      <EndProperty Name="Comments">
+        <ScalarProperty Name="Id" ColumnName="CommentId" />
+      </EndProperty>
+      <EndProperty Name="Incidences">
+        <ScalarProperty Name="Id" ColumnName="IncidenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Comments_Solicitudes" TypeName="INET.Data.Comments_Solicitudes" StoreEntitySet="Comments_Solicitudes">
+      <EndProperty Name="Comments">
+        <ScalarProperty Name="Id" ColumnName="CommentId" />
+      </EndProperty>
+      <EndProperty Name="Solicitudes">
+        <ScalarProperty Name="Id" ColumnName="SolicitudeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserProfile_Fields" TypeName="INET.Data.UserProfile_Fields" StoreEntitySet="UserProfile_Fields">
+      <EndProperty Name="Fields">
+        <ScalarProperty Name="Id" ColumnName="FieldId" />
+      </EndProperty>
+      <EndProperty Name="UserProfile">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="INET.Data.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+      <EndProperty Name="webpages_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="UserProfile">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Dictums_Solicitudes" TypeName="INET.Data.Dictums_Solicitudes" StoreEntitySet="Dictums_Solicitudes">
+      <EndProperty Name="Solicitudes">
+        <ScalarProperty Name="Id" ColumnName="SolicitudeId" />
+      </EndProperty>
+      <EndProperty Name="Dictums">
+        <ScalarProperty Name="Id" ColumnName="DictumId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ResolutionDictums" TypeName="INET.Data.ResolutionDictums" StoreEntitySet="ResolutionDictums">
+      <EndProperty Name="Resolution">
+        <ScalarProperty Name="Id" ColumnName="ResolutionId" />
+      </EndProperty>
+      <EndProperty Name="Dictum">
+        <ScalarProperty Name="Id" ColumnName="DictumId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="TemplateTypeBlocks">
+      <EntityTypeMapping TypeName="INET.Data.TemplateTypeBlock">
+        <MappingFragment StoreEntitySet="TemplateTypeBlocks">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="TemplateTypeId" ColumnName="TemplateTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="INET.Data.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentVariables">
+      <EntityTypeMapping TypeName="INET.Data.DocumentVariable">
+        <MappingFragment StoreEntitySet="DocumentVariables">
+          <ScalarProperty Name="TemplateVariableId" ColumnName="TemplateVariableId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplateVariables">
+      <EntityTypeMapping TypeName="INET.Data.TemplateVariable">
+        <MappingFragment StoreEntitySet="TemplateVariables">
+          <ScalarProperty Name="Variable" ColumnName="Variable" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELMAH_Error">
+      <EntityTypeMapping TypeName="INET.Data.ELMAH_Error">
+        <MappingFragment StoreEntitySet="ELMAH_Error">
+          <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TemplateField" TypeName="INET.Data.TemplateField" StoreEntitySet="TemplateField">
+      <EndProperty Name="Template">
+        <ScalarProperty Name="Id" ColumnName="Templates_Id" />
+      </EndProperty>
+      <EndProperty Name="Field">
+        <ScalarProperty Name="Id" ColumnName="Fields_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

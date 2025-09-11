@@ -1,0 +1,66 @@
+﻿@using INET.Utils.Helpers;
+@using INET.Core.Constants;
+
+<div class="menu">
+    <ul>
+        @if (SessionHelper.HasAnyPermission(new string[] {
+        PermissionConstants.ImprovementPlan.READ
+        }))
+        {
+        <li><a href="@Url.Action("List", "Plan")">Planes de Mejora</a></li>
+        <li><a href="@Url.Action("List", "Resolution")">Disposiciones</a></li>
+        <li><a href="@Url.Action("List", "Dictum")">Dictámenes</a></li>
+        }
+        @if (SessionHelper.HasAnyPermission(new string[] {
+PermissionConstants.ImprovementPlan.INCIDENTS_READ,
+PermissionConstants.Solicitudes.INCIDENTS_READ
+}))
+        {
+        <li><a href="@Url.Action("List", "Incidence")">Incidencias</a></li>
+        }
+
+        @if (SessionHelper.HasAnyPermission(new string[] {
+PermissionConstants.Reports.BUDGET_BY_PROVINCE,
+PermissionConstants.Reports.IMPROVEMENT_PLANS,
+PermissionConstants.Reports.SOLICITUDES_BY_CUE,
+PermissionConstants.Reports.STATEMENT_OF_ACCOUNTS
+}))
+{
+        <li><a href="@Url.Action("Index", "Report")">Reportes</a></li>
+}
+
+        @if (SessionHelper.HasAnyPermission(new string[] {
+            PermissionConstants.Administration.ROLES,
+            PermissionConstants.Administration.USERS,
+PermissionConstants.Administration.BUDGET,
+PermissionConstants.Administration.TEMPLATES,
+PermissionConstants.Administration.ERROR_LOG
+}))
+        {
+        <li><a href="@Url.Action("Index", "Admin")">Administración</a></li>
+}
+
+        <li class="admin-icons">
+            <a href="#" title="Cerrar sesión">
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="image" src="~/Img/icons/icon-off-white.png" />
+        }
+            </a>
+        </li>
+
+        <li class="admin-icons">
+            <a href="@Url.Action("ChangePassword", "Account") " title="Modificar contraseña">
+                <img src="~/Img/icons/icon-configuration-white.png">
+            </a>
+        </li>
+
+        @if (SessionHelper.IsAuthenticated)
+    {
+        <li class="menu-user-info">
+            <span>@SessionHelper.CurrentUserProfile.UserName | @SessionHelper.CurrentUserRoles.First()</span>
+        </li>
+}
+    </ul>
+</div>

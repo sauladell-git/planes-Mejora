@@ -1,0 +1,8 @@
+
+- Al marcar como firmados las  disposiciones se deben importar al sistema los PDF generados en GEDO e indicar a mano su fecha de firma.
+- Al marcar como firmadas las disposiciones hay que indicar el nro de disposición.
+- Al marcar como firmado una disposiciones se tiene que adjuntar su anexo e indicar a mano su fecha de firma (propia del anexo)
+
+=================================
+- Agregado en reporte 4 las fechas de firma de los dictámenes
+- Agregado en reporte 4 las fechas de firma de las disposiciones y sus anexos. "Fecha de Firma de Dictamen en GEDO", "Fecha de dipocision firmada por GEDO", "Fecha de anexo firmado en GEDO"

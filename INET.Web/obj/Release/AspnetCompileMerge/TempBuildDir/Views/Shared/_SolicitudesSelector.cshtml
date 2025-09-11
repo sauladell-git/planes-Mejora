@@ -1,0 +1,35 @@
+﻿@model List<INET.Data.Solicitude>
+@using INET.Utils.Helpers
+
+<div class="list-dictums-wrapper scrollable">
+    <table cellpadding="0" cellspacing="1" class="list" id="list-dictums">
+        <thead>
+            <tr>
+                <td width="90px">Acciones</td>
+                <td>Id</td>
+                <td>Línea</td>
+                <td>Descripción</td>
+                <td width="120px">Estado</td>
+                <td width="100px">Pedido</td>
+                <td width="100px">Aprobado</td>
+            </tr>
+        </thead>
+        <tbody>  
+            @foreach (var s in Model)
+            {
+                <tr data-selectorId="@s.Id" data-requestedTotal="@s.RequestedTotal" data-approvedTotal="@((s.ApprovedTotal != null) ? s.ApprovedTotal.Value : Convert.ToDecimal("0") )" >
+                    <td width="90px" align="center"><input type="checkbox" id="selector_@s.Id" class="checkbox solicitude-checkbox" /></td>
+                    <td align="center">@s.Id</td>
+                    <td align="center">@s.Line.Code</td>
+                    <td>@StringHelper.Cut(s.Details, 100)</td>
+                    <td width="120px" align="center">@s.Status.Description</td>
+                    <td width="100px">@s.RequestedTotal.ToString("C")</td>
+                    <td width="100px">@((s.ApprovedTotal != null) ? s.ApprovedTotal.Value.ToString("C") : Convert.ToDecimal("0").ToString("C") )</td>
+                </tr>
+            }           
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>

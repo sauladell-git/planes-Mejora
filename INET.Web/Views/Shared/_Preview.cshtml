@@ -1,0 +1,7 @@
+﻿@using (Html.BeginForm("Preview", "Plan", FormMethod.Post, new { id = "frmPreview" }))
+{
+    <input type="hidden" id="documentId" name="documentId" />
+    <input type="hidden" id="templateId" name="templateId" />
+    <input type="hidden" id="htmlContent" name="htmlContent" />
+    <div id="previewDocumentVariables"></div>
+}

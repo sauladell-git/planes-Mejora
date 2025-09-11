@@ -1,0 +1,327 @@
+﻿@using INET.Data
+@using INET.Utils.Helpers;
+@using INET.Services.DTO;
+@using INET.Core.Constants;
+@{
+    ViewBag.Title = "Reportes";
+}
+
+@section scripts {
+    @Scripts.Render("~/scripts/lib/jquery.fileDownload.js")
+    @Scripts.Render("~/scripts/js/reports.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<div class="table-float">
+    <div id="msg-reports"></div>
+    <table cellpadding="0" cellspacing="1" class="list" id="list-documents">
+        <thead>
+            <tr>
+                <td width="90px" valign="middle">Acciones</td>
+                <td>Reporte</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (SessionHelper.HasPermission(PermissionConstants.Reports.IMPROVEMENT_PLANS))
+            {
+                <tr>
+                    <td align="center" class="actions"><a href="#"><img id="improvementPlansByBudget" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                    @*<td>Reporte de planes</td>*@
+                    <td> Reporte: montos solicitados y aprobados por Plan de Mejora por eje y línea</td>
+                </tr>
+
+            }
+            @if (SessionHelper.HasPermission(PermissionConstants.Reports.SOLICITUDES_BY_CUE))
+            {
+                <tr>
+                    <td align="center" class="actions"><a href="#"><img id="CUESolicitudesReport" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                    @*<td>Reporte de solicitados por CUE</td>*@
+                    <td> Reporte: elementos solicitados por CUE por plan de mejora por eje y línea con montos</td>
+                </tr>
+            }
+            @if (SessionHelper.HasPermission(PermissionConstants.Reports.STATEMENT_OF_ACCOUNTS))
+            {
+                <tr>
+                    <td align="center" class="actions"><a href="#"><img id="statementsOfAccounts" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                    @*<td>Reporte estado de cuenta de las provincias</td>*@
+                    <td>
+                        Reporte: montos solicitados y aprobados por jurisdicción - Global
+                    </td>
+                </tr>
+            }
+            @if (SessionHelper.HasPermission(PermissionConstants.Reports.BUDGET_BY_PROVINCE))
+            {
+                <tr>
+                    <td align="center" class="actions"><a href="#"><img id="budgetByProvince" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                    @*<td>Reporte de seguimiento de planes provinciales por eje y linea</td>*@
+                    <td>
+                        Reporte: montos solicitados y aprobados por eje y línea por jurisdicción - Global
+                    </td>
+                </tr>
+
+            }
+            @if (SessionHelper.HasPermission(PermissionConstants.Reports.IMPROVEMENT_PLANS))
+            {
+                <tr>
+                    <td align="center" class="actions"><a href="#"><img id="nationalImprovementPlansByBudget" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                    @*<td>Reporte de planes (Dependencia Nacional)</td>*@
+                    @*<td>
+                            Reporte:montos solicitados y aprobados por Plan de Mejora por eje y línea  (Dependencia Nacional)
+                        </td>*@
+
+                    <td> Reporte: elementos solicitados por CUE por plan de mejora por eje y línea con montos</td>
+
+                </tr>
+            }
+
+            @if (SessionHelper.HasPermission(PermissionConstants.Reports.BUDGET_BY_PROVINCE))
+            {
+
+                <tr>
+                    <td align="center" class="actions"><a href="#"><img id="nationalBudgetByProvince" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                    <td>Reporte de seguimiento de planes provinciales por eje y linea (Dependencia Nacional)</td>
+                </tr>
+            }
+            <tr>
+                <td align="center" class="actions"><a href="#"><img id="AccountBudget" src="~/Img/icons/icon-export-plan.png" title="Descargar Excel" class="grid-icon"></a></td>
+                <td>Reporte Rendiciones Cargadas</td>
+
+
+
+            </tr>
+
+
+
+
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>
+
+<div id="budget-by-province-dialog" title="Reporte: montos solicitados y aprobados por eje y línea por jurisdicción - Global">
+    <div id="msg-budget-by-province-dialog"></div>
+    <table>
+        <tr>
+            <td><label>Provincia: </label></td>
+            <td>
+                <select id="budgetByProvince-provinces" class="dialog-input">
+                    <option value="0">Todas</option>
+                    @foreach (Province province in ViewBag.Provinces)
+                    {
+                        <option value="@province.Id">@province.Name</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        @*<tr> SIA 01-10-2021 ocultamos nivel
+                <td><label>Nivel: </label></td>
+                <td>
+                    <select id="budgetByProvince-InstitutionLevelId" class="dialog-input">
+                        <option value="0">Todos</option>
+                        @foreach (InstitutionLevel level in ViewBag.InstitutionLevels)
+                        {
+                            <option value="@level.Code">@level.Name</option>
+                        }
+                    </select>
+                </td>
+            </tr>*@
+        <tr>
+            <td><label>Ciclo lectivo:</label></td>
+            <td>
+                <select id="budgetByProvince-schoolYearId" class="dialog-input">
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Partida:</label></td>
+            <td>
+                <select id="budgetByProvince-budgetYearId" class="dialog-input">
+                    <option value="0">Todos los ciclos</option>
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr id="budgetByProvince-Lines">
+            <td></td>
+            <td>
+                <label><input id="budgetByProvince-lines-A" type="checkbox" checked="checked" value="1" />Eje y Linea 283/16 </label>
+                <label><input id="budgetByProvince-lines-B" type="checkbox" value="0" />Eje y Linea 14/22</label>
+            </td>
+        </tr>
+
+        <tr id="budgetByProvince-reportType">
+            <td></td>
+            <td>
+                <label><input id="budgetByProvince-reportType-A" type="checkbox" checked="checked" value="1" />Vertical</label>
+                <label><input id="budgetByProvince-reportType-B" type="checkbox" value="0" />Horizontal</label>
+            </td>
+        </tr>
+
+
+
+
+    </table>
+    <input name="budgetByProvince-dependenceNational" id="budgetByProvince-dependenceNational" type="hidden" value="false" />
+</div>
+
+<div id="statements-of-accounts-dialog" title="Reporte: montos solicitados y aprobados por jurisdicción - Global">
+    <div id="msg-statements-of-accounts-dialog"></div>
+    <table>
+        <tr>
+            <td><label>Ciclo lectivo:</label></td>
+            <td>
+                <select id="statementsOfAccounts-schoolYearId" class="dialog-input">
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Partida:</label></td>
+            <td>
+                <select id="statementsOfAccounts-budgetYearId" class="dialog-input">
+                    <option value="0">Todos los ciclos</option>
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+
+
+    </table>
+</div>
+
+<div id="improvementPlansByBudget-dialog" title="Reporte: montos solicitados y aprobados por Plan de Mejora por eje y línea">
+    <div id="msg-improvementPlansByBudget-dialog"></div>
+    <table>
+        <tr>
+            <td><label>Ciclo lectivo:</label></td>
+            <td>
+                <select id="improvementPlansByBudget-schoolYearId" class="dialog-input">
+
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Partida:</label></td>
+            <td>
+                <select id="improvementPlansByBudget-budgetYearId" class="dialog-input">
+                    <option value="0">Todos los ciclos</option>
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr id="improvementPlansByBudget-planTypeId-row">
+            <td><label>Tipo de plan:</label></td>
+            <td>
+                @foreach (ImprovementPlansType planType in ViewBag.PlanTypes)
+                {
+                    <label><input name="improvementPlansByBudget-planTypeId" type="checkbox" value="@planType.Id" />@planType.Description</label>
+                }
+            </td>
+        </tr>
+        <tr id="improvementPlansByBudget_prov_row">
+            <td><label>Provincia: </label></td>
+            <td>
+                <select id="improvementPlansByBudget-provinces" class="dialog-input">
+                    <option value="-1">Todas</option>
+                    @foreach (Province province in ViewBag.Provinces)
+                    {
+                        <option value="@province.Id">@province.Name</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr id="improvementPlansByBudget_CUE_row">
+            <td><label>CUE:</label></td>
+            <td>
+                <input id="improvementPlansByBudget-CUE" class="dialog-input input" placeholder="00000000" maxlength="9" size="10" value="" />
+            </td>
+        </tr>
+        <tr id="improvementPlansByBudget-abreviated-row">
+            <td></td>
+            <td>
+                <label><input name="improvementPlansByBudget-abreviated" type="checkbox" checked="checked" value="1" />Versión resumida</label>
+            </td>
+        </tr>
+    </table>
+    <input name="improvementPlansByBudget-dependenceNational" id="improvementPlansByBudget-dependenceNational" type="hidden" value="false" />
+</div>
+
+<div id="accounts-dialog" title="Rendiciones ">
+    <div id="msg-accounts-dialog"></div>
+    <table>
+        <tr>
+            <td><label>Año Carga:</label></td>
+            <td>
+                <select id="accounts-dialog-schoolYearId" class="dialog-input">
+                    <option value="0">Todos los ciclos</option>
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+
+
+<div id="CUESolicitudesReport-dialog" title="Reporte: elementos solicitados por CUE por plan de mejora por eje y línea con montos ">
+    <div id="msg-CUESolicitudesReport-dialog"></div>
+    <table>
+        <tr>
+            <td><label>Ciclo lectivo:</label></td>
+            <td>
+                <select id="CUESolicitudesReport-schoolYearId" class="dialog-input">
+                    <option value="0">Todos los ciclos</option>
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Partida:</label></td>
+            <td>
+                <select id="CUESolicitudesReport-budgetYearId" class="dialog-input">
+                    <option value="0">Todos los ciclos</option>
+                    @foreach (SchoolYear schoolYear in ViewBag.SchoolYears)
+                    {
+                        <option value="@schoolYear.Id">@schoolYear.Cycle</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>CUE:</label></td>
+            <td>
+                <input id="CUESolicitudesReport-CUE" class="dialog-input input" placeholder="00000000" maxlength="9" size="10" value="" />
+            </td>
+        </tr>
+    </table>
+</div>

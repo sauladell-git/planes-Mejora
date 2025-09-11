@@ -1,0 +1,493 @@
+﻿Versión 3.2.3.0 (xxxxxxxx)
+#414 Reportes, eliminar desestimado. Cambiado en "Reporte estado de cuenta de las provincias", "Reporte de planes", "Solicitados por CUE"
+#417 Corregido carga de dictámen para mostrar decimales correcto y generación de detalles por línea en dictámenes para mostrar 2 decimales
+
+Versión 3.2.2.0 (20181130)
+#296 Corregido error de importación y adaptado proceso a nueva versión de la planilla generada al exportar los solicitados. Actualizada librería de lectura de formato Excel.
+#295 Revisado funcionamiento de orden de listado. Corregidos campos mal ordenados, optimizado filtrado por Nro. de expediente. No se aplicó capacidad de ordenar por Expediente debido a que genera problemas de performance. No se aplicó orden por ESTADO de solicitados por que no es una propiedad precalculada.
+#298 Agregado nuevo campo MINISTERIO a la tabla de provincias, agregada palabra clave (campo) [MINISTERIO_PROVINCIA] a las plantillas de disposiciones donde se listan el nombre de los ministerios de todas las provincias contenidas en la disposición (sea una o varias). Remplaza a la variable hoy usada llamada #MINISTERIO_PROVINCIAL# que se debía asignar a mano cada vez.
+#297 Agregado nuevo template para Dispociciones 2018 que se exporta a formato Word. Generar disposiciones en formato Word. Agregado soporte para exportar plantillas a Word (formato docx). Agregar configuración Web.Config, para configuración. ATENCION: Actualizar Web.Config.
+#297 Agregado generación de nuevos anexos para las disposiciones (docx y xlsx con detalle de los dictámenes incluidos).
+#312 Habilitado que los Administradores puedan editar disposiciones firmadas para modificar las fechas, nro de dispo y documentos adjuntos.
+#289 Habilitado que los Administradores puedan enviar dictámenes directamente de Borrador a estado FIRMADO para facilitar la carga.
+#289 Habilitado que los Administradores puedan enviar disposiciones directamente de Borrador a estado FIRMADO para facilitar la carga.
+
+Versión 3.2.1.0 (20181109)
+#284 Agregado orden especifico de listados en los reportes| para corregir la confusión de nombres
+#285 Ocultar ejes no vigentes en ciclos posteriores al 2016, mostrar en reportes de ciclos anteriores al 2017
+#287 Se agregaron columnas faltantes de datos y se reordenaron las existentes en el reporte. Agregado versión reporte resumido de planes para resolver nuevo reporte de planes solicitado sin detalle de líneas (opción en los reportes de planes.)
+#290 Agregado filtro de búsqueda para listado de solicitados al crear dictámenes
+#291 Agregado filtro de búsqueda para listado de dictámenes al crear una disposición
+#293 Agregado columna "descripción" y campo de búsqueda respectivo al listado de planes
+#294 Se habilitó la posibilidad de quitar el evaludar a los planes de mejora, opción "-Sin Evaluador-" en el dialogo de selección.
+#315 Ejecutar SQL para agregar ciclo escolar 2010 (ver directorio DBUpdates/3.1.8.1)
+#299 Modificacion para poder ingresar Cantidades (aprobadas y solicitadas) con decimales.
+#314 Actualizada planilla de importación de solicitados. Agregada posibilidad de importar planilla de plan que envían las jurisdicciones.
+#313 Modificado exportación de solicitados de un plan para mostrar las mismas columas que lo visualizado en el navegador, mismo orden y luego resto. Implementado nuevo formato para hacerlo igual a los reportes utilizados.
+
+Versión 3.1.7.5 (20180621)
+- Solución problema decimales al editar y aprobar solicitados
+
+Versión 3.1.7.4 (20180521)
+- Escapados nombres de documentos firmados (dictámenes y disposiciones)
+
+Versión 3.1.7.3 (20180517)
+- Recompilado error exportación
+
+Versión 3.1.7.1 (20180517)
+- Fix path de servicio de firma de dictámenes
+- Incluido nuevamente ícono faltante de documentos firmados
+
+Versión 3.1.7.0 (20180428)
+- Corregidos reportes de "Reporte ejecución presupuestaria provincial por eje y lineas" y "Reporte ejecución presupuestaria provincial por eje y lineas (Dependencia Nacional)" que faltaba una columna y se corrían los datos.
+- Modificado campo NRO DE EXPEDIENTE en dictámenes existentes para poder copiarlo.
+- Agregado campo manual de Fecha de firma a los dictámenes, validación de guardado para forzar la carga del campo al firmar los dictámenes.
+- Al marcar como firmados los dictámenes se deben importar al sistema los PDF generados en GEDO e indicar a mano su fecha de firma.
+- Al marcar como firmados las  disposiciones se deben importar al sistema los PDF generados en GEDO e indicar a mano su fecha de firma.
+- Al marcar como firmadas las disposiciones hay que indicar el nro de disposición.
+- Al marcar como firmado una disposiciones se tiene que adjuntar su anexo e indicar a mano su fecha de firma (propia del anexo)
+- Modificados formularios de disposicion y de dictámen para mostrar nuevos datos de firma y descarga de documentos adjuntos
+
+Versión 3.1.6.0 (20180405)
+- Paso de mensajes al archivo de recursos para abtracción
+- Eliminados métodos obsoletos
+- Corregido error en reporte de ejecución presupuestaria que generaba que los totales sean cero en todos los casos
+- Corregido error en reporte estado de cuenta de las provincias que generaba que los totales sean cero en todos los casos
+- Reigeniería de librería de permisos y sesión
+- Remplazo de seguridad de ejecución en acciones por nuevas validaciones
+- Agregada página en blanco como inicio de administración para permitir permisos parciales de administración, según nuevo esquema de permisos de usuarios.
+- Agregado edición de Permisos de los Roles
+- Corrección a visibilidad de incidencias, aplicado filtro de acceso a planes (según provincia, eje y nivel)
+- Corrección a visibilidad de dictámenes, aplicado filtro de acceso a planes (según provincia, eje y nivel)
+- Corrección a visibilidad de disposiciones, aplicado filtro de acceso a planes (según provincia, eje y nivel)
+- Optimización procesos de validación y permisos al cargar un detalle de plan, mejora performance de carga de la página
+- Optimización de carga de listado de solicitados, modificado a carga diferida
+- Optimización de edición de solicitados para ejecutar acciones via ajax
+- Removidos estados de elegibilidad de dictámenes en desuso
+- Deshabilitadas viejas plantillas de resoluciones hoy en desuso
+- Agregada plantilla general de disposiciones para las nuevas que se generan por GEDO
+- En los resportes de ejecución presupuestaria, para los ejes no vigentes: Mostrar solo los ejes que contienen información
+- Reporte de planes: Agregado columna EJE (codigo) y Lineas (separadas por comas)
+- En partida presupuestaria, solo mostrar los campos y lineas que tienen presupuesto asignado por configuración
+- Agregado año 2019 en la base y en la plantilla de importación
+- Relinkeo a plantilla de importación
+- Modificada posición de los comentarios a solicitados en plantilla de dictámenes, bloque de "detalles por linea"
+- Administradores pueden incluir comentarios de solicitados en dictámenes (tilde al crear el comentario de un solicitado)
+- Modificado campo [JURISDICCION] en dictámenes para solo reflejar la provincia, no localidad, ciudad.
+- Agregada validación para permitir pasar a pendiente de aprobación los dictámenes emitidos que no hayan sido usados en resoluciones aún. Solo a Administradores
+- Agregada validación para permitir pasar a emitido los dictámenes firmados que no hayan sido usados en resoluciones aún. Solo a Administradores
+- Poder editar el estado de los solicitados salvo que se encuentre bloqueado por estar siendo usado en dictámenes
+
+
+Versión 3.1.5.0 (20170104)
+- Actualización de librerías y referencias del proyecto
+- Aumentado el limite de JSON para manejar request de más de mil elementos (Web.config)
+- Corregido que no se aplica el valor de dependencia al guardar un plan
+- Agregada validación y restricción para limitar los planes de tipo UNIVERSIDAD/DEPENDENCIA NACIONAL a Línea A de Eje 4 (especificar Código de lineas en Web.Config "national_plan_field_line")
+- Agregado presupuesto 2018 a plantilla de carga (PLANILLA_CARGA_SOLICITADOS.20171230-02.xlsx)
+- Agregada restricción para que los CUE de dependencia nacional solo puedan ser usados en planes de tipo institucional.
+- Cambiado nombre RESOLUCION a DISPOSICION en todo el sistema
+- Agregado borrado lógico de usuarios
+- Mostrar solo usuario habilitados y no borrados en filtros y formularios de asignación
+- Remplazo de combo de evaluadores en filtro de planes por un buscador de evaluadores
+- Almacenar nombre de institucion de la que depende para las instituciones de dependencia nacional
+- Agregado nombre de la dependencia para todos los planes institucionales
+
+Versión 3.1.4.5 (20171220)
+- Agregado ciclo lectivo 2018 y sus partidas presupuestarias
+
+Versión 3.1.4.2 (20161228)
+- Corrección de permisos de usuarios por nivel de institución
+- Correción procedimiento de actualización batch campo "claseinstitucion", nivel, en actualización base de datos
+
+Version 3.1.4.0 (20161223)
+- Agregado EJE "Clan"
+- Actualizada planilla de importación de planes para contemplar EJE "Clan"
+- Agregada descarga de planilla de planes en dialogo (ventana) de importación de solicitados
+- Actualizados todos los campos a estado ACTIVO
+- Agregado campo DEPENDENCIA
+- Actualizada campo dependencia para todos los planes institucionales
+- Modificado reportes para no mostrar o contemplar planes institucionales de dependencias nacionales
+- Agregado nuevo reporte de planes de dependencia nacional
+- Agregado nuevo reporte de ejecución presupuestaria provincial de dependencias nacionales
+- Actualizado proceso bach para actualizar datos de planes y tomar dependencia de las instituciones.
+- Actualizadas firmas de documentos y agregado detalle de variable en edición de plantillas (actulizar variables de firma en web.config)
+
+Versión 3.1.2.0 (20161023)
+- Agregado de columna DESCRIPCION al reporte de planes
+
+Versión 3.1.0.0 (20161019)
+- Modificada generación de dictámen para dejar crear dictámenes sin número de expediente nuevamente.
+- Modificar para que cualquier tipo de plan pueda ser de cualquier campo/eje
+- Agregados nuevos EJES y nuevas LINEAS DE ACCION de los nuevos EJES, modificada planilla de importación
+- Cambio de denominación de CAMPOS a EJES
+- Agregado de ESTADOS de EJES (archivado - no se puede usar y no se ve en reportes ni filtros -, vigente - se puede usar se ve en reportes y filtros -, no vigente - no se puede usar y se ve en los reportes y filtros -)
+- Agregado campo NIVEL a los solicitados, agregado campo NIVEL a planillas de importación
+- Agregado toma de NIVEL de cues institucionales del registro
+- Agregado columna NIVEL en reporte de solicitados por CUE
+- Agregado columna NIVEL a Planes y tomado de tipo de institución desde registro al guardar un plan
+- Agregado columna NIVEL a reporte de planes
+- Agregado filtro NIVEL al reporte de ejecución presupuestaria
+- Actualizado flujos y permisos de planes y documentos a DIAGRAMA DE FLUJO DE PLANES DE MEJORA V. 4 (20161018)
+- Agregado campo NIVEL a los usuarios como atributo relacionado
+- Definidos filtros de visibilidad a los usuarios según el nuevo campo NIVEL que poseen asignado.
+- Correjido error que copiaba adjuntos al duplicar un plan
+
+Versión 3.0.8.4 (20161012)
+- Agregado contemplada excepción respuesta erronea registro
+
+Versión 3.0.8.2 (20160830)
+- Correcciones de permisos
+
+Versión 3.0.8.0 (20160830)
+- Correcciones de permisos
+
+Versión 3.0.6.0 (20160819)
+- Reporte de Reporte de solicitados por CUE
+- Corrección formato de nombre de institución (usar campo nombre de registro)
+- Mod permisos delegado provincial inet, otorgados permisos para: 
+	+ cargar planes de mejora en estado EN CARGA PROVINCIAL
+	+ editar planes en estado EN CARGA PROVINCIAL
+	+ borrar planes en estado EN CARGA PROVINCIAL
+	+ asignar evaluadores a planes en estado EN EVALUACION
+	+ crear solicitados en planes en estado EN CARGA PROVINCIAL y EN EVALUACION
+	+ actualizar solicitados en estados no cerrados EN CARGA PROVINCIAL y EN EVALUACION
+	+ borrar solicitados en estado PENDIENTE en planes EN CARGA PROVINCIAL
+	+ anular solicitados
+	+ comentar planes
+
+Versión 3.0.4.0 (20160725)
+- Desasociar las resoluciones a los planes (hoy una disposición se relaciona directamente a un plan)
+- Modificar los reportes para calcular correctamente los montos solo por sus dictámenes y no el plan relacionado
+- Modificar la administración de un plan para no poder generar ni modificar resoluciones desde el mismo
+- Modificar la administración de resoluciones para poder crear resoluciones seleccionando los dictámenes disponibles para ser incluidos (de todos los planes)
+- Modificar para que una disposición pueda contener dictámenes de diferentes nros de expediente, lineas, campos y planes.
+- Modificar las plantillas de resoluciones actuales para implementar el cambio
+- Modificar la emisión de resoluciones para implementar el cambio
+- Implementar nueva plantilla de resolucion
+
+Versión 2.5.5.7 (20160721)
+- Fix envío de correos
+- Corrección guardado de nombre de institucion desde servicios
+
+Versión 2.5.5.6 (20160711)
+- Fix validación de existencia de plan
+
+Versión 2.5.5.4 (20160705)
+- Fix timeouts conexión pop para envío de mails
+
+Versión 2.5.5.0 (20160705)
+- Implementado POP before SMTP para identificación de envío de correos.
+- Agregado CONF de auth pop en Web.Conf
+
+Versión 2.5.4.0 (20160622)
+- Fix validación permisos auditor en detalle de plan que generaba registros de error en log
+- Agregado mensaje de error explicito al querer ver un plan que no existe
+- Fix error de carga de planes con adjunto (valor default erroneo en campo de adjuntos)
+- Fix error de filtro de evaluadores en listado de planes
+
+Versión 2.5.3.0 (20160608)
+- Agregado campo Nro de dictámen a plantillas de dictámenes
+
+Versión 2.5.2.0 (20160608)
+- Agregado campo dictaminado a reporte de estado de cuenta de las provincias
+
+Versión 2.5.1.0 (20160530)
+- Cambio en WS de datos de institución, ahora toma el tipo de claseinstitucion) y cambio de nombre.
+- Reporte de planes, filtros: agregar tipo Institucional y Jurisdiccionales. Se puede seleccionar el tipo de plan a incluir en el reporte
+- Reporte de planes: agregada columna Total Dictaminado
+- Repororte de ejecucion presupuestaria, agreado opcion todas que liste todas las provincias y el total
+
+Versión 2.5.0.0 (20160517)
+- Removido atributo Identifier de extension de resoluciones (era solo el nro de resolucion como string)
+- Limpieza atributos de dictamen en desuso
+- Limpieza de atributos de planes en desuso
+- Mod generación reporte de planes movido a SQL puro
+- Agregado de filtro de CUE a reporte de planes institucionales
+- Actualización motor de reporte ejecución presupuestaria
+- Agregado campo DICTAMINADO a reporte de ejecución presupuestaria
+- Agreagada opción de todas las provincias a reporte de ejecución presupuestaria de las provincias
+
+Versión 2.4.5.2 (20160428)
+- Fix selector de campos en filtros y editar plan para perfil admin y administrador que no mostaba todos los campos
+
+Versión 2.4.5.0 (20160425)
+- Agregado filtro de jurisdicción a reporte de planes
+
+Versión 2.4.3.0 (20160401)
+- Cambio texto aprobación en dictamenes
+
+Versión 2.4.2.0 (20160328)
+- Fix controles y permisos
+
+Versión 2.4.1.0 (20160328)
+- Ajustes menores
+
+Versión 2.4.0.0 (20160328)
+- ﻿Adjuntos a planes
+- ﻿Alcance provincial de todos los usuarios
+﻿- Cambio caratulizacion de planes
+- ﻿Filtros y limites de usuarios
+﻿- Flujo de planes provinciales
+﻿- Mod. nombre perfiles provinciales 
+- ﻿Nuevos perfiles de usuario
+
+
+Versión 2.3.4.0 (20160301)
+- Administradores y administrativos tienen que poder registrar incidencias en planes en estado "EN ADMINISTRACION".
+
+=========================================================================
+
+Versión 2.3.2.2 (20160201)
+- Correcciones usuario provincial y auditor
+- Agregados permisos faltantes a usuario provincial (reportes y resoluciones)
+- Modificación consulta reportes planes para repartir carga, tarda mas pero consume menos.
+
+=========================================================================
+
+Versión 2.3.2.0 (20160128)
+- Reporte estado de cuenta de las provincias: cambio de nombre columna "Total Aprobado" a "Total Evaluado" para reflejar diferencia con campo "En Resoluciones"
+- Reporte de ejecución presupuestaria prov.: agregado pie con totales
+- Perfil Auditor provincial. Agregado. Permiso de lectura de planes y documentos de la provincia asignada.
+- Adjuntos a planes: agregado de espacio para adjuntar documentación al crear un plan
+
+=========================================================================
+
+Versión 2.3.0.1 (20151223)
+- Agregado timeout extendido para los reportes.
+- Modificado sistema de numeración para los dictámenes, ahora es como las resoluciones con valor libre fijado por el sistema.
+- Modificacion reporte estado de cuenta de provincias
+
+=========================================================================
+
+Versión 2.2.16.0 (20151123)
+- Arreglo datos de dictámenes desordenados
+- Arrego columnas vacias en reporte con comas
+
+=========================================================================
+
+Versión 2.2.14.4 (20151116)
+- Importación de datos de escuela
+- Corrección de datos de escuelas para persistir en base
+- Al agregar un solicitado ahora toma el ciclo del plan, no el activo
+- Corregido pie de mensajes de mail
+- Corregido filtro de identificador de plan en listado de resoluciones
+- Modificación armado reporte de planes
+
+=========================================================================
+
+Versión 2.2.14.0 (20151105)
+- Optimizacion y reingeniería del reporte de planes
+- Modificación: Solo se pueden cargar solicitados del ciclo lectivo actual o mayor. Nunca menor
+- Cambios usuario provincial:
+	+ No puede ver los listados generales de resoluciones ni de incidencias
+	+ En detalle de un plan solo puede ver los dictámenes ya fimados
+	+ En detalle del plan no puede ver resoluciones ni incidencias
+	+ Reporte de planes, solo sus planes
+	+ No puede enviar un plan a ingreso sin cargar solicitados
+
+=========================================================================
+
+Versión 2.2.12.0 (20151030)
+- Fix asignación de linea por codigo en importación de solicitados
+- Poder cargar expediente a un solicitado en planes que ya pasaron la caratulización
+- Agregado boton para marcar grupalmente solicitados en proceso en el listado de solicitados de un plan para evaluadores, coordinadores y administradores
+- Asignar automaticamente nro de expediente de la linea al solicitado. Al importar planilla de solicitados si la linea fue cargada y protocolorizada anteriormente.
+- Agregada variable de ciclo lectivo del plan contenido en las resoluciones y dictámenes para mostrar el ciclo lectivo del plan que contienen.
+- Corregido error de carga de solucitados en planes de ciclo lectivo no activo
+- Ocultos reportes: tablero de control, reporte de ejecución de todas provincias, reporte de estado de cuenta de provincia
+- Quitadas categorias presupuestarias
+- Reporte de ejecucion presupuestaria de provincias:
+	+ Quitado Resumen presupuestado planificado
+	+ Modificacion totales por tipo de plan
+- Optimizacion y modificacion reporte de estado de cuenta de las provincias
+
+=========================================================================
+
+Versión 2.2.10.0 (20151021)
+- Corregido poder actualizar numero de resolucion de resoluciones ya protocolizadas
+- Agregado campo de ciclo lectivo al crear o editar un plan para poder indicar el año del mismo
+- Campo 6 cambio de nombre ( Red de aulas talleres móviles -PLAN FEDERAL) sacar el federal
+- Estado de planes: un administrador siempre puede cambiar el estado de un plan al estado anterior (si necesita corregir algo).
+- Listado planes de mejora: Eliminada columna fecha de presentación, se agregó columa Nro de expediente.
+
+=========================================================================
+
+Versión 2.2.9.4 (20151008)
+- Solucionado problema borrado masivo de solicitados
+- Ocultada accion eliminar masiva a evaluadores, no pueden eliminar solicitados, solo anular
+- Error en listado de documentos de plan 1286
+- Error al editar y guardar un plan existente.
+- Error al aprobar un dictámen con solo solicitados rechazados
+- Error que el coordinador de campo no podía mandar a administración un plan
+- Error que los evaluadores veían boton de borrar solicitados en masa (no pueden borrar solo anular)
+- Agregado que se pueda ver el contenido de un plan anulado
+- Error en listado de documentos de plan ID = 1286
+
+=========================================================================
+
+Versión 2.2.9.0 (20151006)
+- Corregido permisos administrador para editar dictámenes
+- Corregidos permisos para planes de mejora
+
+=========================================================================
+
+Versión 2.2.8.0 (20150928)
+- Reoptimización listado planes de mejora, rediseño consulta para mejorar perfomance
+- Reoptimización listado resoluciones, rediseño consulta para mejorar perfomance
+- Reoptimización listado dictamenes, rediseño consulta para mejorar perfomance
+- Cambio de paginación de listados (dictámenes y resoluciones) de 20 a 10 resultados para disminuir carga al procesar cada pagina
+- Cambio de paginación de listados (dictámenes y resoluciones) de 20 a 10 resultados para disminuir carga al procesar cada pagina
+
+=========================================================================
+
+Versión 2.2.6.0 (20150925)
+- Agregados permisos cambio de estado a planes en administracion al admin
+- Agregada paginación de dictamenes
+
+=========================================================================
+
+Versión 2.2.4.0 (20150924)
+- Optimización listado de dictamenes
+
+=========================================================================
+
+Versión 2.2.2.0 (20150924)
+- Arreglo editor de dictamenes bloqueado
+- Arreglo listado de planes filtrado por solo los que tenían evaluador
+- Corregido y optimizado reporte Ejecucion presupuestaria nacional
+- Optimizado reporte ejecución presupuestaria por provincia
+- Optimizado reporte ejecución presupuestaria todas las provincias, removido pie resumen
+- Corregido y optimizado reporte de Estado de cuenta de provincias
+- Corregido link seleccionar todos dictame que estaba desactivado
+
+=========================================================================
+
+Versión 2.2.0.0 (20150918)
+- Arreglos de bugs en el sistema
+- Agregado pie con resumen al reporte de ejecución presupuestaria de todas las provincias
+- Creado nuevo reporte de ejecución presupuestaria nacional
+- Optimizacion listado de planes de mejora
+- Optimización listado de dictámenes
+- Remplazo término "ID de Plan" por "Numero" y "Plan de Mejora" en los listados para unificar el nombre del NUMERO del expediente del plan
+- Optimizado exportación de lista completa de planes
+- Removido filtro en desuso de ID de dictamen en favor de filtros de Numero de resolucion y Numero de dictamen en listado resoluciones y dictamenes
+- Optimizado listado de resoluiones
+- Unificado criterio de números y ID de documentos, no tienen más el padding de ceros a la izquierda
+
+=========================================================================
+
+Versión 2.1.0.0 (20150814)
+- usuario provincial puede cargar planes institucionales
+- correcciones bugs usuarios institucionales
+- corrección validacion cambios de solicitudes de planes x perfil y estado
+- corrección validacion cambios de estados de planes x perfil y estado
+- usuario administrador puede cambiar estados a un plan en ingreso provincial (carga)
+- nueva vista completa alternativa para detalle de planes mas simple (boton cambiar vista en sumario de plan)
+- mod. id de resolucion por nro. protocolo en reporte de planes
+- importar actualización de solicitados (planilla exportada de solicitados, toma solo cantidad y precio unit. aprobado) para evaluadores y administradores. Luego se aprueba seleccionando solicitados. Solo para planes en evaluación
+- agregado soporte para importar solicitados (carga y actualización) en formato antiguo de excel (xls)
+- agregado resumen por fila en reporte ejecución presupuestaria nacional (totales por campo y linea de todas las provincias)
+- corregido total tucuman en reporte de ejecución presupuestaria nacional (mostraba tierra del fuejo)
+- agregada anotación para recordar que los solicitados deben encontrarse correctamente cargados para aprobar usando aprobación en grupo.
+- limitado usuario provincial, no puede descargar dictámenes ni resoluciones que no estén firmadas.
+- modificado nro de los dictámenes a [NRO]/[CICLO LECTIVO DE SUS SOLICITADOS]
+- agregado ciclo lectivo activo al sistema (planes y solicitados se crean asignados al ciclo lectivo activo)
+- al emitir dictámen los solicitados del mismo se actualizan al ciclo lectivo activo
+
+=========================================================================
+
+Versión 2.0.0.0 (20150713)
+- Agregado estado administracion a los planes, cambios implementados
+	+ Evaluacion > administración (Administrador o evaluador)
+	+ Administración > evaluacion (Administrativo)
+	+ Administracion > cerrado (Administrativo)
+	+ Administracion > anulado (Administrativo)
+- Asignado permiso de firma de dictamenes a administrativos
+- Cambio de nombre de filtros de "Seleccionar" a "Todos" para mejorar comprensión.
+- Eliminada columna de link de transferencia en listado de resoluciones
+- Agregada columna "provincia" en listado de usuarios para poder buscar por el valor
+- Implementado nuevo perfil de usuario provincial
+	+ Agregado atributo de provincia a usuarios
+	+ Crear planes de la jurisdicción, estado "En Carga (Provincial)"
+	+ Enviar planes a Ingreso y monitoreo
+	+ Borrar planes en "En Carga (Provincial)"
+	+ Implementados permisos de listado por provincia para usuarios provinciales (dictámenes, resoluciones, planes)
+- Al crear un plan se va a su detalle (ya no al listado completo de planes)
+- Solo admin, coordinador o evaluador ven acciones grupales de aprovar o rechazar solicitados
+- Agregada acción grupal de borrar solicitados
+- fix campo tipo de gasto al editar dos veces en la misma pantalla (quedaba en blanco)
+- Reporte de solicitados en formato excel para usuarios de provincia en planes que no estan en su poder (En carga provincial)
+- Limitado reporte de ejec. presup por provincia para usuarios provinciales
+- Corregido reporte ejecucion provincial (faltaba plata pedida, no se estaban contando los federales)
+- Eliminada columna "Total Aprobado" (mostraba un valor no válido)
+- Excluidos dictámenes y resoluciones anuladas en columnas de dictamen y resolucion de reporte de planes
+- Agregada columna con estado de plan en reporte de planes
+- Modificacion permisos admin los planes: puede cambiar y editar siempre los planes y los solicitados como si fuera los demás perfiles.
+
+=========================================================================
+
+Versión 1.6.8.0 (20150629)
+- Asignación de campo a las plantillas para filtrar al mostrar a los usuarios lo que pueden seleccionar.
+	> Correr SQL Actualización versión
+
+=========================================================================
+
+Versión 1.6.7.6 (20150626)
+- Administrativos pueden firmar dictámenes
+
+=========================================================================
+
+Versión 1.6.7.4 (20150619)
+- Agregado versionado a los scripts de javascript para forzar refresco de carga ante cambios de versión
+
+=========================================================================
+
+Versión 1.6.7.2 (20150612)
+- Cambiado a 12px el tamaño por defecto de la tipografía de los documentos
+- Fix mejora carga javascript para optimizar performance
+- Agregado indicador visual de carga a paginas
+- Arreglo de generación de documentos
+
+=========================================================================
+
+Versión 1.6.7.0 (20150608)
+- Aplicados margenes por documento
+- Aplicados posibilididad de encabezados de documento
+- Nuevas plantillas de resoluciones ajustadas a disposición
+- Agregada firma por template
+
+=========================================================================
+
+Versión 1.6.6.0 (20150527)
+- Fix error de nro de resolucion en listado de dictamenes
+- Fix error al borrar templates
+- Corregido nro. de observaciones repetidas en el listado de solicitados de los dictámenes
+- Corregido tamaño de fuente de montos totales en cuadro resumen dictamenes (inst. y jurisd.)
+- Fix creación de dictámenes con caracteres no válidos interrumpía generación PDF
+
+=========================================================================
+
+Versión 1.6.5.0 (20150519)
+- Agregado nro de reslucion a solapa de documentos, hasta ahora solo mostraba el ID del documento
+- Replanteo de filtros de listado de disposición y listado de dictámenes
+- Fix filtros de dictámenes y resoluciones para resultados parciales en campos ID y numero
+- Fix filtros de listado de planes para tomar valores parciales
+- Solucionado fecha de entrada a campo en reporte de planes
+- Solucionado fecha de dictamenes en reporte de planes
+- Evaluador/ coordinador ahora no puede anular ni cerrar un tramite
+
+=========================================================================
+
+Versión 1.6.4.0 (20150514)
+- Poder buscar planes por nro de expediente que contiene en el listado de planes
+- Ordenar listado de evaluadores por orden alfabetico (filtro listado de planes)
+- Ordenar listado de evaluadores por orden alfabetico (formulario de asignación de evaluador a plan)
+- Modificación de tipos de datos para corregir visualizaciones de reportes
+- Nuevo formato de exportación de solicitados a excel para igualar formato de planilla de importación de solicitados
+
+=========================================================================
+
+Versión 1.6.3.0 (20150410)
+- Modificación ancho de tablas de caratula en dictamenes para que entre más texto
+- Agregado de checkbox y posibilidad de aprobar o rechazar en masa

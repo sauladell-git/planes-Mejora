@@ -1,0 +1,53 @@
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Debug\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Debug\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Debug\EntityFramework.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Debug\EntityFramework.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Debug\INET.Core.csproj.CoreCompileInputs.cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Debug\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Debug\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Debug\INET.Core.csprojResolveAssemblyReference.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csprojAssemblyReference.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CopyComplete
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.pdb
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.xml
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.AssemblyReference.cache
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CoreCompileInputs.cache
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CopyComplete
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.pdb
+C:\GIT\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.dll
+C:\GIT\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.pdb
+C:\GIT\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.dll
+C:\GIT\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\GIT\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.xml
+C:\GIT\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\GIT\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csprojAssemblyReference.cache
+C:\GIT\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CoreCompileInputs.cache
+C:\GIT\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CopyComplete
+C:\GIT\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.dll
+C:\GIT\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\bin\Debug\INET.Core.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.xml
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csprojAssemblyReference.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CoreCompileInputs.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CopyComplete
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.pdb

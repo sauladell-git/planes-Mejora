@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetTokenAcceso">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTokenAccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTokenAccesoResult" type="tns:TokenAcceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TokenAcceso">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rol" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Token" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CabeceraSoapAcceso" type="tns:CabeceraSoapAcceso" />
+      <s:complexType name="CabeceraSoapAcceso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CabeceraSoapToken" type="tns:CabeceraSoapToken" />
+      <s:complexType name="CabeceraSoapToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TokenAcceso" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="obtenerDatosInstitucion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerDatosInstitucionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerDatosInstitucionResult" type="tns:Institucion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Institucion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="provincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orientacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="claseinstitucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="claseinstit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="activo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ambito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="especializaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dependencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtenerSectores">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtenerSectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerSectoresResult" type="tns:ArrayOfTablaOfByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTablaOfByte">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TablaOfByte" nillable="true" type="tns:TablaOfByte" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TablaOfByte">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtenerSubSectores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sector" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerSubSectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerSubSectoresResult" type="tns:ArrayOfTablaOfByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerJurisdicciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sector" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerJurisdiccionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerJurisdiccionesResult" type="tns:ArrayOfTablaOfInt32" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTablaOfInt32">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TablaOfInt32" nillable="true" type="tns:TablaOfInt32" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TablaOfInt32">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtenerDepartamentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jur" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerDepartamentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerDepartamentosResult" type="tns:ArrayOfTablaOfInt16" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTablaOfInt16">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TablaOfInt16" nillable="true" type="tns:TablaOfInt16" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TablaOfInt16">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtenerLocalidades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jur" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="dep" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerLocalidadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerLocalidadesResult" type="tns:ArrayOfTablaOfInt16" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerOfertasEducativas">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtenerOfertasEducativasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerOfertasEducativasResult" type="tns:ArrayOfTablaOfInt32" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerGestiones">
+        <s:complexType />
+      </s:element>
+      <s:element name="obtenerGestionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerGestionesResult" type="tns:ArrayOfTablaOfInt32" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerTitulosRef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jur" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dep" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tit" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gest" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ofer" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerTitulosRefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerTitulosRefResult" type="tns:TituloRef" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TituloRef">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGES" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA" type="tns:ArrayOfTituloRef_Catalogo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTituloRef_Catalogo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TituloRef_Catalogo" nillable="true" type="tns:TituloRef_Catalogo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TituloRef_Catalogo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TITULO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TITULO_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFERTA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtenerInstitsTitRef_Page">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="titRef" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="jur" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dep" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerInstitsTitRef_PageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerInstitsTitRef_PageResult" type="tns:TituloInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TituloInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGES" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA" type="tns:ArrayOfCatalogo_InfoTitulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCatalogo_InfoTitulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Catalogo_InfoTitulo" nillable="true" type="tns:Catalogo_InfoTitulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Catalogo_InfoTitulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CUE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INSTITUCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TITULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GESTION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JURISDICCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPARTAMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCALIDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARAJE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WEB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_INSTIT" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="obtenerInstitsTitRef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="titRef" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="jur" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dep" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerInstitsTitRefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerInstitsTitRefResult" type="tns:TituloInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerInstits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jur" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dep" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerInstitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerInstitsResult" type="tns:TituloInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerFullDataInstit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idInstit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerFullDataInstitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerFullDataInstitResult" type="tns:Escuela_Inet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Escuela_Inet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGES" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA" type="tns:Escuela_INET" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA_TITULOS" type="tns:ArrayOfTitulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Escuela_INET">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Escuela_Contacto">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="modalidadId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvanceCarga" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="ConvenioCual" type="tns:TablaOfInt32" />
+              <s:element minOccurs="1" maxOccurs="1" name="EsConvenio" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AnioRfietp" type="s:short" />
+              <s:element minOccurs="1" maxOccurs="1" name="AnioCreacion" type="s:short" />
+              <s:element minOccurs="1" maxOccurs="1" name="EsAulaTaller" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="EPS" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="EsAnexo" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="NuevaActualiza" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="DatosCargados" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Albergue" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Albergue_Data" type="tns:Albergue" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Escuela_Contacto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Escuela_base">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Contacto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Director" type="tns:Persona" />
+              <s:element minOccurs="0" maxOccurs="1" name="WebInstit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MailContacto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MailDirector" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EMailValidator" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ActivarValidaciones" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MailInstit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelefonoContacto" type="tns:Telefono" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelefonoAlter" type="tns:Telefono" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelefonoInstit" type="tns:Telefono" />
+              <s:element minOccurs="1" maxOccurs="1" name="DomicilioId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Localizacion" type="tns:Domicilio" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Escuela_base">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ModalidadId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PedidoDeUsuarios" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="CantidadDeUsuarios" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstadoCarga" type="tns:Enum_CicloDeCarga" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstadoETP" type="tns:TablaOfByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaseInstitucion" type="tns:TablaOfByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaModif" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAlta" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="tns:TablaOfByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ambito" type="tns:TablaOfByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sector" type="tns:TablaOfByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modalidad" type="tns:TablaOfInt16" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dependencia" type="tns:TablaOfByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="DependenciaCual" type="tns:TablaOfByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anexo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CueAnexo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pv" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoInstitucion" type="tns:TablaOfInt16" />
+          <s:element minOccurs="1" maxOccurs="1" name="Habilitado" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Enum_CicloDeCarga">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sin_Ciclo" />
+          <s:enumeration value="Sin_Carga" />
+          <s:enumeration value="INET_Apertura_Anio" />
+          <s:enumeration value="Institución_Carga_Iniciada" />
+          <s:enumeration value="Institución_Carga_Cerrada" />
+          <s:enumeration value="Institución_Carga_Firmada" />
+          <s:enumeration value="Jurisdicción_Edición" />
+          <s:enumeration value="Jurisdicción_Evaluación_Aprobado" />
+          <s:enumeration value="Jurisdicción_Evaluación_NO_Aprobado" />
+          <s:enumeration value="Jurisdicción_Evaluación_A_Revisión" />
+          <s:enumeration value="Jurisdicción_Firma" />
+          <s:enumeration value="INET_Edición" />
+          <s:enumeration value="INET_Evaluación_Aprobado" />
+          <s:enumeration value="INET_Evaluación_NO_Aprobado" />
+          <s:enumeration value="INET_Evaluación_A_Revisión" />
+          <s:enumeration value="INET_Extension_Plazo_Carga" />
+          <s:enumeration value="INET_Cierre" />
+          <s:enumeration value="MAIL_Institucion" />
+          <s:enumeration value="Institución_En_Revisión" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Persona">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreApellido" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroDocumento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDocumento" type="tns:TablaOfByte" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Telefono">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HoraHasta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoraDesde" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prefijo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Domicilio">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Geografico">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodPostal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Geografico">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GeoReferencia">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="tns:TablaOfByte" />
+              <s:element minOccurs="0" maxOccurs="1" name="Departamento" type="tns:TablaOfInt16" />
+              <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="tns:TablaOfInt16" />
+              <s:element minOccurs="0" maxOccurs="1" name="Paraje" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GeoReferencia">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Latitud" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitud" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Albergue">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Hombres" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Mujeres" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="Instit_Id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTitulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Titulo" nillable="true" type="tns:Titulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Titulo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UltimoAnioDictado" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="Oferta" type="tns:Enum_OfertasEducativas" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubSector" type="tns:TablaOfInt16" />
+          <s:element minOccurs="0" maxOccurs="1" name="Resolucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TituloReferencia" type="tns:TablaOfInt32" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sector" type="tns:TablaOfByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResolAnio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResolNumero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Denominacion" type="tns:TablaOfInt32" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Enum_OfertasEducativas">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="Indistinto" />
+              <s:enumeration value="Nivel_Inicial" />
+              <s:enumeration value="Nivel_Primario" />
+              <s:enumeration value="Secundario_No_Técnico" />
+              <s:enumeration value="Superior_No_Técnico" />
+              <s:enumeration value="Secundario_Técnico_Primer_Ciclo" />
+              <s:enumeration value="Secundario_Técnico_Segundo_Ciclo" />
+              <s:enumeration value="Superior_Técnico" />
+              <s:enumeration value="Formación_Profesional" />
+              <s:enumeration value="Superior_Social_y_Humanística" />
+              <s:enumeration value="Itinerario_Formativo" />
+              <s:enumeration value="Oferta_Historica" />
+              <s:enumeration value="Educacion_Profesional_Secundaria" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:element name="obtenerTitulosData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTitulo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtenerTitulosDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtenerTitulosDataResult" type="tns:Titulos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Titulos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGES" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA" type="tns:Titulo" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTokenAccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTokenAcceso" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenAccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTokenAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenAccesoCabeceraSoapAcceso">
+    <wsdl:part name="CabeceraSoapAcceso" element="tns:CabeceraSoapAcceso" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDatosInstitucionSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerDatosInstitucion" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDatosInstitucionSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerDatosInstitucionResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDatosInstitucionCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerSectores" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerSectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSectoresCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSubSectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerSubSectores" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSubSectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerSubSectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerSubSectoresCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerJurisdiccionesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerJurisdicciones" />
+  </wsdl:message>
+  <wsdl:message name="obtenerJurisdiccionesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerJurisdiccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerJurisdiccionesCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDepartamentosSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDepartamentosSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDepartamentosCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerLocalidadesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerLocalidades" />
+  </wsdl:message>
+  <wsdl:message name="obtenerLocalidadesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerLocalidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerLocalidadesCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerOfertasEducativasSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerOfertasEducativas" />
+  </wsdl:message>
+  <wsdl:message name="obtenerOfertasEducativasSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerOfertasEducativasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerOfertasEducativasCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerGestionesSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerGestiones" />
+  </wsdl:message>
+  <wsdl:message name="obtenerGestionesSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerGestionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerGestionesCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTitulosRefSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerTitulosRef" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTitulosRefSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerTitulosRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTitulosRefCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsTitRef_PageSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerInstitsTitRef_Page" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsTitRef_PageSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerInstitsTitRef_PageResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsTitRef_PageCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsTitRefSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerInstitsTitRef" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsTitRefSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerInstitsTitRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsTitRefCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerInstits" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerInstitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerInstitsCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerFullDataInstitSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerFullDataInstit" />
+  </wsdl:message>
+  <wsdl:message name="obtenerFullDataInstitSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerFullDataInstitResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerFullDataInstitCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTitulosDataSoapIn">
+    <wsdl:part name="parameters" element="tns:obtenerTitulosData" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTitulosDataSoapOut">
+    <wsdl:part name="parameters" element="tns:obtenerTitulosDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTitulosDataCabeceraSoapToken">
+    <wsdl:part name="CabeceraSoapToken" element="tns:CabeceraSoapToken" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultaRegistroSoap">
+    <wsdl:operation name="GetTokenAcceso">
+      <wsdl:input message="tns:GetTokenAccesoSoapIn" />
+      <wsdl:output message="tns:GetTokenAccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosInstitucion">
+      <wsdl:input message="tns:obtenerDatosInstitucionSoapIn" />
+      <wsdl:output message="tns:obtenerDatosInstitucionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSectores">
+      <wsdl:input message="tns:obtenerSectoresSoapIn" />
+      <wsdl:output message="tns:obtenerSectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSubSectores">
+      <wsdl:input message="tns:obtenerSubSectoresSoapIn" />
+      <wsdl:output message="tns:obtenerSubSectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerJurisdicciones">
+      <wsdl:input message="tns:obtenerJurisdiccionesSoapIn" />
+      <wsdl:output message="tns:obtenerJurisdiccionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDepartamentos">
+      <wsdl:input message="tns:obtenerDepartamentosSoapIn" />
+      <wsdl:output message="tns:obtenerDepartamentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerLocalidades">
+      <wsdl:input message="tns:obtenerLocalidadesSoapIn" />
+      <wsdl:output message="tns:obtenerLocalidadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerOfertasEducativas">
+      <wsdl:input message="tns:obtenerOfertasEducativasSoapIn" />
+      <wsdl:output message="tns:obtenerOfertasEducativasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerGestiones">
+      <wsdl:input message="tns:obtenerGestionesSoapIn" />
+      <wsdl:output message="tns:obtenerGestionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTitulosRef">
+      <wsdl:input message="tns:obtenerTitulosRefSoapIn" />
+      <wsdl:output message="tns:obtenerTitulosRefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstitsTitRef_Page">
+      <wsdl:input message="tns:obtenerInstitsTitRef_PageSoapIn" />
+      <wsdl:output message="tns:obtenerInstitsTitRef_PageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstitsTitRef">
+      <wsdl:input message="tns:obtenerInstitsTitRefSoapIn" />
+      <wsdl:output message="tns:obtenerInstitsTitRefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstits">
+      <wsdl:input message="tns:obtenerInstitsSoapIn" />
+      <wsdl:output message="tns:obtenerInstitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFullDataInstit">
+      <wsdl:input message="tns:obtenerFullDataInstitSoapIn" />
+      <wsdl:output message="tns:obtenerFullDataInstitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTitulosData">
+      <wsdl:input message="tns:obtenerTitulosDataSoapIn" />
+      <wsdl:output message="tns:obtenerTitulosDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaRegistroSoap" type="tns:ConsultaRegistroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTokenAcceso">
+      <soap:operation soapAction="http://tempuri.org/GetTokenAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTokenAccesoCabeceraSoapAcceso" part="CabeceraSoapAcceso" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TestCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosInstitucion">
+      <soap:operation soapAction="http://tempuri.org/obtenerDatosInstitucion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerDatosInstitucionCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSectores">
+      <soap:operation soapAction="http://tempuri.org/obtenerSectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerSectoresCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSubSectores">
+      <soap:operation soapAction="http://tempuri.org/obtenerSubSectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerSubSectoresCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerJurisdicciones">
+      <soap:operation soapAction="http://tempuri.org/obtenerJurisdicciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerJurisdiccionesCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/obtenerDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerDepartamentosCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerLocalidades">
+      <soap:operation soapAction="http://tempuri.org/obtenerLocalidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerLocalidadesCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerOfertasEducativas">
+      <soap:operation soapAction="http://tempuri.org/obtenerOfertasEducativas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerOfertasEducativasCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerGestiones">
+      <soap:operation soapAction="http://tempuri.org/obtenerGestiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerGestionesCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTitulosRef">
+      <soap:operation soapAction="http://tempuri.org/obtenerTitulosRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerTitulosRefCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstitsTitRef_Page">
+      <soap:operation soapAction="http://tempuri.org/obtenerInstitsTitRef_Page" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerInstitsTitRef_PageCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstitsTitRef">
+      <soap:operation soapAction="http://tempuri.org/obtenerInstitsTitRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerInstitsTitRefCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstits">
+      <soap:operation soapAction="http://tempuri.org/obtenerInstits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerInstitsCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFullDataInstit">
+      <soap:operation soapAction="http://tempuri.org/obtenerFullDataInstit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerFullDataInstitCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTitulosData">
+      <soap:operation soapAction="http://tempuri.org/obtenerTitulosData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:obtenerTitulosDataCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaRegistroSoap12" type="tns:ConsultaRegistroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTokenAcceso">
+      <soap12:operation soapAction="http://tempuri.org/GetTokenAcceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTokenAccesoCabeceraSoapAcceso" part="CabeceraSoapAcceso" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TestCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDatosInstitucion">
+      <soap12:operation soapAction="http://tempuri.org/obtenerDatosInstitucion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerDatosInstitucionCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSectores">
+      <soap12:operation soapAction="http://tempuri.org/obtenerSectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerSectoresCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerSubSectores">
+      <soap12:operation soapAction="http://tempuri.org/obtenerSubSectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerSubSectoresCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerJurisdicciones">
+      <soap12:operation soapAction="http://tempuri.org/obtenerJurisdicciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerJurisdiccionesCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDepartamentos">
+      <soap12:operation soapAction="http://tempuri.org/obtenerDepartamentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerDepartamentosCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerLocalidades">
+      <soap12:operation soapAction="http://tempuri.org/obtenerLocalidades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerLocalidadesCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerOfertasEducativas">
+      <soap12:operation soapAction="http://tempuri.org/obtenerOfertasEducativas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerOfertasEducativasCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerGestiones">
+      <soap12:operation soapAction="http://tempuri.org/obtenerGestiones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerGestionesCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTitulosRef">
+      <soap12:operation soapAction="http://tempuri.org/obtenerTitulosRef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerTitulosRefCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstitsTitRef_Page">
+      <soap12:operation soapAction="http://tempuri.org/obtenerInstitsTitRef_Page" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerInstitsTitRef_PageCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstitsTitRef">
+      <soap12:operation soapAction="http://tempuri.org/obtenerInstitsTitRef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerInstitsTitRefCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerInstits">
+      <soap12:operation soapAction="http://tempuri.org/obtenerInstits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerInstitsCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFullDataInstit">
+      <soap12:operation soapAction="http://tempuri.org/obtenerFullDataInstit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerFullDataInstitCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTitulosData">
+      <soap12:operation soapAction="http://tempuri.org/obtenerTitulosData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:obtenerTitulosDataCabeceraSoapToken" part="CabeceraSoapToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaRegistro">
+    <wsdl:port name="ConsultaRegistroSoap" binding="tns:ConsultaRegistroSoap">
+      <soap:address location="https://rfietp.educacion.gob.ar/WS/RegistroWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaRegistroSoap12" binding="tns:ConsultaRegistroSoap12">
+      <soap12:address location="https://rfietp.educacion.gob.ar/WS/RegistroWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

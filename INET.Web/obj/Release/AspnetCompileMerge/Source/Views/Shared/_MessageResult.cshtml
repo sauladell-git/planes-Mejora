@@ -1,0 +1,8 @@
+﻿@if (ViewBag.MessageResult != null)
+{
+    @Html.Hidden("MessageResultText", (string)ViewBag.MessageResult.Text)	
+    @Html.Hidden("MessageResultType", (string)ViewBag.MessageResult.Type.ToString())	
+    @Html.Hidden("MessageResultFadeOut", (bool)ViewBag.MessageResult.FadeOut)	
+    
+    ViewBag.MessageResult = null;
+}

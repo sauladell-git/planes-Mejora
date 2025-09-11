@@ -1,0 +1,31 @@
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Utils.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Utils.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Utils.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\EntityFramework.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Data.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\OpenPop.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Data.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\EntityFramework.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\obj\Release\INET.Utils.csprojResolveAssemblyReference.cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\obj\Release\INET.Utils.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\obj\Release\INET.Utils.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\bin\Release\INET.Data.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Utils\obj\Release\INET.Utils.csproj.CoreCompileInputs.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Utils.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Utils.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Utils.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Data.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Core.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Data.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\INET.Data.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\EntityFramework.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\bin\Release\EntityFramework.SqlServer.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\obj\Release\INET.Utils.csprojAssemblyReference.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\obj\Release\INET.Utils.csproj.CopyComplete
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\obj\Release\INET.Utils.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Utils\obj\Release\INET.Utils.pdb

@@ -1,0 +1,136 @@
+﻿@using INET.Core.Enums
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Constants
+@{
+    var showSolicitudesByCUE = Model.Count > 0 ? Model[0].ImprovementPlan.ImprovementPlanTypeId == ImprovementPlanTypeEnum.Jurisdiccional.ToInt() : false;
+    var planId = Model.Count > 0 ? Model[0].ImprovementPlanId : 0;
+    var planStatusId = Model.Count > 0 ? Model[0].ImprovementPlan.StatusId : 0;
+    var evaluatorId = Model.Count > 0 ? Model[0].ImprovementPlan.EvaluatorUserId ?? 0 : 0;
+}
+<form id="frmSolicitudesGroup" action="@Url.Action("UpdateSolicitudes")" method="post">
+    <table cellpadding="0" cellspacing="1" class="list2" id="listSolicitados">
+        <thead>
+            <tr>
+                <td width="110px" valign="middle">Acciones</td>
+                <td width="30px" valign="middle"></td>
+                <td>ID</td>
+                @if (showSolicitudesByCUE)
+                {
+                    <td>CUE</td>
+                }
+                <td>Línea</td>
+                <td>Expediente</td>
+                <td>Estado</td>
+                <td>Detalle</td>
+                <td>Reasignado</td>
+                <td>
+                    <img src="~/Img/icons/icon-comment.png" title="Comentarios" />
+                </td>
+                <td>
+                    <img src="~/Img/icons/icon-alert.png" title="Incidencias" />
+                </td>
+                <td>Pedido</td>
+                <td>Aprobado</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model)
+            {
+                var disabled = s.StatusId == SolicitudeStatusEnum.Anulado.ToInt();
+                var cssClass = (disabled) ? "solicitude-disabled" : "";
+                var canEdit = SolicitudePermissions.CanEdit(s.StatusId, planStatusId, evaluatorId, s.Locked);
+                <tr data-solicitudeId="@s.Id" data-cue="@s.CUE" data-schoolYearId="@s.SchoolYearId" data-details="@s.Details" data-lineId="@s.LineId" data-expenditureTypeId="@s.ExpenditureTypeId"
+                    data-specialization="@s.Specialization" data-solicitudeTypeId="@s.SolicitudeTypeId" data-reasignedId="@s.ReassignedId" data-statusId="@s.StatusId" data-fileNumber="@s.FileNumber"
+                    data-MeasurementUnitId="@s.MeasurementUnitId" data-requestedAmount="@s.RequestedAmount" data-requestedPriceUnit="@s.RequestedPriceUnit.ToString("#.####")" data-requestedTotal="@s.RequestedTotal.ToString("C")"
+                    data-approvedAmount="@((s.ApprovedAmount != null) ? s.ApprovedAmount : null)" data-approvedPriceUnit="@((s.ApprovedPriceUnit != null) ? s.ApprovedPriceUnit.ToString("#.####") : null)" data-approvedTotal="@((s.ApprovedTotal != null) ? s.ApprovedTotal.ToString("C") : null)" class="@cssClass">
+                    <td width="140px" align="center">
+                        <img src="~/Img/icons/icon-view.png" class="solicitude-action-view actionLink" title="Ver" />
+                        @if (!disabled)
+                        {
+                            if (canEdit)
+                            {
+                                <img src="~/Img/icons/icon-edit.png" class="solicitude-action-edit actionLink" title="Editar" />
+                            }
+
+                            <a href="@Url.Action("ExportSolicitudeToPDF", "Plan", new { solicitudeId = s.Id })"><img src="~/Img/icons/icon-export-plan.png" title="Descargar PDF" class="grid-icon" /></a>
+
+                            if (SolicitudePermissions.CanDelete(s.StatusId, planStatusId, s.Locked))
+                            {
+                                <img src="~/Img/icons/icon-delete.png" class="solicitude-action-delete actionLink" title="Eliminar" />
+                            }
+
+                            if (SolicitudePermissions.CanBlock(evaluatorId, planStatusId, s.Locked))
+                            {
+                                <img src="~/Img/icons/icon-close.png" class="solicitude-action-block actionLink" title="Anular Solicitud" />
+                            }
+                        }
+                    </td>
+                    <td align="center">
+                        @if (canEdit)
+                        {
+                            <input type="checkbox" name="selectedSolicitudes" value="@s.Id" />
+                        }
+                    </td>
+                    <td align="center">@s.Id</td>
+                    @if (showSolicitudesByCUE)
+                    {
+                        <td align="center">@s.CUE</td>
+                    }
+                    <td class="line-desc" align="center">
+                        @if (s.Line) {
+                        @s.Line.Code
+                        <div class="noshow">@s.Line.Description linea:@s.Line.Code</div>
+                        }
+                    </td>
+                    <td class="line-desc" align="center">@s.FileNumber</td>
+                    <td align="center">@s.Status.Description</td>
+                    <td>
+                        @StringHelper.Cut(s.Details, 100) @if (s.Details.Length > 100)
+                        {
+                            <div class="noshow">@s.Details</div>
+                        }
+                    </td>
+                    <td align="center">@(s.ReassignedId != null ? s.ReassignedId : "Orginal")</td>
+                    <td align="center">
+                        @if (SolicitudePermissions.Comments.CanCreate(s.StatusId, planStatusId, evaluatorId))
+                        {
+                            <img src="~/Img/icons/icon-comment.png" class="solicitude-action-comment actionLink left" title="Agregar Comentario" />
+                        }
+                        else
+                        {
+                            <div class="left" style="width: 25px; height: 25px;"></div>
+                        }
+
+                        @if (SessionHelper.HasPermission(PermissionConstants.Solicitudes.COMMENTS_READ))
+                        {
+                            <a href="#" class="link-comment solicitude-view-comment left">@s.Comments.Count</a>
+                        }
+
+                    </td>
+                    <td align="center">
+                        @if (SolicitudePermissions.Incidences.CanCreate(s.StatusId, planStatusId, evaluatorId))
+                        {
+                            <img src="~/Img/icons/icon-alert.png" class="solicitude-action-incidence actionLink left" title="Agregar Incidencia" />
+                        }
+                        else
+                        {
+                            <div class="left" style="width: 25px; height: 25px;"></div>
+                        }
+                        @if (SessionHelper.HasPermission(PermissionConstants.Solicitudes.INCIDENTS_READ))
+                        {
+                            <a href="#" class="link-comment solicitude-view-incidences left">@s.Incidences.Count</a>
+                        }
+                    </td>
+                    <td class="nowrap">@s.RequestedTotal.ToString("C")</td>
+                    <td class="nowrap">@((s.ApprovedTotal != null) ? s.ApprovedTotal.ToString("C") : null)</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+    <input name="planId" type="hidden" value="@planId" />
+    <input name="action" id="solicitude_group_action" type="hidden" value="" />
+</form>

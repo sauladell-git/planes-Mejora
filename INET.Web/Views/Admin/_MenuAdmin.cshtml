@@ -1,0 +1,37 @@
+@using INET.Core.Constants;
+@using INET.Utils.Helpers;
+
+<div class="search">
+    <ul class="tabs">
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.ROLES))
+        {
+            <a href="@Url.Action("Roles")"><li class="roles" title="Permisos"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.USERS))
+        {
+            <a href="@Url.Action("Users")"><li class="newuser" title="Usuarios"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.BUDGET))
+        {
+            <a href="@Url.Action("Budgets")"><li class="lective" title="Partida presupuestaria"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.BUDGET))
+        {
+            <a href="@Url.Action("Budgets_216")"><li class="lective" title="Partida presupuestaria Res 214/22"></li></a>
+        }
+
+
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.TEMPLATES))
+        {
+            <a href="@Url.Action("TemplatesList")"><li class="templates" title="Plantillas de Documentos"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.USERS))
+        {
+            <a href="@Url.Action("ExportUsersToExcel")"><li class="export" title="Exportar Usuarios"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.Administration.ERROR_LOG))
+        {
+            <a href="~/elmah" target="_blank"><li class="errors-log" title="Log de Errores"></li></a>
+        }
+    </ul>
+</div>

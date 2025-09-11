@@ -1,0 +1,48 @@
+﻿@model IList<INET.Data.Incidence>
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+
+@foreach (var incidence in Model)
+{
+    <ul class="incidents">
+        <li>
+            @*<div class="user"><span class="celeste">Usuario:</span> @(incidence.UserId > 0 ? incidence.UserProfile.FullName : "")</div>*@
+            <div class="date"><span class="celeste">Fecha:</span> @incidence.Date</div>
+            <div><span class="celeste">Estado:</span> @incidence.Status</div>
+            <div class="message">
+                <span class="celeste">Asunto:</span> @incidence.IncidenceType.Description
+                <p>@incidence.Details</p>
+            </div>
+
+            <ul class="tabs-sm">
+                @if (IncidencePermissions.CanChangeStatus(incidence))
+                {
+                    <li class="status" data-incidenceId="@incidence.Id" data-solicitudeId="@(incidence.SolicitudeId)" data-improvementPlanId="@incidence.ImprovementPlanId" title="Cerrar Incidencia"></li>
+                }
+                @if (IncidencePermissions.CanComment(incidence))
+                {
+                    <li class="add-comment incidence-comment" title="Añadir Comentario" data-incidenceId="@incidence.Id" data-solicitudeId="@(incidence.SolicitudeId)" data-improvementPlanId="@incidence.ImprovementPlanId"></li>
+                }
+            </ul>
+
+        </li>
+    </ul>
+
+    <div class="icon-comment" data-commentIncidence="comment-incidence-@incidence.Id"><img src="~/img/icons/icon-comment.png" /><span class="celeste">@incidence.Comments.Count Comentarios</span></div>
+    if (incidence.Comments.Count > 0)
+    {
+        <ul class="comments comment-inc">
+            @foreach (var comment in incidence.Comments.OrderByDescending(x => x.Date))
+            {
+                <li class="incident-comment comment-incidence-@incidence.Id">
+                    <div class="user"><span class="celeste">Usuario:</span> @comment.UserProfile.FullName</div>
+                    <div class="date"><span class="celeste">Fecha:</span> @comment.Date</div>
+                    <div class="message">
+                        <span class="celeste">Comentario:</span>
+                        <p>@comment.Text</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+}

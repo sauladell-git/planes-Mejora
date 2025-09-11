@@ -1,0 +1,86 @@
+﻿@model INET.Services.DTO.ImprovementPlanListDTO
+@using INET.Utils.Helpers
+@using INET.Core.Constants
+
+@{
+    ViewBag.Title = "Lista de Planes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+   <link href="~/scripts/chosen/chosen.min.css?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion" rel="stylesheet" type="text/css">
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/globalize")    
+    @Scripts.Render("~/scripts/chosen/chosen.jquery.min.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+    @Scripts.Render("~/scripts/js/search.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+    @Scripts.Render("~/scripts/js/list.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+<div class="search">
+    <ul class="tabs">
+        <li class="search-opener" title="Buscar Planes de Mejoras"></li>
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.CREATE))
+        {
+        <a href="@Url.Action("Editor", "Plan")"><li class="add-plan" title="Nuevo Plan de Mejoras"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.READ))
+        {
+        <a href="@Url.Action("ExportImprovementPlansToExcel", "Plan")"><li class="export" title="Exportar Planes"></li></a>
+        }
+    </ul>
+    <div class="search-close" title="Cerrar Panel de Búsqueda"></div>    
+    <h2>Filtrar resultados</h2>
+    <div id="msg-search"></div>
+    <form id="frmSearchPlans" action="#">
+        <div class="column1">
+            @Html.Label("Número:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.Identifier, new { @class = "input", maxLength = "50" })
+
+            @Html.Label("CUE:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.CUE, new { @class = "input", maxLength = "9" })
+
+            @Html.Label("Ciclo Lectivo:", new { @class = "label" }) 
+            @Html.DropDownListFor(x => x.Filters.SchoolYearId, new SelectList(Model.Filters.SchoolYears, "Id", "Cycle"), "Todos", new { @class = "input" })
+
+            @Html.Label("Evaluador:", new { @class = "label" }) 
+            @Html.DropDownListFor(x => x.Filters.EvaluatorId, new SelectList(Model.Filters.Evaluators.OrderBy(y => y.FullName), "UserId", "FullName"), "Todos", new { @class = "input chosen-select" })
+
+            @Html.Label("Expediente:", new { @class = "label" }) 
+            @Html.TextBoxFor(x => x.Filters.FileNumber, new { @class = "input", maxLength = "50" })
+        </div>
+        <div class="column2">
+            @Html.Label("Descripción:", new { @class = "label" })
+            @Html.TextBoxFor(x => x.Filters.Summary, new { @class = "input", maxLength = "100" })
+
+            @Html.Label("Tipo de plan:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.Filters.ImprovementPlanTypeId, new SelectList(Model.Filters.ImprovementPlansTypes, "Id", "Description"), "Todos", new { @class = "input" })
+
+            @Html.Label("Fecha de Presentación:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.Filters.ReceptionDateDay, new SelectList(Model.Filters.Days, "Key", "Value"), "Día", new { @class = "input date" })
+            @Html.DropDownListFor(x => x.Filters.ReceptionDateMonth, new SelectList(Model.Filters.Months, "Key", "Value"), "Mes", new { @class = "input date" })
+            @Html.DropDownListFor(x => x.Filters.ReceptionDateYear, new SelectList(Model.Filters.Years, "Key", "Value"), "Año", new { @class = "input date year" })
+            @Html.TextBox("opencal", "", new { title = "Abrir Calendario" })
+            <br />
+
+            @Html.Label("Eje:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.Filters.FieldId, new SelectList(Model.Filters.Fields, "Id", "Description"), "Todos", new { @class = "input" })
+
+            @Html.Label("Estado:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.Filters.StatusId, new SelectList(Model.Filters.Status, "Id", "Description"), "Todos", new { @class = "input" })
+        </div>
+        <div style="width: 100%; clear: both; padding-top: 10px;">
+            <div class="button">
+                <input type="submit" value="Buscar" class="btn-search"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="improvementPlans">@Html.Partial("_List", Model.ImprovementPlans)</div>
+
+@Html.Partial("_MessageResult")
+
+<div id="delete-confirm" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span class="delete-text">¿Desea borrar el Plan de Mejora ID?</span></p>
+</div>

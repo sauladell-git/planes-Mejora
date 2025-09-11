@@ -1,0 +1,20 @@
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Release\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Release\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Release\EntityFramework.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Release\EntityFramework.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Release\INET.Core.csprojResolveAssemblyReference.cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Release\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Release\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Core\obj\Release\INET.Core.csproj.CoreCompileInputs.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Release\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Release\INET.Core.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Release\EntityFramework.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Release\EntityFramework.SqlServer.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Release\EntityFramework.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\bin\Release\EntityFramework.SqlServer.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Release\INET.Core.csprojAssemblyReference.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Release\INET.Core.csproj.CopyComplete
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Release\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Core\obj\Release\INET.Core.pdb

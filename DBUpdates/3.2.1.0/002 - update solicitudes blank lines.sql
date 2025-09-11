@@ -1,0 +1,1 @@
+alter table Solicitudes alter column LineId int NULL;

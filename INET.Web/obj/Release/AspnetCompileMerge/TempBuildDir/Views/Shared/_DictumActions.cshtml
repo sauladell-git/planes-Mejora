@@ -1,0 +1,33 @@
+﻿@model INET.Data.Dictum
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Enums
+@using INET.Core.Constants
+
+<a href="#"><img src="~/Img/icons/icon-view.png" data-documentId="@Model.Id" data-templateId="@Model.TemplateId" data-improvementPlanId="@Model.ImprovementPlan.Id" class="view-dictum" title="Ver"></a>
+
+@if (DictumPermissions.CanEdit(Model.Id))
+{
+    <a href="#"><img src="~/Img/icons/icon-edit.png" data-documentId="@Model.Id" data-templateId="@Model.TemplateId" data-improvementPlanId="@Model.ImprovementPlan.Id" title="Editar" class="edit-dictum"></a>
+}
+
+@if (DictumPermissions.CanDelete(Model.Id))
+{
+    <a href="#"><img src="~/Img/icons/icon-delete.png" data-documentId="@Model.Id" data-improvementPlanId="@Model.ImprovementPlan.Id" title="Eliminar" class="delete-dictum"></a>
+}
+
+@if (DictumPermissions.CanBlock(Model.Id))
+{
+    <a href="#"><img src="~/Img/icons/icon-close.png" data-documentId="@Model.Id" data-improvementPlanId="@Model.ImprovementPlan.Id" title="Anular" class="block-dictum"></a>
+}
+
+@if (
+    (Model.StatusId == DictumStatusEnum.Emitido.ToInt() && !Roles.IsUserInRole(INET.Core.Constants.RoleConstants.OPERADOR_PROVINCIAL)) || Model.StatusId == DictumStatusEnum.Firmado.ToInt() || Model.StatusId == EligibilityStatusEnum.Pendiente.ToInt() || Model.StatusId == EligibilityStatusEnum.Aprobado.ToInt()
+    )
+{
+    <a href="~/Docs/@Model.PDF" target="_blank"><img src="~/Img/icons/icon-export-plan.png" title="Descargar PDF" class="grid-icon"></a>
+}
+@if (!String.IsNullOrEmpty(Model.SignedDocument) && Model.StatusId == DictumStatusEnum.Firmado.ToInt())
+{
+    <a href="~/Docs/@ConfigConstants.SIGNED_DICTUMS_PATH/@System.Uri.EscapeDataString(Model.SignedDocument)" target="_blank"><img src="~/Img/icons/icon-signed.png" title="Descargar Documento Firmado Digitalmente" class="grid-icon"></a>
+}

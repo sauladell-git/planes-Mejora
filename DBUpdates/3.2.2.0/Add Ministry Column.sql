@@ -1,0 +1,26 @@
+alter table Provinces add MinistryName nvarchar(100) NULL;
+
+update Provinces set MinistryName = 'DIRECCION GENERAL DE CULTURA Y EDUCACIÓN' where Id = 1;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN, CIENCIA Y TECNOLOGÍA' where Id = 2;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN, CULTURA, CIENCIA Y TECNOLOGÍA' where Id = 3;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 4;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION E INNOVACION' where Id = 5;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 6;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 7;
+update Provinces set MinistryName = 'CONSEJO GENERAL DE EDUCACION' where Id = 8;
+update Provinces set MinistryName = 'MINISTRO DE CULTURA Y EDUCACIÓN' where Id = 9;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 10;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 11;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN, CIENCIA Y TECNOLOGÍA' where Id = 12;
+update Provinces set MinistryName = 'DIRECCION GENERAL DE ESCUELAS' where Id = 13;
+update Provinces set MinistryName = 'CONSEJO GENERAL DE EDUCACION' where Id = 14;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN' where Id = 15;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN Y DDHH' where Id = 16;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN, CIENCIA Y TECNOLOGÍA' where Id = 17;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN' where Id = 18;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN' where Id = 19;
+update Provinces set MinistryName = 'CONSEJO PROVINCIAL DE EDUCACIÓN' where Id = 20;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 21;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACIÓN, CIENCIA Y TECNOLOGÍA' where Id = 22;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 23;
+update Provinces set MinistryName = 'MINISTERIO DE EDUCACION' where Id = 24;

@@ -1,0 +1,34 @@
+﻿@model IList<INET.Data.Incidence>
+
+@{
+    ViewBag.Title = "Incidencias";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/js/incidences.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<div class="table-float">   
+    <div id="msg-incidences-list"></div>
+    <div id="incidences-wrapper">
+        @Html.Partial("_IncidencesList", Model)
+    </div>
+</div>
+
+<div id="view-incidence" title="Incidencia">
+    <div id="msg-incidence"></div>
+    <div class="incidence"></div>
+</div>
+
+<div id="new-comment" title="Nuevo Comentario" class="modal">
+    <form id="frmComments">
+        <div id="msg-comment"></div>
+        <label class="label">Comentario</label>
+        <textarea id="CommentText" name="CommentText" class="textarea" maxlength="4000" required></textarea>
+    </form>
+</div>
+
+<div id="change-confirm" title="Cerrar Incidencia">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea cerrar esta incidencia?</p>
+</div>

@@ -1,0 +1,22 @@
+@model List<INET.Data.SchoolYear>
+@{
+    ViewBag.Title = "Ciclos Lectivos";    
+}
+
+@section header {
+    @Styles.Render("~/content/jqtree.css")
+}
+@section scripts {
+    @Scripts.Render("~/scripts/lib/tree.jquery.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)    
+    @Scripts.Render("~/bundles/globalize")
+    @Scripts.Render("~/scripts/lib/jquery.numericInput.min.js")
+    @Scripts.Render("~/scripts/js/budget.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)    
+}
+
+@Html.Partial("_MenuAdmin")
+
+<div class="table-float">    
+    @Html.Label("Ciclo Lectivo")
+    @Html.DropDownList("SchoolYearId", new SelectList(Model, "Id", "Description")) 
+    <div id="tree"></div>
+</div>

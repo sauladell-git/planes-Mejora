@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="af2d0194497442b4be0691e14bb4e2af" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="INET.Data.Audit" Width="1.5" PointX="8.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Budget" Width="1.5" PointX="10.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Comment" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Dictum" Width="1.5" PointX="4" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.DictumType" Width="1.5" PointX="13.875" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Document" Width="2.125" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.ExpenditureType" Width="1.5" PointX="15.875" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Field" Width="1.5" PointX="3.125" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.FileNumber" Width="1.5" PointX="12.875" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.ImprovementPlan" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.ImprovementPlansType" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Incidence" Width="1.5" PointX="13.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.IncidenceType" Width="1.5" PointX="11.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Institution" Width="1.5" PointX="17.875" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Line" Width="1.5" PointX="8.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.MeasurementUnit" Width="1.5" PointX="15.875" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Province" Width="1.5" PointX="0.625" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Resolution" Width="1.5" PointX="1.375" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.SchoolYear" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Solicitude" Width="2.25" PointX="18.125" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.SolicitudeType" Width="1.5" PointX="15.875" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Status" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.StatusCriterion" Width="1.5" PointX="7" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.Template" Width="1.875" PointX="10.875" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.TemplateTypeField" Width="1.5" PointX="7.875" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.TemplateType" Width="1.5" PointX="5.625" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.UserProfile" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.webpages_Membership" Width="1.5" PointX="12.875" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.webpages_OAuthMembership" Width="1.5" PointX="19.875" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INET.Data.webpages_Roles" Width="1.5" PointX="7.375" PointY="17.375" IsExpanded="true" />
+        <AssociationConnector Association="INET.Data.FK_Audits_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Budgets_Fields" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Budgets_Lines" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Budgets_Provinces" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Budgets_SchoolYears" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Comments_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Dictums_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_DocumentsManagement_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_DocumentsManagement_Templates" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_ExpenditureTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_ImprovementPlans_Fields" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Lines_Fields" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_ImprovementPlans_ImprovementPlans" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_ImprovementPlans_ImprovementPlansTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_ImprovementPlans_SchoolYears" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_ImprovementPlans_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_ImprovementPlans_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Incidences_ImprovementPlans" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_ImprovementPlans" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Incidences_IncidenceTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Incidences_Solicitudes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Incidences_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_Lines" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_MeasurementUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_SchoolYears" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_SolicitudeTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Status_StatusCriterions" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_Templates_TemplateTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.FK_TemplateTypeFields_TemplateTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.Comments_ImprovementPlans" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.Comments_Incidences" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.Comments_Solicitudes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.Dictums_Solicitudes" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.UserProfile_Fields" ManuallyRouted="false" />
+        <AssociationConnector Association="INET.Data.webpages_UsersInRoles" ManuallyRouted="false" />
+        <InheritanceConnector EntityType="INET.Data.Dictum" />
+        <InheritanceConnector EntityType="INET.Data.Resolution" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_Solicitudes1" />
+        <AssociationConnector Association="INET.Data.FK_Documents_ImprovementPlans" />
+        <AssociationConnector Association="INET.Data.FK_Documents_UserProfile" />
+        <AssociationConnector Association="INET.Data.ResolutionDictums" />
+        <EntityTypeShape EntityType="INET.Data.TemplateTypeBlock" Width="1.5" PointX="7.875" PointY="31.375" />
+        <AssociationConnector Association="INET.Data.FK_TemplateTypeBlocks_TemplateTypes" />
+        <EntityTypeShape EntityType="INET.Data.DocumentVariable" Width="1.5" PointX="15.75" PointY="5.125" />
+        <AssociationConnector Association="INET.Data.FK_DocumentVariables_Documents" />
+        <EntityTypeShape EntityType="INET.Data.TemplateVariable" Width="1.5" PointX="13.5" PointY="5.25" />
+        <AssociationConnector Association="INET.Data.FK_DocumentVariables_TemplateTypeVariables1" />
+        <AssociationConnector Association="INET.Data.FK_TemplateTypeVariables_Templates" />
+        <EntityTypeShape EntityType="INET.Data.ELMAH_Error" Width="1.5" PointX="20.875" PointY="7.375" />
+        <AssociationConnector Association="INET.Data.TemplateField" />
+        <AssociationConnector Association="INET.Data.UserProfile_Provinces" />
+        <AssociationConnector Association="INET.Data.FK_FieldStatus" />
+        <EntityTypeShape EntityType="INET.Data.InstitutionLevel" Width="1.5" PointX="16.375" PointY="0.875" />
+        <AssociationConnector Association="INET.Data.UserProfile_InstitutionLevels" />
+        <EntityTypeShape EntityType="INET.Data.webpages_Permissions" Width="1.5" PointX="0.75" PointY="4.25" />
+        <AssociationConnector Association="INET.Data.webpages_Permissions_StatusCriterions" />
+        <EntityTypeShape EntityType="INET.Data.webpages_RolePermissionStatuses" Width="2.625" PointX="10" PointY="18.5" />
+        <AssociationConnector Association="INET.Data.FK_webpages_RolePermissionStatuses_Status" />
+        <AssociationConnector Association="INET.Data.FK_webpages_RolePermissionStatuses_webpages_Permissions" />
+        <AssociationConnector Association="INET.Data.FK_RolePermissionStatuses_webpages_Roles" />
+        <AssociationConnector Association="INET.Data.FK_Lines_ImprovementPlans" />
+        <EntityTypeShape EntityType="INET.Data.Lines_22" Width="1.5" PointX="13.5" PointY="20.125" />
+        <EntityTypeShape EntityType="INET.Data.SubField" Width="1.5" PointX="11.25" PointY="0.75" />
+        <EntityTypeShape EntityType="INET.Data.sysdiagram" Width="1.5" PointX="18.375" PointY="1.25" />
+        <EntityTypeShape EntityType="INET.Data.Documents_TMP" Width="1.5" PointX="8.375" PointY="1.25" />
+        <AssociationConnector Association="INET.Data.FK_SubFields_Fields" />
+        <AssociationConnector Association="INET.Data.FK_Lines_22_ImprovementPlans" />
+        <AssociationConnector Association="INET.Data.FK_SubFields_ImprovementPlans" />
+        <AssociationConnector Association="INET.Data.FK_Lines_22_SubFields" />
+        <AssociationConnector Association="INET.Data.FK_SubFieldStatus" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_Lines_22" />
+        <AssociationConnector Association="INET.Data.FK_Lines_22_Lines" />
+        <EntityTypeShape EntityType="INET.Data.ExpenditureObjectType" Width="1.5" PointX="20.375" PointY="0.875" />
+        <AssociationConnector Association="INET.Data.FK_Solicitudes_ExpenditureObjectTypes" />
+        <EntityTypeShape EntityType="INET.Data.Budgets_216" Width="1.5" PointX="21.75" PointY="11.5" />
+        <AssociationConnector Association="INET.Data.FK_Budgets_216_Provinces" />
+        <AssociationConnector Association="INET.Data.FK_Budgets_216_SchoolYears" />
+        <AssociationConnector Association="INET.Data.FK_Budgets216_Fields" />
+        <AssociationConnector Association="INET.Data.FK_Budgets216_Lines22" />
+        <EntityTypeShape EntityType="INET.Data.RelatedLines_22" Width="1.5" PointX="15.75" PointY="18.5" />
+        <AssociationConnector Association="INET.Data.FK_RelatedLines_22_ImprovementPlans" />
+        <AssociationConnector Association="INET.Data.FK_RelatedLines_22_Lines_22" />
+        <EntityTypeShape EntityType="INET.Data.AccountRendering" Width="1.5" PointX="24.625" PointY="9.875" />
+        <AssociationConnector Association="INET.Data.FK_AccountRendering_Dictums" />
+        <AssociationConnector Association="INET.Data.FK_AccountRendering_ExpenditureObjectTypes" />
+        <AssociationConnector Association="INET.Data.FK_AccountRendering_ImprovementPlans" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

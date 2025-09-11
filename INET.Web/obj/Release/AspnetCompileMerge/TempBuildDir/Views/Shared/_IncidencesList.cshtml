@@ -1,0 +1,34 @@
+﻿@model IList<INET.Data.Incidence>
+
+<table cellpadding="0" cellspacing="1" class="list" id="list-incidences">        
+    <thead>
+        <tr>
+            <td width="50px">Acciones</td>
+            <td width="80px">Tipo</td>
+            <td width="145px">Plan de Mejora</td>
+            <td width="80px">Estado</td>
+            <td width="130px">Fecha</td>                
+            <td>Asunto</td>                
+            <td>Detalle</td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var incidence in Model)
+    { 
+        <tr data-incidenceId="@incidence.Id" data-improvementPlanId="@incidence.ImprovementPlanId" data-solicitudeId="@incidence.SolicitudeId">
+            <td width="50px" align="center" class="actions">
+                <a href="#"><img src="~/Img/icons/icon-view.png" title="Ver" class="view-incidence"></a>
+            </td>
+            <td width="80px">@(incidence.Solicitude != null ? "Solicitado" : "Plan de Mejora")</td>
+            <td width="145px">@incidence.ImprovementPlan.Identifier</td>
+            <td width="80px">@incidence.Status</td>
+            <td width="130px">@incidence.Date</td>
+            <td>@incidence.IncidenceType.Description</td>                
+            <td>@incidence.Details</td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+        <tr></tr>
+    </tfoot>
+</table>

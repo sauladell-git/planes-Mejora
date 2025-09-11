@@ -1,0 +1,1 @@
+insert into [TemplateTypeFields] (TemplateTypeId, Field, Description) values(4, '[JURISDICCION]', 'Nombre de la(s) jurisdicción(s) incluida(s) en el documento')

@@ -1,0 +1,1 @@
+insert into [TemplateTypeFields] (TemplateTypeId, Field, Description) values(4, '[MINISTERIO_PROVINCIA]', 'Nombre de ministerio de la(s) provincia(s) incluida(s) en el documento')

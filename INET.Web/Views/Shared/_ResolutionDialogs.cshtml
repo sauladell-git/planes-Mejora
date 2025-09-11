@@ -1,0 +1,107 @@
+﻿@model INET.Services.DTO.ResolutionDTO
+
+@using INET.Core.Constants
+
+<div id="delete-confirm-resolution" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea borrar la disposición seleccionada?</p>
+</div>
+
+<div id="block-confirm-resolution" title="Anular Disposición">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea anular la disposición seleccionada?</p>
+</div>
+
+<div id="new-resolution" title="Disposición" class="modal">
+    <div id="msg-resolution"></div>
+    <div id="resolution-tabs">
+        <ul>
+            <li id="li-resolutions"><a href="#resolution-tab1">Dictámenes</a></li>
+            <li id="li-variables"><a href="#resolution-tab2">Variables</a></li>
+            <li id="li-res-preview"><a href="#resolution-tab3">Previsualizar</a></li>
+            <li id="li-annex"><a href="#resolution-tab4">Firma</a></li>
+            @*<li id="li-resolution-number"><a href="#resolution-tab5">Número Disposición</a></li>*@
+        </ul>
+        <div id="resolution-tab1">
+            <form id="frmResolution">
+                <div class="dictum-header">
+                    <div class="left half">
+                        @Html.Label("Tipo de Plantilla:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.TemplateTypeId, new SelectList(Model.TemplatesTypes, "Id", "Description"), "Seleccionar...", new { id = "DocumentDTO_ResolutionDTO_TemplateTypeId", @class = "input" })
+
+                        @Html.Label("Estado:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.StatusId, new SelectList(Model.Status, "Id", "Description"), "Seleccionar...", new { id = "DocumentDTO_ResolutionDTO_StatusId", @class = "input" })
+                    </div>
+                    <div class="right half">
+                        @Html.Label("Plantilla:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.TemplateId, new SelectList(Model.Templates, "Id", "Description"), "Seleccionar...", new { id = "DocumentDTO_ResolutionDTO_TemplateId", @class = "input" })
+                    </div>
+                </div>
+
+                <div id="dictums-selector">
+                    @Html.Partial("_DictumsSelector", new List<INET.Data.Dictum>())
+                </div>
+                <div class="ammounts">
+                    <label class="label">Total <span id="resolution-ammount">$0,00</span></label>
+                </div>
+                <input id="CurrentResolutionTemplateId" type="hidden" />
+            </form>
+        </div>
+        <div id="resolution-tab2">
+            <p>Por favor, cargue las variables dinámicas del documento que se completarán en el dictámen</p>
+            <div id="resolution-variables-wrapper"></div>
+        </div>
+        <div id="resolution-tab3">
+            <p>Por favor, haga click en el botón previsualizar para descargar una vista previa de la disposición.</p>
+            <div id="resolution-preview" class="div-button preview">Previsualizar</div>
+        </div>
+        <div id="resolution-tab4">
+            <div id="sign-resolution-wrapper">
+                @using (Html.BeginForm("SignResolution", "Plan", FormMethod.Post, new { id = "frmAnnex", enctype = "multipart/form-data" }))
+                {
+                    <input type="hidden" id="resolutionId" name="resolutionId" />
+                    <input type="hidden" id="resolutionPlanId" name="resolutionPlanId" />
+
+                    <div class="dictum-header">
+                        <div class="left half">
+                            @Html.Label("Fecha de Firma Disposición", new { @class = "label" })
+                            @Html.TextBoxFor(x => Model.SignatureDate, new { id = "signDate", @class = "input", required = "required" })
+
+                            <label class="label" style="margin-top: 10px">Documento Firmado Digitalmente</label>
+                            <div id="signedDocumentDiv-input">
+                                <input type="file" id="fileSigned" name="fileSigned" required="required" />
+                            </div>
+                            <div id="signedDocumentDiv-link" style="margin: 5px 0px 10px 0px;">
+                                <a href="#" id="signedDocument-link" data-urlbase="./Docs/@ConfigConstants.SIGNED_RESOLUTIONS_PATH/" target="_blank">Descargar Documento</a>
+                            </div>
+
+                            @Html.Label("Número de Disposición:", new { @class = "label", style = "margin-top: 10px" })
+                            @Html.TextBoxFor(x => Model.ResolutionNumber, new { id = "DocumentDTO_ResolutionDTO_ResolutionNumber", @class = "input", maxLength = "100", required = "required" })
+                        </div>
+                        <div class="right half">
+                            @Html.Label("Fecha de Firma Anexo", new { @class = "label" })
+                            @Html.TextBoxFor(x => Model.AnnexSignatureDate, new { id = "annexSignDate", @class = "input"  })
+
+                            <label class="label" style="margin-top: 10px">Anexo enviado por el ministerio</label>
+                            <div id="annexDiv-input">
+                                <input type="file" id="annex" name="file"  />
+                            </div>
+                            <div id="annexDiv-link" style="margin: 5px 0px 10px 0px;">
+                                <a href="#" id="annex-link" data-urlbase="./annex" target="_blank">Descargar anexo</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        @*<div id="resolution-tab5">
+            <form id="frmResolutionNumber">
+                @Html.Label("Número de Disposición:")
+                @Html.TextBoxFor(x => Model.ResolutionNumber, new { id = "DocumentDTO_ResolutionDTO_ResolutionNumber", @class = "input inline-input", maxLength = "100", required = "required" })
+
+                @Html.Label("Fecha de Envío")
+                @Html.TextBoxFor(x => Model.ShipDate, new { id = "DocumentDTO_ResolutionDTO_ShipDate", @class = "input inline-input" })
+            </form>
+        </div>*@
+    </div>
+</div>

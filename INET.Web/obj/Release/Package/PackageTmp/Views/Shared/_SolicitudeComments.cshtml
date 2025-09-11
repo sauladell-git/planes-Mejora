@@ -1,0 +1,10 @@
+﻿@using INET.Core.Enums
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Constants
+
+    <img src="~/Img/icons/icon-comment.png" data-solicitudeId="@Model.Id" class="solicitude-action-comment actionLink left" title="Agregar Comentario" />
+
+    @if (Model.Comments.Count > 0) {
+    <a href="#" data-solicitudeId="@Model.Id" class="link-comment solicitude-view-comment left">@Model.Comments.Count</a>
+    }

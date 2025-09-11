@@ -1,0 +1,108 @@
+﻿@model INET.Services.DTO.RoleDTO
+@using System.Configuration;
+@using INET.Utils.Helpers;
+@{
+    ViewBag.Title = "Permisos";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/js/roles.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<div id="main_plan_detail_block">
+
+    <div class="search">
+        <ul class="tabs">
+            <a href="@Url.Action("Roles", "Admin")">
+                <li class="back" title="Volver"></li>
+            </a>
+        </ul>
+    </div>
+
+    @using (Html.BeginForm("RoleEditor", "Admin", FormMethod.Post, new { id = "frmEditor", enctype = "multipart/form-data" }))
+    {
+        <div class="plan-container scroll">
+            <div class="table-float">
+                <h1>Editar Permisos / Rol @Model.RoleName</h1>
+                <p>Debajo encontrarás listados todos los permisos del Rol elegido, puedes modificarlos. Recuerda presionar el botón <b>GUARDAR</b> para confirmar los cambios realizados.</p>
+                <div id="msg-list-roles"></div>
+                <h2>Permisos asignados / Rol @Model.RoleName</h2>
+                <div id="label-list"></div>
+                <div style="clear: both; width: 100%;"></div>
+                <div class="resumen">
+                    <div class="button">
+                        <input type="submit" value="Guardar" class="btn-save">
+                    </div>
+                </div>
+                <h2>Permisos Disponibles / Rol @Model.RoleName</h2>
+                <div id="list_filter" class="dataTables_filter"><label>Buscar:<input id="list_perm_search" type="search" class="" placeholder="" aria-controls="list"></label></div>
+                <table cellpadding="0" cellspacing="1" class="list" id="list_perm" style="min-width: auto;">
+                    <thead>
+                        <tr>
+                            <td width="10%" valign="middle">Estado</td>
+                            <td width="20%">Permiso</td>
+                            <td width="70%">Avanzado</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var permission in Model.Permissions)
+                        {
+                            <tr data-permissionId="@permission.PermissionId">
+                                <td align="center" class="actions">
+                                    @if (permission.StatusCriterions.Count == 0)
+                                    {
+                                        string is_checked = (Model.SelectedPermissions.Where(x => x.PermissionId == permission.PermissionId && x.StatusId == null).Any()) ? "checked='checked'" : "";
+                                        <input type="checkbox" id="chk_permission_@permission.PermissionId" name="chk_permission_@permission.PermissionId" value="@permission.PermissionId" data-label="@permission.PermissionName" data-permissionId="@permission.PermissionId" data-permissionCode="@permission.PermissionCode" data-statusId="" class="checkbox selected-permissions" @is_checked />
+                                    }
+                                    else
+                                    {
+                                        <span>-</span>
+                                    }
+
+                                </td>
+                                <td class="index"><label for="chk_permission_@permission.PermissionId">@permission.PermissionName</label></td>
+                                <td>
+                                    @foreach (var criterion in permission.StatusCriterions)
+                                    {
+                                        <table class="list" style="min-width:auto;">
+                                            <thead>
+                                                <tr>
+                                                    <td colspan="2" align="left"><b>@criterion.Description</b></td>
+                                                </tr>
+                                            </thead>
+                                            @foreach (var obj_status in criterion.Status)
+                                            {
+                                                if (SessionHelper.IgnorePermissionStatus(permission.PermissionCode, obj_status.Id))
+                                                {
+                                                    continue;
+                                                }
+
+                                                string is_checked = (Model.SelectedPermissions.Where(x => x.PermissionId == permission.PermissionId && x.StatusId == obj_status.Id).Any()) ? "checked='checked'" : "";
+                                                <tr>
+                                                    <td width="45px" align="center" class="actions"><input type="checkbox" id="chk_permission_@permission.PermissionId-@obj_status.Id" name="chk_permission_@permission.PermissionId-@obj_status.Id" value="@permission.PermissionId-@obj_status.Id" data-label="@permission.PermissionName / @obj_status.Description" data-permissionId="@permission.PermissionId" data-permissionCode="@permission.PermissionCode" data-statusId="@obj_status.Id" class="checkbox selected-permissions" @is_checked /></td>
+                                                    <td><label for="chk_permission_@permission.PermissionId-@obj_status.Id">@obj_status.Description</label></td>
+                                                </tr>
+                                            }
+                                        </table>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr></tr>
+                    </tfoot>
+                </table>
+                <div class="resumen">
+                    <div class="button">
+                        <input type="submit" value="Guardar" class="btn-save">
+                    </div>
+                </div>
+            </div>
+
+            @Html.HiddenFor(x => x.RoleId)
+        </div>
+    }
+    @Html.Partial("_MessageResult")
+</div>

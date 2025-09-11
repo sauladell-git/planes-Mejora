@@ -1,0 +1,81 @@
+﻿@using INET.Utils.Helpers;
+
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <title>INET - @ViewBag.Title</title>
+        <link href="~/favicon.ico?v=2" rel="shortcut icon" type="image/x-icon" />
+        
+        <!-- CSS -->
+        <link href="~/content/inet-general.css?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion" rel="stylesheet" type="text/css">
+        <link href="~/content/jquery-ui.custom.css" rel="stylesheet" type="text/css">       
+        <link href="~/content/table-sorter.css" rel="stylesheet" type="text/css"> 
+        
+        @RenderSection("header", required: false)     
+                  
+    </head>
+    <body>
+        <div class="loading" id="loadingDiv">Cargando&#8230;</div>
+        <div class="header">
+            <a href="@Url.Action("Index", "Home") "><img src="~/Img/logo_me.jpg"></a>
+        </div>
+        @if (SessionHelper.IsAuthenticated)
+        {
+            @Html.Partial("_MenuTabs")
+        }
+
+        <div class="content">
+            @RenderBody()
+        </div>
+
+        <div class="footer">
+            <p>
+                @*Sistema de Seguimiento de Planes de Mejora INET - Ministerio de Educación de la Nación Argentina - Saavedra 789 C1229ACE - Teléfono (011) 4129-2000 - @INET.Web.ApplicationInformation.ExecutingAssamblyCopyright. <br />Todos los derechos reservados. Contacto Soporte: <a href="mailto:ingresoseguimientoymonitoreodeplanesdemejora@inet.edu.ar">ingresoseguimientoymonitoreodeplanesdemejora@inet.edu.ar</a>
+                Versi&oacute;n @INET.Web.ApplicationInformation.ExecutingAssemblyVersion de @INET.Web.ApplicationInformation.CompileDate*@
+            </p>
+        </div>
+
+        <ul class="vakata-context"></ul>
+        <div id="jstree-marker" style="display: none;">&nbsp;</div>
+
+        <!-- JS -->
+        <script type="text/javascript" src="~/scripts/lib/jquery-1.10.2.min.js?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion"></script>
+        <script type="text/javascript" src="~/scripts/lib/jquery-ui-1.10.3.custom.js?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion"></script>
+        <script type="text/javascript" src="~/scripts/lib/jquery.dataTables.min.js?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion"></script>
+        <script type="text/javascript" src="~/scripts/lib/jquery.mask.min.js?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion"></script>
+        <script type="text/javascript" src="~/scripts/lib/jquery.nicescroll.js?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion"></script>
+        <script type="text/javascript" src="~/scripts/js/inet-general.js?v=@INET.Web.ApplicationInformation.ExecutingAssemblyVersion"></script>
+        <script>
+            var BaseSiteURL = '@System.Web.Configuration.WebConfigurationManager.AppSettings["SiteURL"]';
+        </script>
+
+        @RenderSection("scripts", required: false)
+        <script>
+            $(window).ready(function () {
+                hideLoading();
+            });
+            function showLoading() {
+                $('#loadingDiv').stop().css('display', 'block').fadeTo('fast', 1);
+            };
+            function hideLoading() {
+                $('#loadingDiv').stop().fadeTo('fast', 0, function () {
+                    $(this).css('display', 'none');
+                });
+            };
+            $(function () {
+                $('#list').dataTable({
+                    "bPaginate": true,
+                    "bLengthChange": false,
+                    "bFilter": true,
+                    "bSort": true,
+                    "bInfo": true,
+                    "bAutoWidth": false,
+                    "pageLength": 20,
+                    "aoColumnDefs": [{
+                        "bSearchable": false, "aTargets": [0]
+                    }]
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,438 @@
+﻿@model INET.Services.DTO.ImprovementPlanDetailsDTO
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Enums
+@using INET.Core.Constants
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts {
+    <script type="text/ecmascript">
+        $(document).ready(function () {
+            var tabId = getURLParameterValue("tabId");
+            if (tabId != "") {
+                $("#solicitados-detail").tabs("option", "active", tabId);
+            }
+        })
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/globalize")
+    @Scripts.Render("~/scripts/lib/jquery.numericInput.min.js")
+    @Scripts.Render("~/scripts/lib/tinymce/tinymce.min.js")
+    @Scripts.Render("~/scripts/js/details.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+    @Scripts.Render("~/scripts/js/dictumsActions.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+    @Scripts.Render("~/scripts/js/dictumsDetails.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<input type="hidden" id="planId" name="planId" value="@Model.Id" />
+
+<input type="hidden" id="canReadSolComments" value="@(SessionHelper.HasPermission(PermissionConstants.Solicitudes.COMMENTS_READ) ? "1" : "0")" />
+<input type="hidden" id="canWriteSolComments" value="@(SessionHelper.HasPermission(PermissionConstants.Solicitudes.COMMENTS_WRITE) ? "1" : "0")" />
+
+<input type="hidden" id="canReadSolIncidents" value="@(SessionHelper.HasPermission(PermissionConstants.Solicitudes.INCIDENTS_READ) ? "1" : "0")" />
+<input type="hidden" id="canWriteSolIncidents" value="@(SessionHelper.HasPermission(PermissionConstants.Solicitudes.INCIDENTS_WRITE) ? "1" : "0")" />
+
+<div class="search">
+    <ul class="tabs" style="z-index: 100;">
+        <a href="@Url.Action("List")"><li class="back" title="Volver"></li></a>
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.EDIT, Model.StatusId))
+        {
+            <a href="@Url.Action("Editor", new { id = Model.Id })"><li class="edit" title="Editar"></li></a>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.CHANGE_STATUS, Model.StatusId))
+        {
+            <li class="change-plan-status" title="Modificar estado"></li>
+        }
+        <a href="@Url.Action("ExportImprovementPlansToPDF", "Plan", new { improvementPlanId = Model.Id })"><li class="pdf" title="Generar PDF"></li></a>
+        @if (Model.StatusId == (int)StageStatusEnum.EnEvaluacion && SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.ASSIGN_EVALUATOR))
+        {
+            <li class="evaluator" title="Asignar Evaluador" id="evaluator"></li>
+        }
+        <li class="timeline" title="Línea de tiempo de modificaciones" id="timeline"></li>
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.DELETE, Model.StatusId))
+        {
+            <li class="delete" title="Eliminar" id="delete"></li>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.BLOCK, Model.StatusId))
+        {
+            <li class="block" title="Anular Plan" id="plan-block"></li>
+        }
+
+        @if (SessionHelper.HasPermission(PermissionConstants.Solicitudes.CREATE, Model.StatusId))
+        {
+            <li class="import" title="Importar planilla de solicitados" id="import"></li>
+        }
+
+        <a href="@Url.Action("ExportSolicitudes", "Plan", new { improvementPlanId = Model.Id })"><li class="export" title="Exportar lista de solicitados"></li></a>
+    </ul>
+</div>
+<div class="plan-container hidden">
+    <div id="msg-plan"></div>
+
+    <div id="plan-detail">
+        <ul>
+            <li><a href="#tabs-1">Detalle del Plan</a></li>
+        </ul>
+        <div id="tabs-1">
+            <p><span class="celeste">Tipo de plan:</span> @Model.ImprovementPlanType<p>
+            <p><span class="celeste">NUMERO:</span> @Model.Identifier</p>
+            <p><span class="celeste">CUE:</span> @Model.CUE</p>
+            <p><span class="celeste">Fecha de presentación:</span> @Model.ReceptionDate.ToString("dd/MM/yyyy")</p>
+            <p><span class="celeste">Ciclo lectivo:</span> @Model.SchoolYear</p>
+            <p><span class="celeste">Eje:</span> @Model.Field</p>
+            <p><span class="celeste">Evaluador:</span> <span id="evaluator_text">@Model.User</span></p>
+            <p><span class="celeste">Estado:</span> @Model.Status</p>
+            <p><span class="celeste">Extiende a:</span> @Model.ParentIdentifier</p>
+            @if (Model.Institution != null)
+            {
+                <p><span class="celeste">Nombre:</span> @Model.Institution.Name</p>
+                <p><span class="celeste">Provincia:</span> @Model.Institution.Province</p>
+                <p><span class="celeste">Departamento:</span> @Model.Institution.Department</p>
+                <p><span class="celeste">Localidad:</span> @Model.Institution.Locality</p>
+                <p><span class="celeste">Orientación:</span> @Model.Institution.Orientation</p>
+                <p><span class="celeste">Tipo:</span> @Model.Institution.Type</p>
+                <p><span class="celeste">Activo:</span> @Model.Institution.Active</p>
+                <p><span class="celeste">Ámbito:</span> @Model.Institution.Ambit</p>
+                <p><span class="celeste">Dependencia:</span> @Model.Institution.Dependence</p>
+                <p><span class="celeste">Especializaciones:</span> @Model.Institution.Specializations</p>
+            }
+            <p>
+                <span class="celeste">Justificación pedagógica:</span> @if (@Model.DocumentationURL != null)
+                {
+                    <a href="~/annex/@Model.DocumentationURL" target="_blank">@Path.GetFileName(Model.DocumentationURL)</a>
+                }
+                else
+                {
+                    <em>- no enviado -</em>
+                }
+            <p>
+                <span class="celeste">Información adicional:</span> @if (@Model.AttachmentURL != null)
+                {
+                    <a href="~/annex/@Model.AttachmentURL" target="_blank">@Path.GetFileName(Model.AttachmentURL)</a>
+                }
+                else
+                {
+                    <em>- no enviado -</em>
+                }
+            </p>
+        </div>
+    </div>
+    <div id="solicitados-detail">
+        <ul>
+            <li><a href="#tabs-1">Resumen</a></li>
+            <li><a href="#tabs-2">Documentos</a></li>
+            <li><a href="#tabs-3">Solicitados</a></li>
+            @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.INCIDENTS_READ))
+            {
+                <li><a href="#tabs-4">Incidencias</a></li>
+            }
+            @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.COMMENTS_READ))
+            {
+                <li><a href="#tabs-5">Comentarios</a></li>
+            }
+        </ul>
+        <div id="tabs-1" class="" style="padding-top: 5px;">
+            <div class="scrollable">
+                <div type="button" class="div-button toogleFullView" role="button" aria-disabled="false">Cambiar vista</div>
+                <p>@Model.Summary</p>
+                <div id="summary-wrapper">
+                    @Html.Partial("_Summary", Model.Solicitudes)
+                </div>
+
+                @if (SessionHelper.HasPermission(PermissionConstants.Solicitudes.FILE_NUMBER) && Model.Solicitudes.Count > 0 && Model.StatusId == (int)StageStatusEnum.EnEvaluacion)
+                {
+                    <div class="nro-expediente" style="width:270px; margin-top:10px;">Guardar Números de Expediente</div>
+                }
+            </div>
+        </div>
+        <div id="tabs-2" class="">
+            <div class="scrollable" style="margin-top: 5px;">
+                @if (ImprovementPlanPermissions.Dictums.CanCreate(Model.Id))
+                {
+                    <div class="nuevo-dictamen" id="nuevo-dictamen">Nuevo Dictamen</div>
+                }
+            </div>
+            <div class="documents-wrapper">
+                @Html.Partial("_DocumentsList", Model.Documents)
+            </div>
+        </div>
+        <div id="tabs-3" class="" style="padding-top: 5px;">
+            <div class="tab-loading" id="tabLoadingDiv">Cargando&#8230;</div>
+            <div class="scrollable">
+                @if (ImprovementPlanPermissions.Solicitudes.CanCreate(Model.Id))
+                {
+                    <div class="nuevo-solicitado" id="nuevo-solicitado">Cargar Solicitado</div>
+                }
+                <div class="solicitudes">
+                    @Html.Partial("_SolicitudesAjax", Model.Solicitudes)
+                </div>
+                @if (Model.Solicitudes.Count > 0)
+                {
+                    <div class="common-actions">
+                        @if ((Model.StatusId == (int)StageStatusEnum.EnEvaluacion && SessionHelper.HasPermission(PermissionConstants.Solicitudes.EDIT, (int)StageStatusEnum.EnEvaluacion)) || SessionHelper.HasPermission(PermissionConstants.Solicitudes.DELETE, Model.StatusId))
+                        {
+                            <span>Seleccionar: <a href="#" class="select-all-solicitude">Todos</a>, <a href="#" class="select-none-solicitude">Ninguno</a>.</span>
+                            <span>Acciones:<a href="#" class="mod-selected-solicitudes">Modificar seleccionados</a></span>
+                        }
+                        @if (ImprovementPlanPermissions.CanBulkAprove(Model.StatusId, Model.EvaluatorId))
+                        {
+                            <span>, </span><a href="#" id="update_solicitados">Importar planilla de Aprobación</a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.INCIDENTS_READ))
+        {
+            <div id="tabs-4" class="">
+                <div class="scrollable" style="margin-top: 5px;">
+                    @if (ImprovementPlanPermissions.Incidences.CanCreate(Model.Id))
+                    {
+                        <div class="nueva-incidencia">Nueva incidencia</div>
+                    }
+                    <div class="incidences">@Html.Partial("_Incidences", Model.Incidences)</div>
+                </div>
+            </div>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.COMMENTS_READ))
+        {
+            <div id="tabs-5" class="">
+                <div class="scrollable" style="margin-top: 5px;">
+                    @if (ImprovementPlanPermissions.Comments.CanCreate(Model.Id))
+                    {
+                        <div class="nuevo-comentario improvementPlan-comment">Nuevo Comentario</div>
+                    }
+
+                    <ul class="comments">@Html.Partial("_Comments", Model.ImprovementPlanComments)</ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div id="solicitudes-group-actions" title="Acciones Grupales de Solicitados" class="modal hidden">
+    <div id="msg-solicitudes-group-actions"></div>
+    <p>Seleccione la operación a realizar sobre los solicitados seleccionados</p>
+    <div>
+
+        @if (Model.StatusId == (int)StageStatusEnum.EnEvaluacion && SessionHelper.HasPermission(PermissionConstants.Solicitudes.EDIT, (int)StageStatusEnum.EnEvaluacion))
+        {
+            <button id="process-solicitudes-group">En Proceso</button>
+            <button id="approve-solicitudes-group">Aprobar</button>
+            <button id="reject-solicitudes-group">Rechazar</button>
+        }
+        @if (SessionHelper.HasPermission(PermissionConstants.Solicitudes.DELETE, Model.StatusId))
+        {
+            <button id="delete-solicitudes-group">Eliminar</button>
+        }
+    </div>
+    <p><b>Importante:</b> Para aprobar solicitados en grupo los mismos deben estar correctamente cargados, de faltar datos necesarios o requeridos no se modificará el estado de los mismos.</p>
+</div>
+<div id="new-incidence" title="Nueva Incidencia" class="modal hidden">
+    <div id="msg-incidence"></div>
+    <form id="frmIncidence">
+        @Html.Label("Asunto:", new { @class = "label" })
+        @Html.DropDownListFor(x => x.IncidenceDTO.IncidenceTypeId, new SelectList(Model.IncidenceDTO.IncidencesTypes, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+
+        @Html.Label("Detalle:", new { @class = "label" })
+        @Html.TextAreaFor(x => x.IncidenceDTO.Details, new { @class = "textarea bigger", maxLength = "2000" })
+    </form>
+</div>
+<div id="update_solicitados_box" title="Importar planilla de Aprobación de solicitados" class="hidden">
+    <div id="msg-import-updates"></div>
+    <p><b>Importante</b>: Debe utilizar la planilla de solicitados generada por el sistema. Solo columnas de cantidad y precio unit. aprobado serán actualizadas). Solo los solicitados a ser modificados deben ser incluidos.</p>
+    <p>Selecciones el archivo Excel (.xls o .xlsx) actualizado:</p>
+    <p>
+        @using (Html.BeginForm("ImportSolicitudesApprovals", "Plan", FormMethod.Post, new { id = "frmImportSolicitudesUpdates", enctype = "multipart/form-data" }))
+        {
+            <input type="file" id="file_update" name="file_update" accept="*.xlsx" required="required" />
+            <input type="hidden" id="planId" name="planId" value="@Model.Id" />
+        }
+    </p>
+</div>
+
+<div id="new-solicitation" title="Nuevo Solicitado" class="modal hidden">
+    <div id="msg-solicitude"></div>
+    <form id="frmSolicitude">
+        <div class="left half">
+            @Html.Label("CUE que afecta:", new { @class = "label second" })
+            @Html.Label("Nro de Expediente:", new { @class = "label second", style = "margin-left:4px;" })
+
+            @Html.TextBoxFor(x => x.SolicitudeDTO.CUE, new { @class = "input second", maxLength = "9" })
+            @Html.TextBoxFor(x => x.SolicitudeDTO.FileNumber, new { @class = "input second", maxLength = "50", disabled = "disabled", style = "margin-left:4px;" })
+
+            @Html.Label("Detalle:", new { @class = "label" })
+            @Html.TextAreaFor(x => x.SolicitudeDTO.Details, new { @class = "textarea", style = "height: 210px", maxLength = "2000" })
+
+            @Html.Label("Línea:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.SolicitudeDTO.LineId, new SelectList(Model.SolicitudeDTO.Lines, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+
+            @Html.Label("Tipo de gasto:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.SolicitudeDTO.ExpenditureTypeId, new SelectList(Model.SolicitudeDTO.ExpedureTypes, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+        </div>
+        <div class="right half">
+            @Html.Label("Especialización:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.SolicitudeDTO.Specialization, new SelectList(Model.SolicitudeDTO.Specializations, "Key", "Value"), "Seleccionar...", new { @class = "input" })
+
+            @Html.Label("Tipo:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.SolicitudeDTO.SolicitudeTypeId, new SelectList(Model.SolicitudeDTO.SolicitudesTypes, "Id", "Description"), null, new { @class = "input" })
+
+            @Html.Label("Reasignado de:", new { @class = "label" })
+            @Html.TextBoxFor(x => x.SolicitudeDTO.Reassigned, new { @class = "input select-reassigned-tb" })
+            <div class="div-button select-reassigned">...</div>
+
+            @Html.Label("Estado:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.SolicitudeDTO.StatusId, new SelectList(Model.SolicitudeDTO.Status, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+
+            @Html.Label("Unidad de Medida:", new { @class = "label" })
+            @Html.DropDownListFor(x => x.SolicitudeDTO.MeasurementUnitId, new SelectList(Model.SolicitudeDTO.MeasurementUnits, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+
+            @Html.Label("Pedido:", new { @class = "label" })
+            @Html.Label("Cantidad:", new { @class = "label third" })
+            @Html.Label("Precio unitario:", new { @class = "label third" })
+            @Html.Label("Precio total", new { @class = "label third" })
+
+            @Html.TextBoxFor(x => x.SolicitudeDTO.RequestedAmount, new { @class = "third input requestedAmount" })
+            @Html.TextBoxFor(x => x.SolicitudeDTO.RequestedPriceUnit, new { @class = "third input requestedAmount priceUnit" })
+            @Html.TextBoxFor(x => x.SolicitudeDTO.RequestedTotal, new { @class = "third input totalAmount", disabled = "disabled" })
+
+            @Html.Label("Aprobado", new { @class = "label" })
+            @Html.Label("Cantidad:", new { @class = "label third" })
+            @Html.Label("Precio unitario:", new { @class = "label third" })
+            @Html.Label("Precio total", new { @class = "label third" })
+
+            @Html.TextBoxFor(x => x.SolicitudeDTO.ApprovedAmount, new { @class = "third input approvedAmount" })
+            @Html.TextBoxFor(x => x.SolicitudeDTO.ApprovedPriceUnit, new { @class = "third input approvedAmount priceUnit" })
+            @Html.TextBoxFor(x => x.SolicitudeDTO.ApprovedTotal, new { @class = "third input totalAmount", disabled = "disabled" })
+        </div>
+
+        @Html.HiddenFor(x => Model.Id)
+        @Html.HiddenFor(x => Model.SchoolYearId)
+        @Html.HiddenFor(x => x.CUE)
+        @Html.HiddenFor(x => x.Field)
+        @Html.HiddenFor(x => x.Identifier)
+        @Html.HiddenFor(x => x.ImprovementPlanType)
+        @Html.HiddenFor(x => x.SolicitudeDTO.SolicitudeId)
+        @Html.Hidden("ReassignedTotal")
+        @Html.Hidden("OriginalSolicitudeCUE")
+        @Html.Hidden("OriginalStatusId", Model.StatusId)
+        @Html.Hidden("UserRole", Roles.GetRolesForUser().First())
+    </form>
+</div>
+
+<div id="solicitudes-to-reassign" title="Reasignación de Solicitados" class="hidden">
+    <div id="msg-reassign"></div>
+    <p>Por favor, seleccione el solicitado del cual desea reasignar fondos</p>
+    <table id="list-reassignedSolicitudes" class="list2" cellpadding="0" cellspacing="1">
+        <thead>
+            <tr>
+                <td></td>
+                <td>Id</td>
+                <td>Detalles</td>
+                <td>Disposición</td>
+                <td>Total Aprobado</td>
+                <td>Total Reasignado</td>
+                <td>Total Disponible</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>
+<div id="view-timeline" title="Línea de tiempo" class="modal hidden">
+    <p class="celeste">Última modificación:</p>
+    <p></p>
+    <p class="celeste">Modificaciones anteriores:</p>
+    <p></p>
+</div>
+<div id="new-comment" title="Nuevo Comentario" class="modal hidden">
+    <form id="frmComments">
+        <div id="msg-comment"></div>
+        <label class="label">Comentario</label>
+        <textarea id="CommentText" name="CommentText" class="textarea" maxlength="4000" required></textarea>
+        @if (SessionHelper.HasAnyRole(new string[] { RoleConstants.EVALUADOR, RoleConstants.COORDINADOR_EJE, RoleConstants.ADMIN }))
+        {
+            <div id="include-in-dictum">
+                <input type="checkbox" id="chkIncludeDictum" name="chkIncludeDictum" class="checkbox" />
+                <label>Incluir en el dictamen como observación</label>
+            </div>
+        }
+    </form>
+</div>
+<div id="delete-confirm" title="Eliminar" class="hidden">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span class="delete-text">¿Desea borrar el Plan de Mejora ID?</span></p>
+</div>
+
+<div id="block-confirm-plan" title="Anular Plan" class="hidden">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea anular el plan?</p>
+</div>
+
+<div id="delete-confirm-solicitude" title="Eliminar" class="hidden">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea borrar el solicitado seleccionado?</p>
+</div>
+
+<div id="block-confirm-solicitude" title="Anular Solicitud" class="hidden">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea anular el solicitado seleccionado?</p>
+</div>
+
+<div id="change-confirm" title="Cerrar Incidencia" class="hidden">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea cerrar esta incidencia?</p>
+</div>
+
+<div id="view-solicitudes-comments" title="Comentarios" class="hidden">
+    <ul class="comments"></ul>
+</div>
+
+<div id="view-solicitudes-incidences" title="Incidencias" class="hidden">
+    <div id="msg-solicitude-incidences"></div>
+    <div class="solicitude-incidences"></div>
+</div>
+@if (Model.StatusId == (int)StageStatusEnum.EnEvaluacion && SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.ASSIGN_EVALUATOR))
+{
+    <div id="evaluator-dialog" title="Evaluadores" class="hidden">
+        <div id="msg-evaluators"></div>
+        <form id="frmEvaluators">
+            <label class="label">Evaluador</label>
+            @{ Html.EnableClientValidation(false); }
+            @Html.DropDownListFor(x => x.EvaluatorId, new SelectList(Model.Evaluators.OrderBy(y => y.FullName), "UserId", "FullName"), "- Sin evaluador -", new { @class = " chosen-select" })
+            @{ Html.EnableClientValidation(true); }
+        </form>
+    </div>
+}
+@if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.CHANGE_STATUS, Model.StatusId))
+{
+    <div id="change-plan-status" title="Modificar Estado" class="hidden">
+        <div id="msg-plan-status"></div>
+        <form id="frmPlanStatus">
+            <label class="label">Estado</label>
+            @Html.DropDownListFor(x => x.StatusId, new SelectList(Model.AvailableStatus, "Id", "Description"), "Seleccionar...", new { required = "required" })
+        </form>
+    </div>
+}
+@if (SessionHelper.HasPermission(PermissionConstants.Solicitudes.CREATE, Model.StatusId))
+{
+    <div id="import-spread" title="Importar planilla de solicitados" class="hidden">
+        <div id="msg-import"></div>
+        <p>Seleccione el archivo Excel (.xls o .xlsx) que desea cargar para importa de manera automática los solicitados asociados al plan:</p>
+        <p>
+            @using (Html.BeginForm("ImportSolicitudes", "Plan", FormMethod.Post, new { id = "frmImportSolicitudes", enctype = "multipart/form-data" }))
+        {
+            <input type="file" id="file" name="file" accept="*.xlsx" required="required" />
+            <input type="hidden" id="planId" name="planId" value="@Model.Id" />
+    }
+        </p>
+        <p><b>Formatos soportados</b></p>
+        <ul>
+            <li>Planilla de sistema (<a href="~/Content/planillas/PLANILLA_CARGA_SOLICITADOS.20181101-04.xlsx">descargar aquí</a>)</li>
+            @if (Model.StatusId == (int)StageStatusEnum.EnIngreso) {
+            <li style="margin-top: .4rem;">Planilla de jurisdicciones (<a href="~/Content/planillas/PLAN_MEJORA.xlsx">referencia del documento</a>)<br /><em>DISPONIBLE SOLO PARA PLANES EN INGRESO</em></li>
+            }
+        </ul>
+    </div>
+}
+@Html.Partial("_MessageResult")
+@Html.Partial("_Preview")
+@Html.Partial("_DictumDialogs", Model.DocumentDTO.DictumDTO)

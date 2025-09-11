@@ -1,0 +1,11 @@
+﻿@using INET.Core.Enums
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Constants
+
+    <img src="~/Img/icons/icon-alert.png" data-solicitudeId="@Model.Id" class="solicitude-action-incidence actionLink left" title="Agregar Incidencia" />
+
+    @if (Model.Incidences.Count > 0)
+    {
+    <a href="#" class="link-comment solicitude-view-incidences left" data-solicitudeId="@Model.Id">@Model.Incidences.Count</a>
+    }

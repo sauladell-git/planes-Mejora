@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChangePassword_Error" xml:space="preserve">
+    <value>El password es incorrecto o el nuevo password no es válido.</value>
+  </data>
+  <data name="FileNumbers_Are_Repeated" xml:space="preserve">
+    <value>Hay uno o mas numeros de expediente repetidos.</value>
+  </data>
+  <data name="ChangePassword_Success" xml:space="preserve">
+    <value>Se modificó la contraseña con éxito.</value>
+  </data>
+  <data name="CUE_NotValidCUE" xml:space="preserve">
+    <value>El CUE ingresado no es válido.</value>
+  </data>
+  <data name="ImprovementPlan_Save" xml:space="preserve">
+    <value>El plan de mejora {0} se guardó con éxito.</value>
+  </data>
+  <data name="Incidences_Save_Error" xml:space="preserve">
+    <value>No es posible guardar la incidencia debido a que la misma no es válida.</value>
+  </data>
+  <data name="Incidences_Save_Success" xml:space="preserve">
+    <value>La incidencia se guardó con éxito.</value>
+  </data>
+  <data name="Solicitudes_Delete_IncidencesRelated" xml:space="preserve">
+    <value>No es posible eliminar el solicitado debido a que tiene incidencias relacionadas</value>
+  </data>
+  <data name="Solicitudes_Delete_Success" xml:space="preserve">
+    <value>El solicitado se eliminó con éxito.</value>
+  </data>
+  <data name="Solicitudes_Save_Error" xml:space="preserve">
+    <value>No es posible guardar el solicitado debido a que el mismo no es válido.</value>
+  </data>
+  <data name="Solicitudes_Save_Success" xml:space="preserve">
+    <value>El solicitado se guardó con éxito.</value>
+  </data>
+  <data name="Users_UserAlreadyExist" xml:space="preserve">
+    <value>El usuario {0} ya existe en el sistema.</value>
+  </data>
+  <data name="Users_Error" xml:space="preserve">
+    <value>Los datos ingresados no son válidos.</value>
+  </data>
+  <data name="InvalidModel" xml:space="preserve">
+    <value>Los datos ingresados no son válidos</value>
+  </data>
+  <data name="Login_InvalidLogin" xml:space="preserve">
+    <value>El nombre de usuario o la contraseña ingresada no son válidas</value>
+  </data>
+  <data name="Users_CantDeleteUser" xml:space="preserve">
+    <value>No es posible eliminar el usuario debido a que el mismo ya ha utilizado el sistema o es el usuario con el que se encuentra logueado.</value>
+  </data>
+  <data name="Users_Delete_Success" xml:space="preserve">
+    <value>El usuario se eliminó con éxito.</value>
+  </data>
+  <data name="Users_Save_Success" xml:space="preserve">
+    <value>El usuario se guardó con éxito.</value>
+  </data>
+  <data name="ImprovementPlan_Delete" xml:space="preserve">
+    <value>El plan {0} se eliminó con éxito.</value>
+  </data>
+  <data name="ImprovementPlan_CantChangeType" xml:space="preserve">
+    <value>No se puede cambiar el Tipo de Plan ya que tiene Solicitados asociados al mismo.</value>
+  </data>
+  <data name="ForgotPassword_Sucess" xml:space="preserve">
+    <value>Se le ha enviado un email con las instrucciones para cambiar su contraseña.</value>
+  </data>
+  <data name="ForgotPassword_Error" xml:space="preserve">
+    <value>El mail ingresado no pertenece a un usuario registrado en el sistema</value>
+  </data>
+  <data name="ResetPassword_Error" xml:space="preserve">
+    <value>No fue posible cambiar su contraseña. Verifique que los datos ingresados sean válidos y que no haya caducado el período de tiempo válido para cambiar su contraseña</value>
+  </data>
+  <data name="ChangeStatus_Error" xml:space="preserve">
+    <value>Ocurrió un error al intentar modificar el estado. Es posible que otro usuario haya modificado el estado antes que usted o que falte información en los registros para continuar.</value>
+  </data>
+  <data name="ChangeStatus_Success" xml:space="preserve">
+    <value>Se modificó el estado con éxito.</value>
+  </data>
+  <data name="CUE_CannotChangeCUE" xml:space="preserve">
+    <value>No es posible modificar el CUE debido a que ya existen solicitados asociados al plan.</value>
+  </data>
+  <data name="Template_Error" xml:space="preserve">
+    <value>Ocurrió un error al intentar guardar la plantilla</value>
+  </data>
+  <data name="Templates_Delete_Success" xml:space="preserve">
+    <value>Se eliminó la plantilla con éxito</value>
+  </data>
+  <data name="Template_Delete_Error" xml:space="preserve">
+    <value>No es posible eliminar la plantilla seleccionada.</value>
+  </data>
+  <data name="Templates_Save_Success" xml:space="preserve">
+    <value>La plantilla se guardó con éxito.</value>
+  </data>
+  <data name="Import_Solicitudes_Error" xml:space="preserve">
+    <value>Ocurrió el siguiente error al intentar importar los solicitados: {0}</value>
+  </data>
+  <data name="Import_Solicitudes_Success" xml:space="preserve">
+    <value>Se importaron los solicitados con éxito.</value>
+  </data>
+  <data name="Templates_NotValid" xml:space="preserve">
+    <value>El template no es válido. Asegúrese de que contenga las pabras clave [CUERPO] y [FIRMA] (cuando corresponda).</value>
+  </data>
+  <data name="Resolution_Save_Error" xml:space="preserve">
+    <value>Ocurrió un error al guardar la disposición</value>
+  </data>
+  <data name="Resolution_Save_Success" xml:space="preserve">
+    <value>La disposición se guardó con éxito</value>
+  </data>
+  <data name="ImprovementPlan_Delete_Error" xml:space="preserve">
+    <value>No es posible eliminar el plan {0}.</value>
+  </data>
+  <data name="ImprovementPlan_Block_Error" xml:space="preserve">
+    <value>Ocurrió un error al querer anular el plan.</value>
+  </data>
+  <data name="ImprovementPlan_Block_Success" xml:space="preserve">
+    <value>El plan se anuló con éxito.</value>
+  </data>
+  <data name="ChangeStatusNoSolicitudes_Error" xml:space="preserve">
+    <value>Ocurrió un error al intentar modificar el estado. No se registran solicitados en el plan.</value>
+  </data>
+  <data name="ChangeStatusNoAttachment_Error" xml:space="preserve">
+    <value>Para poder continuar debe cargar un adjunto al plan con la documentación correspondiente.</value>
+  </data>
+  <data name="ImprovementPlan_DocumentationRequired" xml:space="preserve">
+    <value>Debe cargar el XLS del PLan ingresado.</value>
+  </data>
+  <data name="CUE_FieldNotValid" xml:space="preserve">
+    <value>El Eje seleccionado no es válido para el CUE ingresado.</value>
+  </data>
+  <data name="CUE_LineNotValid" xml:space="preserve">
+    <value>La Línea seleccionada no es válido para el CUE ingresado.</value>
+  </data>
+  <data name="CUE_NotValidPlanTypeForCUE" xml:space="preserve">
+    <value>El tipo de plan no es válido para el CUE.</value>
+  </data>
+  <data name="ImprovementPlan_NotExists" xml:space="preserve">
+    <value>El ID de plan solicitado no existe.</value>
+  </data>
+  <data name="ImprovementPlan_InvalidUserField" xml:space="preserve">
+    <value>El Eje no es válido para el usuario.</value>
+  </data>
+  <data name="ImprovementPlan_InvalidUserProvince" xml:space="preserve">
+    <value>El CUE no pertenece a una provincia del usuario.</value>
+  </data>
+  <data name="ImprovementPlan_NoPermissions" xml:space="preserve">
+    <value>No posee permisos para poder visualizar el plan.</value>
+  </data>
+  <data name="ImprovementPlan_NoSolicitudesSelected" xml:space="preserve">
+    <value>Debe seleccionar uno o más solicitados a modificar.</value>
+  </data>
+  <data name="ImprovementPlan_SolicitudeActionResult" xml:space="preserve">
+    <value>Se {0} {1} de {2} solicitados.</value>
+  </data>
+  <data name="Forbiden" xml:space="preserve">
+    <value>Acceso no permitido</value>
+  </data>
+  <data name="ReportsBuildError" xml:space="preserve">
+    <value>No se puede generar el reporte</value>
+  </data>
+  <data name="Roles_Error" xml:space="preserve">
+    <value>No se pudo actualizar el Rol y sus permisos</value>
+  </data>
+  <data name="Roles_Save_Success" xml:space="preserve">
+    <value>El rol se actualizó con éxito.</value>
+  </data>
+  <data name="Roles_Invalid" xml:space="preserve">
+    <value>Los datos ingresados no son válidos.</value>
+  </data>
+</root>

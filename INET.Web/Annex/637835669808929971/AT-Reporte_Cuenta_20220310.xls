@@ -1,0 +1,43 @@
+<div>
+	<table cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvExportCuenta" style="width:661px;border-collapse:collapse;">
+		<tr>
+			<th scope="col">ID</th><th scope="col">carg por</th><th scope="col">Datos Cliente</th><th scope="col">Fecha</th><th scope="col">Tipo</th><th scope="col">Comentario</th><th scope="col">Monto</th><th scope="col">Forma de Pago</th><th scope="col">Saldo</th>
+		</tr><tr>
+			<td>97730</td><td>claudia</td><td>
+                             <span id="gvExportCuenta_ctl08_lblCliente">GARBINI "LA CASA DE LAS CAMAS"-PELLEGRINI 1231</span>
+                               </td><td>08/03/2022</td><td>
+                             <span id="gvExportCuenta_ctl08_lblTipoMovimiento">Factura</span>
+                               </td><td>Factura A-Nro:28585-Monto : $33360,16- Monto R :$27570,38-//</td><td>
+                             <span id="gvExportCuenta_ctl08_lblMonto" style="color:Red;">60930,54</span>
+                               </td><td>
+                             <span id="gvExportCuenta_ctl08_lblFormaPago"></span>
+                               </td><td>
+                             <span id="gvExportCuenta_ctl08_lblSaldo" style="color:Red;">117933,51</span>
+                               </td>
+		</tr><tr>
+			<td>97737</td><td>claudia</td><td>
+                             <span id="gvExportCuenta_ctl09_lblCliente">GARBINI "LA CASA DE LAS CAMAS"-PELLEGRINI 1231</span>
+                               </td><td>09/03/2022</td><td>
+                             <span id="gvExportCuenta_ctl09_lblTipoMovimiento">Factura</span>
+                               </td><td>Nota Credito A-Nro:1074-Monto : $-33360,16- Monto R :$-27570,38</td><td>
+                             <span id="gvExportCuenta_ctl09_lblMonto" style="color:Green;">60930,54</span>
+                               </td><td>
+                             <span id="gvExportCuenta_ctl09_lblFormaPago"></span>
+                               </td><td>
+                             <span id="gvExportCuenta_ctl09_lblSaldo" style="color:Red;">57002,97</span>
+                               </td>
+		</tr><tr>
+			<td>97738</td><td>claudia</td><td>
+                             <span id="gvExportCuenta_ctl10_lblCliente">GARBINI "LA CASA DE LAS CAMAS"-PELLEGRINI 1231</span>
+                               </td><td>09/03/2022</td><td>
+                             <span id="gvExportCuenta_ctl10_lblTipoMovimiento">Factura</span>
+                               </td><td>Factura A-Nro:28588-Monto : $31760,06- Monto R :$26247,98-//</td><td>
+                             <span id="gvExportCuenta_ctl10_lblMonto" style="color:Red;">58008,04</span>
+                               </td><td>
+                             <span id="gvExportCuenta_ctl10_lblFormaPago"></span>
+                               </td><td>
+                             <span id="gvExportCuenta_ctl10_lblSaldo" style="color:Red;">115011,01</span>
+                               </td>
+		</tr>
+	</table>
+</div>

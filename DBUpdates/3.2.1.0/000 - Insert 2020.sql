@@ -1,0 +1,1 @@
+insert into SchoolYears (Active, Cycle, Description) values (1, 2020, 2020);

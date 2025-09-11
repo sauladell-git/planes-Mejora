@@ -1,0 +1,32 @@
+﻿@model List<INET.Data.ImprovementPlan>
+@using INET.Core.Enums
+@using INET.Utils.Helpers
+@using INET.Services
+
+<div class="table-float">      
+    <div id="msg-list"></div>    
+    <table cellpadding="0" cellspacing="1" class="list" id="list-plans">        
+        <thead>
+            <tr>
+                <td width="90px" valign="middle">Acciones</td>
+                <td>Descripción</td>
+                <td>Tipo</td>
+                <td>CUE</td>
+                <td>Nro. Expedientes</td>
+                <td>Ciclo</td>
+                <td>Eje</td>
+                <td>Solicitados</td>
+                <td>Evaluador</td>
+                <td><img src="~/img/icons/icon-comment.png" title="Comentarios" /></td>
+                <td><img src="~/img/icons/icon-alert.png" title="Incidencias" /></td>
+                <td>Estado (Plan)</td>
+                <td>Estado (Solicitados)</td>
+            </tr>
+        </thead>
+        <tbody>        
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>

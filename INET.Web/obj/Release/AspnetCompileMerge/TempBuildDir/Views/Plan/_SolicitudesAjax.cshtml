@@ -1,0 +1,42 @@
+﻿@using INET.Core.Enums
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+@using INET.Core.Constants
+@{
+    var showSolicitudesByCUE = Model.Count > 0 ? Model[0].ImprovementPlan.ImprovementPlanTypeId == ImprovementPlanTypeEnum.Jurisdiccional.ToInt() : false;
+    var planId = Model.Count > 0 ? Model[0].ImprovementPlanId : 0;
+}
+<form id="frmSolicitudesGroup" action="@Url.Action("UpdateSolicitudes")" method="post">
+    <table cellpadding="0" cellspacing="1" class="list2" id="listSolicitados">
+        <thead>
+            <tr>
+                <td width="110px" valign="middle">Acciones</td>
+                <td width="30px" valign="middle"></td>
+                <td>ID</td>
+                @if (showSolicitudesByCUE)
+                {
+                    <td class="show-cue-col">CUE</td>
+                }
+                <td>Línea</td>
+                <td>Expediente</td>
+                <td>Estado</td>
+                <td>Detalle</td>
+                <td>Reasignado</td>
+                <td>
+                    <img src="~/Img/icons/icon-comment.png" title="Comentarios" />
+                </td>
+                <td>
+                    <img src="~/Img/icons/icon-alert.png" title="Incidencias" />
+                </td>
+                <td>Pedido</td>
+                <td>Aprobado</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+    <input name="planId" type="hidden" value="@planId" />
+    <input name="action" id="solicitude_group_action" type="hidden" value="" />
+</form>

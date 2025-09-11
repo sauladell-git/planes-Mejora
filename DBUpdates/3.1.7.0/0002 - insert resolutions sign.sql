@@ -1,0 +1,1 @@
+  insert into [webpages_Permissions]([PermissionName],[PermissionCode]) values ('Disposiciones - Firmar','RESOLUTIONS_SIGN');

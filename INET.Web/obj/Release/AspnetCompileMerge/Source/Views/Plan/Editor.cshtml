@@ -1,0 +1,109 @@
+﻿@model INET.Services.DTO.ImprovementPlanEditorDTO
+@using INET.Utils.Helpers
+@using INET.Core.Constants
+@{
+    ViewBag.Title = (Model.Id == 0)
+                        ? "Agregar Plan de Mejora"
+                        : "Editar Plan de Mejora";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/globalize")
+    @Scripts.Render("~/scripts/js/editor.js?v=" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+<div id="main_plan_detail_block">
+    <div class="search">
+        <ul class="tabs">
+            <a href="@Url.Action("List", "Plan")">
+                <li class="back" title="Volver"></li>
+            </a>
+
+            @if (Model.Id > 0 && SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.DELETE,Model.StatusId))
+            {
+                <li class="delete" title="Eliminar" id="delete"></li>
+            }
+        </ul>
+    </div>
+
+    @using (Html.BeginForm("Editor", "Plan", FormMethod.Post, new { id = "frmEditor", enctype = "multipart/form-data" }))
+    {
+        <div class="plan-container scroll">
+            <div id="msg-plan"></div>
+            <div id="plan-detail">
+                <ul>
+                    <li><a href="#tabs-1">Detalle del Plan</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="add-new-plan">
+                        @Html.Label("Tipo de plan:", new { @class = "label" })
+                        @Html.DropDownListFor(x => x.ImprovementPlanTypeId, new SelectList(Model.ImprovementPlansTypes, "Id", "Description"), "Seleccionar...", new { @class = "input", @dataReadstatus = Roles.IsUserInRole(INET.Core.Constants.RoleConstants.OPERADOR_PROVINCIAL) ? "readonly" : "" })
+
+                        @Html.Label("Ciclo Lectivo:", new { @class = "label" })
+                        @Html.DropDownListFor(x => x.SchoolYearId, new SelectList(Model.SchoolYears, "Id", "Description"), new { @class = "input", @dataReadstatus = Roles.IsUserInRole(INET.Core.Constants.RoleConstants.OPERADOR_PROVINCIAL) ? "readonly" : "" })
+
+                        @Html.Label("CUE:", new { @class = "label" })
+                        @Html.TextBoxFor(x => x.CUE, new { @class = "input", maxLength = "9" })
+
+                        @Html.Label("Fecha de Presentación:", new { @class = "label" })
+                        @Html.DropDownListFor(x => x.ReceptionDateDay, new SelectList(Model.Days, "Key", "Value"), "Día", new { @class = "input date" })
+                        @Html.DropDownListFor(x => x.ReceptionDateMonth, new SelectList(Model.Months, "Key", "Value"), "Mes", new { @class = "input date" })
+                        @Html.DropDownListFor(x => x.ReceptionDateYear, new SelectList(Model.Years, "Key", "Value"), "Año", new { @class = "input date year", style = "width: auto;" })
+                        @Html.TextBox("opencal", "", new { title = "Abrir Calendario" })
+                        
+                        <div class="clear"></div>
+
+                        @Html.Label("Eje:", new { @class = "label" })
+                        @Html.DropDownListFor(x => x.FieldId, new SelectList(Model.Fields, "Id", "Description"), "Seleccionar...", new { @class = "input" })
+                    </div>
+                </div>
+            </div>
+            <div id="solicitados-detail">
+                <ul>
+                    <li><a href="#tabs-2">Resumen del Plan</a></li>
+                </ul>
+                <div id="tabs-2">
+                    <div class="resumen">
+                        @Html.TextAreaFor(x => x.Summary, new { @class = "textarea", maxLength = "4000" })
+                        <br />
+                        <div style="margin-top: 20px;">
+                            <label class="label" for="_documentation:">@if(@Model.DocumentationURL == null) { <span>Agregar</span> } else { <span>Remplazar</span> } Justificación Pedagógica:</label>
+                            <input type="file" id="_documentation" name="_documentation" accept="*" />
+                            <div class="small">Hasta @INET.Web.ApplicationInformation.MaxRequestLengthMB MB.</div>
+                        </div>
+                        @if(@Model.DocumentationURL != null) { 
+                            <ul>
+                                <li>Justificación Pedagógica actual: <a href="~/annex/@Model.DocumentationURL" target="_blank">@Path.GetFileName(Model.DocumentationURL)</a></li>
+                            </ul>
+                        }
+                        <div style="margin-top: 20px;">
+                            <label class="label" for="_attachment:">@if(@Model.AttachmentURL == null) { <span>Agregar</span> } else { <span>Remplazar</span> } información adicional:</label>
+                            <input type="file" id="_attachment" name="_attachment" accept="*" />
+                            <div class="small">Hasta @INET.Web.ApplicationInformation.MaxRequestLengthMB MB.</div>
+                        </div>
+                        @if(@Model.AttachmentURL != null) { 
+                            <ul>
+                                <li>Información adicional actual: <a href="~/annex/@Model.AttachmentURL" target="_blank">@Path.GetFileName(Model.AttachmentURL)</a></li>
+                            </ul>
+                        }
+                        <div class="button">
+                            <input type="submit" value="Guardar" class="btn-save">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        @Html.HiddenFor(x => x.Id)
+        @Html.HiddenFor(x => x.ParentId)
+        @Html.HiddenFor(x => x.Identifier)
+    }
+
+    <div id="delete-confirm" title="Eliminar">
+        <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span><span class="delete-text">¿Desea borrar el Plan de Mejora ID?</span></p>
+    </div>
+
+    @Html.Partial("_MessageResult")
+</div>

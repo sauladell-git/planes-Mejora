@@ -1,0 +1,31 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    display: block;    
+    font-family: Arial, Helvetica, sans-serif;
+    repeat-header: yes;
+}
+html, body, p, table, td {
+    font-size: 12px;
+    text-align: justify;
+    repeat-header: yes;
+}
+p {
+    line-height: 26px;
+}
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+.signature {
+    width:200px;
+}
+
+.inet_mainTable {
+    width: 99%;
+    repeat-header: yes;
+}
+.center {
+    text-align:center !important;
+}

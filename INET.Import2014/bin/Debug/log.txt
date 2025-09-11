@@ -1,0 +1,1157 @@
+Comenzando...
+ > Abriendo archivo de planes: C:\Users\AgusQuiroga\Desktop\temp\corrientes\planilla.xlsx
+ > Verificando 52 filas
+Procesando fila 1: 
+ERROR: Fecha de recepción inválida: FECHA INGRESO
+Plan ignorado
+Procesando fila 2: 
+ERROR: Fecha de recepción inválida: 
+Plan ignorado
+Procesando fila 3: 
+ERROR: Fecha de recepción inválida: FECHA INGRESO
+Plan ignorado
+Procesando fila 4: 
+ > Importando solicitados desde el plan
+ > Linea: 3, Pedido: 1522156,2, Aprobado NI: 1522157, Aprobado I: , Expediente: 264/14
+Total Solicitados (1): 1522157
+Plan procesado
+ > Buscando: (.*)14012_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 264-14 RINET 10-14 Dictamen - 14012_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 5 hojas de datos
+ > Dictámen tipo: C
+ > Campo de plan en dictámen: I  “IGUALDAD DE OPORTUNIDADES”
+Dictámen procesado
+ > Buscando: (.*)14012_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES. CORRIENTES 1.522.157 - 14012_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 5: 
+ > Importando solicitados desde el plan
+ > Linea: 2, Pedido: 4790220, Aprobado NI: 4790220, Aprobado I: , Expediente: 312/14
+Total Solicitados (1): 4790220
+Plan procesado
+ > Buscando: (.*)14011_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 312-14 RM 182-14 Dictamen - 14011_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 3 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: I  “IGUALDAD DE OPORTUNIDADES”
+Dictámen procesado
+ > Buscando: (.*)14011_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RM CORRIENTES 4.790.220 - 14011_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 6: 
+ > Importando solicitados desde el plan
+ > Linea: 8, Pedido: 3826965,53, Aprobado NI: 1913663, Aprobado I: , Expediente: 376/14
+Total Solicitados (1): 1913663
+Plan procesado
+ > Buscando: (.*)14054_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 376-14 RINET 132-14 Dictamen - 14054_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 6 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: II "FORMACION DE FORMADORES, INICIAL Y CONTINUA"
+Dictámen procesado
+ > Buscando: (.*)14054_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES CORRIENTES 1.913.663 - 14054_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 7: 
+ > Importando solicitados desde el plan
+ > Linea: 8, Pedido: 3826965,53, Aprobado NI: 1913663, Aprobado I: , Expediente: 376/14
+Total Solicitados (1): 1913663
+Plan procesado
+ > Buscando: (.*)14054-B_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 376-14 RINET 938-14 Dictamen RECTIFICATORIO 14054 RM 132-14 -14054-B_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 5 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: II  “FORMACION DE FORMADORES, INICIAL Y CONTINUA”
+Dictámen procesado
+ > Buscando: (.*)14054-B_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES CORRIENTES 1.913.663 - 14054-B_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 8: 
+ > Importando solicitados desde el plan
+ > Linea: 9, Pedido: 605313, Aprobado NI: , Aprobado I: 605313, Expediente: 378/14
+Total Solicitados (1): 605313
+Plan procesado
+ > Buscando: (.*)14066_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 378-14 RINET 118-14 Dictamen - 14066_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 5 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: II  “FORMACION DE FORMADORES, INICIAL Y CONTINUA”
+Dictámen procesado
+ > Buscando: (.*)14066_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES CORRIENTES 605.313 - 14066_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 9: 
+ > Importando solicitados desde el plan
+ > Linea: 10, Pedido: 1672612, Aprobado NI: 1214847, Aprobado I: , Expediente: 377/14
+Total Solicitados (1): 1214847
+Plan procesado
+ > Buscando: (.*)14068_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 377-14 RINET 169-14 Dictamen 14068 RINET 169-14 -14068_14.xlsx
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 377-14 RINET 169-14 RINET 169-14 Dictamen - 14068_14.xlsx
+ > Se encontraron 2 dictámenes
+ERROR: Ignorando, se encontraron más de un dictámen (2)
+Error al procesar el dictámen
+Procesando fila 10: 
+ > Importando solicitados desde el plan
+ > Linea: 22, Pedido: 4113227, Aprobado NI: 4102560, Aprobado I: , Expediente: 413/14
+Total Solicitados (1): 4102560
+Plan procesado
+ > Buscando: (.*)14083_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 413-14 RM 262-14 Dictamen - 14083_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 8 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: IV  “PISO TECNOLÓGICOS - TIC´S”
+Dictámen procesado
+ > Buscando: (.*)14083_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RM. CORRIENTES 4.102.560 - 14083_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 11: 
+ > Importando solicitados desde el plan
+ > Linea: 20, Pedido: 115590,16, Aprobado NI: 115591, Aprobado I: , Expediente: 538/14
+Total Solicitados (1): 115591
+Plan procesado
+ > Buscando: (.*)14100_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 538-14 RINET 54-14 Dictamen - 14100_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 8 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: IV  “PISO TECNOLÓGICOS - TIC´S”
+Dictámen procesado
+ > Buscando: (.*)14100_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES CORRIENTES 115.591 - 14100_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 12: 
+ > Importando solicitados desde el plan
+ > Linea: 1, Pedido: 918272,8, Aprobado NI: 1428017, Aprobado I: , Expediente: 315/14
+Total Solicitados (1): 1428017
+Plan procesado
+ > Buscando: (.*)14114_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 315-14 RINET 51-14 Dictamen  - 14114_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 5 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: I  “IGUALDAD DE OPORTUNIDADES”
+Dictámen procesado
+ > Buscando: (.*)14114_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES. CORRIENTES 1.428.017 - 14114_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 13: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 394321,6, Aprobado NI: , Aprobado I: 365719, Expediente: 4643/14
+ > Linea: 16, Pedido: 51678,33, Aprobado NI: 51679, Aprobado I: , Expediente: 4643/14
+Total Solicitados (2): 417398
+Plan procesado
+ > Buscando: (.*)14326_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4643-14 RINET 245-14 Dictamen 14326 180140700 - 14326_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14326_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 417.398 - 14326_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 14: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1641664,86, Aprobado NI: 141453, Aprobado I: 638714, Expediente: 4632/14
+ > Linea: 13, Pedido: 196834, Aprobado NI: 196834, Aprobado I: , Expediente: 4632/14
+ > Linea: 14, Pedido: 23560, Aprobado NI: 23560, Aprobado I: , Expediente: 4632/14
+ > Linea: 15, Pedido: 212825,63, Aprobado NI: , Aprobado I: 138350, Expediente: 4632/14
+ > Linea: 16, Pedido: 63960, Aprobado NI: 63960, Aprobado I: , Expediente: 4632/14
+Total Solicitados (5): 1202871
+Plan procesado
+ > Buscando: (.*)14325_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4632-14 RINET 304-14 Dictamen 14325  180040300 - 14325_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14325_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 1.202.871 - 14325_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 15: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1686078,84, Aprobado NI: 253882, Aprobado I: 455278, Expediente: 4631/14
+ > Linea: 16, Pedido: 69760, Aprobado NI: , Aprobado I: 89169, Expediente: 4631/14
+Total Solicitados (2): 798329
+Plan procesado
+ > Buscando: (.*)14328_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4631-14 RINET 251-14 Dictamen 14328-2014 CUE 180141000 - 14328_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14328_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 798.329 - 14328_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 16: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1811386,92, Aprobado NI: 104504, Aprobado I: 384533, Expediente: 4642/14
+ > Linea: 15, Pedido: 90935, Aprobado NI: , Aprobado I: 44922, Expediente: 4642/14
+ > Linea: 16, Pedido: 255345, Aprobado NI: , Aprobado I: 61750, Expediente: 4642/14
+ > Linea: 17, Pedido: 1579956,75, Aprobado NI: , Aprobado I: , Expediente: 4642/14
+Total Solicitados (3): 595709
+Plan procesado
+ > Buscando: (.*)14327_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4642-14 RINET 294-14 Dictamen 14327-2014 CUE 180043100 - 14327_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14327_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 595.709 - 14327_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 17: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1746270,8, Aprobado NI: , Aprobado I: 771062, Expediente: 4630/14
+ > Linea: 12, Pedido: 500977,86, Aprobado NI: , Aprobado I: , Expediente: 4630/14
+ > Linea: 13, Pedido: 64687,81, Aprobado NI: , Aprobado I: , Expediente: 4630/14
+ > Linea: 15, Pedido: 58736,7, Aprobado NI: , Aprobado I: 34884, Expediente: 4630/14
+ > Linea: 16, Pedido: 107765,4, Aprobado NI: , Aprobado I: 97783, Expediente: 4630/14
+ > Linea: 17, Pedido: 49595,09, Aprobado NI: 49596, Aprobado I: , Expediente: 4630/14
+Total Solicitados (4): 953325
+Plan procesado
+ > Buscando: (.*)14329_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4630-14 RINET 309-14 Dictamen 14329 - 14329_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14329_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 953.325 - 14329_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 18: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 264638,45, Aprobado NI: 49524, Aprobado I: 43559, Expediente: 4432/14
+ > Linea: 14, Pedido: 43676,83, Aprobado NI: , Aprobado I: , Expediente: 4432/14
+ > Linea: 15, Pedido: 35700, Aprobado NI: , Aprobado I: 35700, Expediente: 4432/14
+ > Linea: 17, Pedido: 20117,58, Aprobado NI: 20118, Aprobado I: , Expediente: 4432/14
+Total Solicitados (3): 148901
+Plan procesado
+ > Buscando: (.*)14348_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4432 -14 RINET 331-14 Dictamen 14348-2014 CUE 180171900 - 14348_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14348_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 148.901 - 14348_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 19: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 274260,38, Aprobado NI: 26539, Aprobado I: 19596, Expediente: 4434/14
+ > Linea: 16, Pedido: , Aprobado NI: 120, Aprobado I: , Expediente: 4434/14
+Total Solicitados (1): 46135
+Plan procesado
+ > Buscando: (.*)14347_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4434 -14 RINET 346-14 Dictamen 14347-2014 CUE 180150300 - 14347_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14347_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 46.256 - 14347_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 20: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 21373,15, Aprobado NI: 6309, Aprobado I: 15065, Expediente: 4433/14
+ > Linea: 16, Pedido: 22250, Aprobado NI: 3750, Aprobado I: 18500, Expediente: 4433/14
+Total Solicitados (2): 43624
+Plan procesado
+ > Buscando: (.*)14346_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4433-14 RINET 328-14 Dictamen 14346 180156800 (2013) - 14346_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14346_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 43.624 - 14346_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 21: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1357745,19, Aprobado NI: 554583, Aprobado I: 484766, Expediente: 4436/14
+ > Linea: 15, Pedido: 38875,5, Aprobado NI: , Aprobado I: 19608, Expediente: 4436/14
+Total Solicitados (2): 1058957
+Plan procesado
+ > Buscando: (.*)14345_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expendiente 4436-14 RINET 292-14 Dictamen 14345  180145200-13 - 14345_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14345_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 1.058.957 - 14345_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 22: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 225721,93, Aprobado NI: 93319, Aprobado I: 125804, Expediente: 4442/14
+ > Linea: 14, Pedido: 25768,38, Aprobado NI: 25769, Aprobado I: , Expediente: 4442/14
+ > Linea: 15, Pedido: 25462, Aprobado NI: , Aprobado I: 25462, Expediente: 4442/14
+ > Linea: 16, Pedido: 33327, Aprobado NI: , Aprobado I: 33327, Expediente: 4442/14
+ > Linea: 17, Pedido: 53400, Aprobado NI: 53400, Aprobado I: , Expediente: 4442/14
+Total Solicitados (5): 357081
+Plan procesado
+ > Buscando: (.*)14344_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4442-14 RINET 244-14  Dictamen 14344-2014 CUE 180041700 - 14344_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14344_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 357.081- 14344_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 23: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 376808,35, Aprobado NI: 39090, Aprobado I: 201712, Expediente: 4430/14
+ > Linea: 15, Pedido: 74422,44, Aprobado NI: , Aprobado I: 63069, Expediente: 4430/14
+ > Linea: 16, Pedido: 85877,33, Aprobado NI: 70535, Aprobado I: , Expediente: 4430/14
+ > Linea: 17, Pedido: 56294,87, Aprobado NI: 56295, Aprobado I: , Expediente: 4430/14
+Total Solicitados (4): 430701
+Plan procesado
+ > Buscando: (.*)14343_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4430-14 RINET 352-14 Dictamen 14343-2014 CUE 180135000 - 14343_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14343_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 430.701 - 14343_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 24: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 15247,61, Aprobado NI: 13518, Aprobado I: 1730, Expediente: 4439/14
+ > Linea: 14, Pedido: 8566,4, Aprobado NI: 8567, Aprobado I: , Expediente: 4439/14
+ > Linea: 16, Pedido: 18652,05, Aprobado NI: 6450, Aprobado I: 12203, Expediente: 4439/14
+ > Linea: 17, Pedido: 41123,6, Aprobado NI: 41124, Aprobado I: , Expediente: 4439/14
+Total Solicitados (4): 83592
+Plan procesado
+ > Buscando: (.*)14342_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 4439-14 RINET 1698-14 Dictamen 14342 - 180165500 (2013) - 14342_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14342_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES 83.592 - 14342_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 25: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 383335,82, Aprobado NI: 5400, Aprobado I: 221278, Expediente: 4440/14
+ > Linea: 15, Pedido: 122207,55, Aprobado NI: , Aprobado I: 45486, Expediente: 4440/14
+Total Solicitados (2): 272164
+Plan procesado
+ > Buscando: (.*)14341_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4440-14 RINET 288-14 Dictamen 14341-2014 CUE_180073100_13 - 14341_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14341_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 272.164 - 14341_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 26: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 159701,41, Aprobado NI: 9381, Aprobado I: 150321, Expediente: 4257/14
+ > Linea: 14, Pedido: 15366,12, Aprobado NI: 15367, Aprobado I: , Expediente: 4257/14
+ > Linea: 15, Pedido: 73404, Aprobado NI: , Aprobado I: 73404, Expediente: 4257/14
+ > Linea: 16, Pedido: 128280, Aprobado NI: 128280, Aprobado I: , Expediente: 4257/14
+ > Linea: 17, Pedido: 644579,54, Aprobado NI: , Aprobado I: , Expediente: 4257/14
+Total Solicitados (4): 376753
+Plan procesado
+ > Buscando: (.*)14353_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4257-14 RINET 409-14 Dictamen 14353 180140200 (2013) - 14353_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14353_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 376.753 - 14353_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 27: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 268794,39, Aprobado NI: 9110, Aprobado I: 258195, Expediente: 4255/14
+Total Solicitados (1): 267305
+Plan procesado
+ > Buscando: (.*)14352_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\01.12.14 Expediente 4255-14 RINET 854-14 Dictamen - 14352_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14352_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES 267.305 - 14352_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 28: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 310075,47, Aprobado NI: 17791, Aprobado I: 255390, Expediente: 4254/14
+ > Linea: 12, Pedido: 3250, Aprobado NI: 3250, Aprobado I: , Expediente: 4254/14
+ > Linea: 13, Pedido: 105000, Aprobado NI: 105000, Aprobado I: , Expediente: 4254/14
+ > Linea: 14, Pedido: 14700, Aprobado NI: , Aprobado I: , Expediente: 4254/14
+ > Linea: 15, Pedido: 28155, Aprobado NI: , Aprobado I: 28155, Expediente: 4254/14
+ > Linea: 17, Pedido: 451819,06, Aprobado NI: , Aprobado I: , Expediente: 4254/14
+Total Solicitados (4): 409586
+Plan procesado
+ > Buscando: (.*)14351_14\.(xls|xlsm|xlsx)$
+ > Se encontraron 0 dictámenes
+ERROR: Ignorando, se encontraron más de un dictámen (0)
+Error al procesar el dictámen
+Procesando fila 29: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1036364,25, Aprobado NI: 297282, Aprobado I: 712249, Expediente: 4437/14
+ > Linea: 15, Pedido: 85143,6, Aprobado NI: , Aprobado I: 73691, Expediente: 4437/14
+ > Linea: 16, Pedido: 199228, Aprobado NI: 199228, Aprobado I: , Expediente: 4437/14
+ > Linea: 17, Pedido: 576885, Aprobado NI: , Aprobado I: , Expediente: 4437/14
+Total Solicitados (3): 1282450
+Plan procesado
+ > Buscando: (.*)14350_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4437-14 RINET 305-14 Dictamen 14350-2014 CUE 180139700 - 14350_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14350_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 1.282.450 - 14350_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 30: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 309433,29, Aprobado NI: 67298, Aprobado I: 87385, Expediente: 4258/14
+ > Linea: 15, Pedido: , Aprobado NI: , Aprobado I: 2731, Expediente: 4258/14
+ > Linea: 16, Pedido: , Aprobado NI: , Aprobado I: 21812, Expediente: 4258/14
+Total Solicitados (1): 154683
+Plan procesado
+ > Buscando: (.*)14349_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4258-14 RINET 301-14 Dictamen 14349-2014 CUE 180151500 - 14349_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14349_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 179.226 - 14349_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 31: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 152881,64, Aprobado NI: 5261, Aprobado I: 11498, Expediente: 4441/14
+ > Linea: 15, Pedido: 19859, Aprobado NI: , Aprobado I: 10059, Expediente: 4441/14
+ > Linea: 16, Pedido: , Aprobado NI: , Aprobado I: 74893, Expediente: 4441/14
+Total Solicitados (2): 26818
+Plan procesado
+ > Buscando: (.*)14362_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4441 - 14 RINET 323-14 Dictamen Nº 14362 - 14 - 14362_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14362_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 96.450 - 14362_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 32: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 40387,65, Aprobado NI: 40388, Aprobado I: , Expediente: 4426/14
+Total Solicitados (1): 40388
+Plan procesado
+ > Buscando: (.*)14361_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4426-14 RINET 358-14 Dictamen 14361-2014 CUE 180112001 - 14361_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 25 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14361_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 40.388 - 14361_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 33: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 510895,11, Aprobado NI: 48484, Aprobado I: 462412, Expediente: 4429/14
+ > Linea: 14, Pedido: 1242898,95, Aprobado NI: , Aprobado I: , Expediente: 4429/14
+ > Linea: 17, Pedido: 258956,12, Aprobado NI: , Aprobado I: , Expediente: 4429/14
+Total Solicitados (1): 510896
+Plan procesado
+ > Buscando: (.*)14360_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4429-14 RINET 308-14 Dictamen 14360-2014 CUE 180014200 - 14360_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14360_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 510.896 - 14360_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 34: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 148762,8, Aprobado NI: 39792, Aprobado I: 131947, Expediente: 4428/14
+ > Linea: 12, Pedido: 36416, Aprobado NI: , Aprobado I: , Expediente: 4428/14
+ > Linea: 13, Pedido: 291263, Aprobado NI: , Aprobado I: , Expediente: 4428/14
+ > Linea: 15, Pedido: 21969,79, Aprobado NI: , Aprobado I: 17806, Expediente: 4428/14
+ > Linea: 16, Pedido: 3716, Aprobado NI: 13440, Aprobado I: 3716, Expediente: 4428/14
+ > Linea: 17, Pedido: 159780, Aprobado NI: , Aprobado I: , Expediente: 4428/14
+Total Solicitados (3): 206701
+Plan procesado
+ > Buscando: (.*)14359_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4428-14 RINET 295-14 Dictamen 14359-2014 CUE 180146200 - 14359_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14359_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 206.701 - 14359_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 35: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 149674, Aprobado NI: , Aprobado I: 66694, Expediente: 4435/14
+ > Linea: 15, Pedido: 49881, Aprobado NI: , Aprobado I: 25844, Expediente: 4435/14
+ > Linea: 16, Pedido: 18970, Aprobado NI: , Aprobado I: 18970, Expediente: 4435/14
+Total Solicitados (3): 111508
+Plan procesado
+ > Buscando: (.*)14356_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4435-14 RINET 423-14 Dictamen 14356-13 CUE 180141901 - 14356_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14356_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 111.508 - 14356_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 36: 
+ERROR: CUE inválido según WS de registro: 180014900
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 326635,85, Aprobado NI: 36574, Aprobado I: 130577, Expediente: 4427/14
+ > Linea: 15, Pedido: 65722,2, Aprobado NI: , Aprobado I: 24486, Expediente: 4427/14
+ > Linea: 16, Pedido: 8948, Aprobado NI: 7368, Aprobado I: , Expediente: 4427/14
+ > Linea: 17, Pedido: 266927,25, Aprobado NI: , Aprobado I: , Expediente: 4427/14
+Total Solicitados (3): 199005
+Plan procesado
+ > Buscando: (.*)14355_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\11.03.15 Expediente 4427-14 RINET 334-14 Dictamen 14355-2014 CUE 180142900 - 14355_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14355_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 199.005 - 14355_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 37: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 75504,82, Aprobado NI: 23658, Aprobado I: 51848, Expediente: 4256/14
+Total Solicitados (1): 75506
+Plan procesado
+ > Buscando: (.*)14354_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4256-14 RINET 344-14 Dictamen 14354 180053200 (2013) - 14354_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14354_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES.CORRIENTES - Institucional 75.506 - 14354_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 38: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 112254, Aprobado NI: 88904, Aprobado I: 23350, Expediente: 4253/14
+ > Linea: 15, Pedido: 16463, Aprobado NI: , Aprobado I: , Expediente: 4253/14
+ > Linea: 16, Pedido: , Aprobado NI: 15337, Aprobado I: 1126, Expediente: 4253/14
+Total Solicitados (1): 112254
+Plan procesado
+ > Buscando: (.*)14405_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 4253-14 RINET 549-14 Dictamen 14405-14 CUE Nº 180083900-13 - 14405_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)14405_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES. CORRIENTES 128.717 - 14405_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 39: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 421147, Aprobado NI: , Aprobado I: 361630, Expediente: 16096/14
+ > Linea: 14, Pedido: 15077,29, Aprobado NI: 15078, Aprobado I: , Expediente: 16096/14
+ > Linea: 16, Pedido: 14970, Aprobado NI: 14970, Aprobado I: , Expediente: 16096/14
+Total Solicitados (3): 391678
+Plan procesado
+ > Buscando: (.*)16049_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\Expediente 16096-14 RINET 1794-14 Dictamen 16049-2014 CUE 180157300 - 16049_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)16049_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES. CORRIENTES 391.678 - 16049_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 40: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 3041799,36, Aprobado NI: 424670, Aprobado I: 503831, Expediente: 16088/14
+ > Linea: 15, Pedido: 119291, Aprobado NI: , Aprobado I: 49365, Expediente: 16088/14
+ > Linea: 16, Pedido: 2011449, Aprobado NI: , Aprobado I: 308805, Expediente: 16088/14
+ > Linea: 17, Pedido: 953341, Aprobado NI: , Aprobado I: , Expediente: 16088/14
+Total Solicitados (3): 1286671
+Plan procesado
+ > Buscando: (.*)15942_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16088-14  RINET 1920-14 Dictamen 15942 CUE 180169500 - 15942_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15942_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES - Institucional 1.286.671 - 15942_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 41: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 528246,55, Aprobado NI: 126134, Aprobado I: 164503, Expediente: 16100/14
+ > Linea: 13, Pedido: 28000, Aprobado NI: , Aprobado I: , Expediente: 16100/14
+ > Linea: 15, Pedido: 5169, Aprobado NI: , Aprobado I: 5169, Expediente: 16100/14
+ > Linea: 16, Pedido: 85850, Aprobado NI: 85850, Aprobado I: 1031, Expediente: 16100/14
+Total Solicitados (3): 382687
+Plan procesado
+ > Buscando: (.*)15460_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\01.12.14 Expediente 16100-14 RINET 945-14 Dictamen - 15460_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15460_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES - Institucional 382.687 - 15460_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 42: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 1176842,39, Aprobado NI: 182975, Aprobado I: 515785, Expediente: 16101/14
+ > Linea: 15, Pedido: 4370, Aprobado NI: , Aprobado I: 4370, Expediente: 16101/14
+ > Linea: 16, Pedido: 535646, Aprobado NI: 21885, Aprobado I: 94800, Expediente: 16101/14
+ > Linea: 17, Pedido: 1990364,61, Aprobado NI: , Aprobado I: , Expediente: 16101/14
+Total Solicitados (3): 819815
+Plan procesado
+ > Buscando: (.*)15967_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16101-14 RINET 1489-14 Dictamen 15967-2014 CUE 180140400 - 15967_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15967_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES 819.815 - 15967_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 43: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 386793,03, Aprobado NI: 67747, Aprobado I: 316546, Expediente: 16102/14
+ > Linea: 15, Pedido: 12516, Aprobado NI: , Aprobado I: 12516, Expediente: 16102/14
+ > Linea: 16, Pedido: 127544,3, Aprobado NI: 126527, Aprobado I: 3519, Expediente: 16102/14
+Total Solicitados (3): 526855
+Plan procesado
+ > Buscando: (.*)15437_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16102-14 RINET 1462-14 Dictamen 15437-2014 CUE 180168800 - 15437_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15437_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES 526.855 - 15437_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 44: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 809493,25, Aprobado NI: 181722, Aprobado I: 609363, Expediente: 16103/14
+ > Linea: 12, Pedido: 7051,12, Aprobado NI: 7052, Aprobado I: , Expediente: 16103/14
+ > Linea: 13, Pedido: 56887, Aprobado NI: 56888, Aprobado I: , Expediente: 16103/14
+ > Linea: 14, Pedido: 133311, Aprobado NI: , Aprobado I: , Expediente: 16103/14
+ > Linea: 15, Pedido: 95022, Aprobado NI: , Aprobado I: 49606, Expediente: 16103/14
+ > Linea: 17, Pedido: 69999,96, Aprobado NI: , Aprobado I: , Expediente: 16103/14
+Total Solicitados (4): 904631
+Plan procesado
+ > Buscando: (.*)15453_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16103-14 RINET 1430-14 Dictamen 15453- 2014 CUE 180083200 - 15453_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15453_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES. CORRIENTES 904.631 - 15453_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 45: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 707094,36, Aprobado NI: 121160, Aprobado I: 236750, Expediente: 16104/14
+ > Linea: 15, Pedido: 36147, Aprobado NI: , Aprobado I: 34137, Expediente: 16104/14
+ > Linea: 16, Pedido: , Aprobado NI: , Aprobado I: 966, Expediente: 16104/14
+Total Solicitados (2): 392047
+Plan procesado
+ > Buscando: (.*)15459_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\12.03.15 Expediente 16104-14 Dictamen 15459-2014 CUE 180098400 - 15459_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15459_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES - Institucional 393.013 - 15459_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 46: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 159111,44, Aprobado NI: 82820, Aprobado I: 71041, Expediente: 16105/14
+Total Solicitados (1): 153861
+Plan procesado
+ > Buscando: (.*)15438_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16105-14  RINET 1215-14 Dictamen 15438-2014 CUE 180053200 - 15438_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15438_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES 153.861 - 15438_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 47: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 115603,48, Aprobado NI: 138653, Aprobado I: 11632, Expediente: 16106/14
+Total Solicitados (1): 150285
+Plan procesado
+ > Buscando: (.*)15439_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16106-14 RINET 1262-14 Dictamen 15439-2014 CUE 180112001 - 15439_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15439_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES - Institucional 150.285 - 15439_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 48: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 308206, Aprobado NI: 19072, Aprobado I: 99134, Expediente: 16107/14
+Total Solicitados (1): 118206
+Plan procesado
+ > Buscando: (.*)15424_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16107-14 RINET 1707-14Dictamen 15424  180031000 - 15424_14 - 15424_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15424_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES - Institucional 118.206 - 15424_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 49: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 910430,93, Aprobado NI: 125378, Aprobado I: 447856, Expediente: 16108/14
+ > Linea: 15, Pedido: 37024, Aprobado NI: , Aprobado I: , Expediente: 16108/14
+ > Linea: 16, Pedido: 108178, Aprobado NI: , Aprobado I: , Expediente: 16108/14
+ > Linea: 17, Pedido: 1145448,25, Aprobado NI: , Aprobado I: , Expediente: 16108/14
+Total Solicitados (1): 573234
+Plan procesado
+ > Buscando: (.*)15440_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16108-14 RINET 1522-14 Dictamen 15440-2014 CUE 180142500  - 15440_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15440_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES 573.234 - 15440_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 50: 
+ > Importando solicitados desde el plan
+ > Linea: 11, Pedido: 32509,2, Aprobado NI: 2773, Aprobado I: 29737, Expediente: 16110/14
+ > Linea: 12, Pedido: 63827, Aprobado NI: , Aprobado I: , Expediente: 16110/14
+ > Linea: 13, Pedido: 78000, Aprobado NI: 78000, Aprobado I: , Expediente: 16110/14
+ > Linea: 16, Pedido: , Aprobado NI: , Aprobado I: 38450, Expediente: 16110/14
+Total Solicitados (2): 110510
+Plan procesado
+ > Buscando: (.*)15425_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\26.01.15 Expediente 16110-14 RINET 1625-14  Dictamen 15425-2014 CUE 180165000 - 15425_14.xlsm
+ > Se encontraron 1 dictámenes
+ > Dictámen con 27 hojas de datos
+ > Dictámen tipo: A
+ > Campo de plan en dictámen: CAMPO PROGRAMÁTICO N° III - ENTORNOS FORMATIVOS -
+Dictámen procesado
+ > Buscando: (.*)15425_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES - Institucional 148.960 - 15425_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 51: 
+ > Importando solicitados desde el plan
+ > Linea: 1, Pedido: 141081, Aprobado NI: 141081, Aprobado I: , Expediente: 315/14
+Total Solicitados (1): 141081
+Plan procesado
+ > Buscando: (.*)14684_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 Expediente 315-14 RINET 700-14 Dictamen - 14684_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 6 hojas de datos
+ > Dictámen tipo: B
+ > Campo de plan en dictámen: I  “IGUALDAD DE OPORTUNIDADES”
+Dictámen procesado
+ > Buscando: (.*)14684_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\RES. CORRIENTES COMPLEMENTARIO 141.081 - OLIMPIADAS - 14684_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+Procesando fila 52: 
+ > Importando solicitados desde el plan
+ > Linea: 3, Pedido: 115344, Aprobado NI: 115344, Aprobado I: , Expediente: 264/14
+Total Solicitados (1): 115344
+Plan procesado
+ > Buscando: (.*)15226_14\.(xls|xlsm|xlsx)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Dictamenes xls\19.11.14 COMPLEMENTARIO Expediente 264-14 RINET 717-14 Dictamen - 15226_14.xlsx
+ > Se encontraron 1 dictámenes
+ > Dictámen con 5 hojas de datos
+ > Dictámen tipo: C
+ > Campo de plan en dictámen: I  “IGUALDAD DE OPORTUNIDADES”
+Dictámen procesado
+ > Buscando: (.*)15226_14\.(doc|docx|pdf)$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Resoluciones word\CORRIENTES  115.344 -15226_14.doc
+Se encontraron 1 resoluciones
+Plan guardado
+ > Documento importado: feeb1ce1f4123fc88e5b7fc591d824e0.xlsx
+ > Documento importado: afbf3cb8d881bdc2e46d8da5ee8a9f22.doc
+ > Buscando: (.*)14012_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\CORRIENTES 1.522.157 I -14012_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: afbf3cb8d881bdc2e46d8da5ee8a9f22.pdf
+ > Documento importado: 798e785dca839297094a6d6d79c11970.xlsx
+ > Documento importado: de3079a1963a26d2eef3837d35c3b53d.doc
+ > Buscando: (.*)14011_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\RM CORRIENTES 4.790.220 - 14011_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: de3079a1963a26d2eef3837d35c3b53d.pdf
+ > Documento importado: 75ef6f5e400bff448ce6d25d5a35f32b.xlsx
+ > Documento importado: 557c421186d721e240c615c8cc5d2526.doc
+ > Buscando: (.*)14054_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\RES CORRIENTES 1.913.663 - 14054_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: 557c421186d721e240c615c8cc5d2526.pdf
+ > Documento importado: 2caecc058e82aed9385003578cf2fc17.xlsx
+ > Documento importado: 7f33128edd78c7054060ec9188b88c76.doc
+ > Buscando: (.*)14054-B_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\CORRIENTES 1.913.663 - 14054-B_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: 7f33128edd78c7054060ec9188b88c76.pdf
+ > Documento importado: 5ea00a9dc6d19c67d10acc9428711730.xlsx
+ > Documento importado: 0d04f26becc8111c2397052f4f200a2d.doc
+ > Buscando: (.*)14066_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\RES CORRIENTES 605.313 - 14066_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: 0d04f26becc8111c2397052f4f200a2d.pdf
+ > Documento importado: c91dc8218a0fa6cc5c0007d9c4ed4a95.xlsx
+ > Documento importado: ae9dcbe5b7922e2b036fd7e12194c280.doc
+ > Buscando: (.*)14083_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\RM. CORRIENTES 4.102.560 - 14083_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: ae9dcbe5b7922e2b036fd7e12194c280.pdf
+ > Documento importado: 7fd06044b1fabb2aeb412ac33e8abccf.xlsx
+ > Documento importado: 26b0f5f936139993117b773360a9778a.doc
+ > Buscando: (.*)14100_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\RES CORRIENTES 115.591 - 14100_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: 26b0f5f936139993117b773360a9778a.pdf
+ > Documento importado: 971260b741ac62eb86afa350cb7aace0.xlsx
+ > Documento importado: 861a2bce74e45c4ca82ac6fb25e3e3c6.doc
+ > Buscando: (.*)14114_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\RES. CORRIENTES 1.428.017 - 14114_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: 861a2bce74e45c4ca82ac6fb25e3e3c6.pdf
+ > Documento importado: d059993f984061c76a3bd3ef9dca3931.xlsm
+ > Documento importado: 12be525ffdbc8ffcd8c6e17a307056fe.doc
+ > Buscando: (.*)14326_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14326_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 12be525ffdbc8ffcd8c6e17a307056fe.rar
+ > Documento importado: 996078934bc1946947ea4d92a3e49e04.xlsm
+ > Documento importado: e8590773500c68cff79d28997a96e961.doc
+ > Buscando: (.*)14325_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14325_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: e8590773500c68cff79d28997a96e961.rar
+ > Documento importado: a9c3b90d110002392960eb6845c79d4e.xlsm
+ > Documento importado: 32989e133dd6debb60c59bbf2ce7845f.doc
+ > Buscando: (.*)14328_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14328_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 32989e133dd6debb60c59bbf2ce7845f.rar
+ > Documento importado: b74ff411e6f0a2489bb1c663555d79d4.xlsm
+ > Documento importado: 59d12f79ae125894998fdc1162ff3b87.doc
+ > Buscando: (.*)14327_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14327_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 59d12f79ae125894998fdc1162ff3b87.rar
+ > Documento importado: e54e6030ac6668c9221337b7e2501b2e.xlsm
+ > Documento importado: e3f5190d8eaa2d606a71f803f2b2fe3b.doc
+ > Buscando: (.*)14329_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14329_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: e3f5190d8eaa2d606a71f803f2b2fe3b.rar
+ > Documento importado: 82118f3622c1b3d6b8cef05115b76a87.xlsm
+ > Documento importado: 5177ab2d452a44a8e89bd6eae3f89bdb.doc
+ > Buscando: (.*)14348_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14348_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 5177ab2d452a44a8e89bd6eae3f89bdb.rar
+ > Documento importado: 33bd514528048c5e1b6a67fc435c2edd.xlsm
+ > Documento importado: 609f1555036f1e1de588a91932c0e18e.doc
+ > Buscando: (.*)14347_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14347_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 609f1555036f1e1de588a91932c0e18e.rar
+ > Documento importado: 0c3507e341ae617b869a57fb4f319269.xlsm
+ > Documento importado: ddbe89891ceb31d1654cdc30ef2b654d.doc
+ > Buscando: (.*)14346_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14346_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: ddbe89891ceb31d1654cdc30ef2b654d.rar
+ > Documento importado: d1ace1562aaa3a1b72b17d5710242d2a.xlsm
+ > Documento importado: 6eb2e83058d299f4895f194a41ab2fc3.doc
+ > Buscando: (.*)14345_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14345_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 6eb2e83058d299f4895f194a41ab2fc3.rar
+ > Documento importado: ffdf4f2c10d27831745d7564738ebba9.xlsm
+ > Documento importado: 96924fd8e77c75553acafbf9b69e0e68.doc
+ > Buscando: (.*)14344_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14344_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 96924fd8e77c75553acafbf9b69e0e68.rar
+ > Documento importado: 425b709684be154493607b0de4d6b027.xlsm
+ > Documento importado: d019ff0f57e87c693076f6cff35dbaf0.doc
+ > Buscando: (.*)14343_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14343_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: d019ff0f57e87c693076f6cff35dbaf0.rar
+ > Documento importado: c382b125e2eea67ce3495ca878fb17d9.xlsm
+ > Documento importado: 511c8f80d85bdf99d0b148547a229793.doc
+ > Buscando: (.*)14342_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14342_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 511c8f80d85bdf99d0b148547a229793.rar
+ > Documento importado: ce1b674e5fb964f4e9c69806c479ba6f.xlsm
+ > Documento importado: 7539380de7bae5d23fc6fa01ae92945b.doc
+ > Buscando: (.*)14341_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14341_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 7539380de7bae5d23fc6fa01ae92945b.rar
+ > Documento importado: 028f37aed9ea2208a23224697d3687f1.xlsm
+ > Documento importado: 40a2ed4bf9c82079e0adcb6a4c80b900.doc
+ > Buscando: (.*)14353_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14353_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 40a2ed4bf9c82079e0adcb6a4c80b900.rar
+ > Documento importado: cab4f78882c5219e63654abfff39a260.xlsm
+ > Documento importado: aa2a5ea5b3ee87c7c292c9367b6e5103.doc
+ > Buscando: (.*)14352_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14352_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: aa2a5ea5b3ee87c7c292c9367b6e5103.rar
+ > Documento importado: 4ff2c617e798dd87b1e6aa373d03afb0.xlsm
+ > Documento importado: dc1919e7cc9538622f618ae35e334dfa.doc
+ > Buscando: (.*)14350_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14350_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: dc1919e7cc9538622f618ae35e334dfa.rar
+ > Documento importado: 3a24369ff406b3e84c91c5269df5de41.xlsm
+ > Documento importado: 2a2c03b63c77c20b91504735d16de0f7.doc
+ > Buscando: (.*)14349_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14349_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 2a2c03b63c77c20b91504735d16de0f7.rar
+ > Documento importado: 1fe7f22d3227c78d2a8fa710b44d6d64.xlsm
+ > Documento importado: 606cf83420704aef590325ca3ca48e9b.doc
+ > Buscando: (.*)14362_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14362_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 606cf83420704aef590325ca3ca48e9b.rar
+ > Documento importado: b5b59e464235f8a46af89c92ce56778c.xlsm
+ > Documento importado: ce225109644ce74290dc26234d5bd1e1.doc
+ > Buscando: (.*)14361_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14361_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: ce225109644ce74290dc26234d5bd1e1.rar
+ > Documento importado: 2a7a4079594f9739fe730594be861cff.xlsm
+ > Documento importado: 9f8f4dddcb0cd92d95fe6e88dca720ba.doc
+ > Buscando: (.*)14360_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos  - 14360_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 9f8f4dddcb0cd92d95fe6e88dca720ba.rar
+ > Documento importado: 00014dd645146292974ac7f68f8e3b2a.xlsm
+ > Documento importado: ec5d0012186dc104e13a1d6af9d23883.doc
+ > Buscando: (.*)14359_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14359_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: ec5d0012186dc104e13a1d6af9d23883.rar
+ > Documento importado: 900e912cc7949cd4465b12aa29cec7cf.xlsm
+ > Documento importado: c2bdffbeee02e72c7ea66117f3208455.doc
+ > Buscando: (.*)14356_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14356_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: c2bdffbeee02e72c7ea66117f3208455.rar
+ > Documento importado: 89c3c314e1fe4758fa17e74f16067dc4.xlsm
+ > Documento importado: 08ef01452058d223efcefc2efdcca93b.doc
+ > Buscando: (.*)14355_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14355_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 08ef01452058d223efcefc2efdcca93b.rar
+ > Documento importado: 004418322f5d57393f92dbb94e083e01.xlsm
+ > Documento importado: 824979d8ba8297218dfb79cd77aa4aa2.doc
+ > Buscando: (.*)14354_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14354_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 824979d8ba8297218dfb79cd77aa4aa2.rar
+ > Documento importado: 4862b2f7cecb6540972ca6d065258355.xlsm
+ > Documento importado: 91376245ef772487388843e16e980111.doc
+ > Buscando: (.*)14405_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 14405_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 91376245ef772487388843e16e980111.rar
+ > Documento importado: 97dd7626c7ecb02a512c9f5a2c2bd573.xlsm
+ > Documento importado: fe863967c424f923646148200a62b807.doc
+ > Buscando: (.*)16049_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 16049_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: fe863967c424f923646148200a62b807.rar
+ > Documento importado: 1004809d59f62cdaf45d52e89dcc9e39.xlsm
+ > Documento importado: 7fef7195825319deed40f0015db9e8cd.doc
+ > Buscando: (.*)15942_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15942_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 7fef7195825319deed40f0015db9e8cd.rar
+ > Documento importado: bfa28fc7eebf610dff2bdbdae02d0256.xlsm
+ > Documento importado: fa9c32171f17facad4661ef7a0587bc3.doc
+ > Buscando: (.*)15460_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15460_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: fa9c32171f17facad4661ef7a0587bc3.rar
+ > Documento importado: 4c09db965b43f787082b2ac79e96d986.xlsm
+ > Documento importado: 86bb620a43c4fd58c036c8b60e4a4385.doc
+ > Buscando: (.*)15967_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15967_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 86bb620a43c4fd58c036c8b60e4a4385.rar
+ > Documento importado: 5bb901fb3e27997083d3229b9a0256d0.xlsm
+ > Documento importado: 35b320b89df04c40c709aaacea924f4e.doc
+ > Buscando: (.*)15437_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15437_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 35b320b89df04c40c709aaacea924f4e.rar
+ > Documento importado: 869963baa7810d1db647fad12c6339f6.xlsm
+ > Documento importado: ae8cc89c76a9d4e3e77b0b3599c98b9c.doc
+ > Buscando: (.*)15453_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15453_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: ae8cc89c76a9d4e3e77b0b3599c98b9c.rar
+ > Documento importado: 6733ac99ea0ac95fb350fd459cd0220a.xlsm
+ > Documento importado: 7ef877dc201531e40ca0e8cb65d36be9.doc
+ > Buscando: (.*)15459_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15459_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 7ef877dc201531e40ca0e8cb65d36be9.rar
+ > Documento importado: 703ceb7ac74e38bb05faefef4813fa79.xlsm
+ > Documento importado: 1a8f621d711b1c24f69d0e1a3e477f69.doc
+ > Buscando: (.*)15438_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15438_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 1a8f621d711b1c24f69d0e1a3e477f69.rar
+ > Documento importado: a36fdd913fea403e55df1b55bfa63ab1.xlsm
+ > Documento importado: 8760295004d965aa91d7bebe7b90b06f.doc
+ > Buscando: (.*)15439_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15439_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 8760295004d965aa91d7bebe7b90b06f.rar
+ > Documento importado: 5cf2e269de0f1475357cddb60727f2f0.xlsm
+ > Documento importado: 04820fbc749eb2512c16b4d27c4eebaa.doc
+ > Buscando: (.*)15424_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15424_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 04820fbc749eb2512c16b4d27c4eebaa.rar
+ > Documento importado: 7cf17f9b41ff61129a96c51fb522e2f7.xlsm
+ > Documento importado: 7755c823f9f495ec7ea83bcff5112b9e.doc
+ > Buscando: (.*)15440_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15440_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: 7755c823f9f495ec7ea83bcff5112b9e.rar
+ > Documento importado: 04e1751ed52b33a4ef1ca28b95347bf8.xlsm
+ > Documento importado: d2abe0449f4ccc82c868a6f53d2b8e61.doc
+ > Buscando: (.*)15425_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\Anexos - 15425_14.rar
+Se encontraron 1 anexos
+ > Anexo importado: d2abe0449f4ccc82c868a6f53d2b8e61.rar
+ > Documento importado: ea13a0961c5558c2e2f2064666f71cd0.xlsx
+ > Documento importado: 2d697b070591e9878f200993c73e5605.doc
+ > Buscando: (.*)14684_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\CORRIENTES 141.081 - 14684_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: 2d697b070591e9878f200993c73e5605.pdf
+ > Documento importado: 933d179c30f4391db49303b84e5caf40.xlsx
+ > Documento importado: f4e8b947ee782595db8e84d6bc2a0b5a.doc
+ > Buscando: (.*)15226_14\.(.{3})$
+ > C:\Users\AgusQuiroga\Desktop\temp\corrientes\Anexos\CORRIENTES 115.344 I - 15226_14.pdf
+Se encontraron 1 anexos
+ > Anexo importado: f4e8b947ee782595db8e84d6bc2a0b5a.pdf
+Documentos copiados: 94
+47 planes procesados
+FIN

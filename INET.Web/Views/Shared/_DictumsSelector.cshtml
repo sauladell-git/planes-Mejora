@@ -1,0 +1,29 @@
+﻿@model List<INET.Data.Dictum>
+<div class="list-resolutions-wrapper scrollable">
+    <table cellpadding="0" cellspacing="1" class="list" id="list-resolutions">
+        <thead>
+            <tr>
+                <td width="90px">Acciones</td>
+                <td width="100px">ID</td>
+                <td width="120px">Estado</td>
+                <td width="100px">Fecha de Firma</td>
+                <td width="100px">Monto Dictaminado</td>                
+            </tr>
+        </thead>
+        <tbody>  
+            @foreach (var d in Model)
+            {
+                <tr data-selectorId="@d.Id" data-requestedTotal="@d.Ammount">
+                    <td width="90px" align="center"><input type="checkbox" id="selector_@d.Id" class="checkbox dictum-checkbox" /></td>
+                    <td width="150px">@d.DictumNumber.ToString()</td>
+                    <td width="120px" align="center">@d.Status.Description</td>
+                    <td width="100px">@(d.SignatureDate.HasValue ?  d.SignatureDate.Value.ToString("dd/MM/yyyy") : "")</td>
+                    <td width="100px">@(d.Ammount.HasValue ? d.Ammount.Value.ToString("C") : Int16.Parse("0").ToString("C") )</td>                    
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>INET - Sistema de Seguimiento de Planes de Mejora</title>
+    <meta http-equiv="refresh" content="12; url=https://gestion.inet.edu.ar/planesdemejora">
+    <style>
+        body,html{margin:0;padding:0;background:#F9FAFF;font-family:sans-serif;font-size:.9em;width:100%}.whell{padding:10px 20px;background-color:#FFF;border:1px solid grey;border-radius:5px;margin:50px auto;width:60%;min-width:300px}.loader{width:200px;height:100px;margin:10px auto;background-image:url(data:image/gif;base64,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)}#countdown{font-weight:700}a,a:visited{color:#4800ff;text-decoration:none}
+    </style>
+    <script>
+        var domIsReady = function (e) { var n = function () { return document.attachEvent && "undefined" != typeof document.attachEvent ? "ie" : "not-ie" }; return e = function (e) { e && "function" == typeof e ? "ie" !== n() ? document.addEventListener("DOMContentLoaded", function () { return e() }) : document.attachEvent("onreadystatechange", function () { return "complete" === document.readyState ? e() : void 0 }) : console.error("The callback is not a function!") } }(domIsReady || {}); domIsReady(function () { var e = parseInt(document.getElementById("countdown").innerText), n = setInterval(function () { document.getElementById("countdown").innerText = e--, 0 > e && (clearInterval(n), window.location.href = "https://gestion.inet.edu.ar/planesdemejora") }, 1e3) });
+    </script>
+</head>
+<body>
+    <div class="whell">
+        <h2>INET - Sistema de Seguimiento de Planes de Mejora</h2>
+        <p>Actualizamos los servidores. Por favor, elimina los accesos directos que tengas y remplazalos por la nueva dirección:</p>
+        <blockquote><a href="https://gestion.inet.edu.ar/planesdemejora">https://gestion.inet.edu.ar/planesdemejora</a></blockquote>
+        <p>Estamos redirijiendote a los nuevos servidores en <span id="countdown">10</span>.</p>
+        <div class="loader"></div>
+    </div>
+</body>
+</html>

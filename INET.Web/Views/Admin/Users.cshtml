@@ -1,0 +1,110 @@
+@model INET.Services.DTO.UserDTO
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+@Html.Partial("_MenuAdmin")
+@Html.Partial("_UsersList", Model.Users)
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/lib/multiselect.min.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+    @Scripts.Render("~/scripts/js/users.js?v" + INET.Web.ApplicationInformation.ExecutingAssemblyVersion)
+}
+
+<div id="delete-confirm" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea eliminar el Usuario?</p>
+</div>
+<div id="user" title="Nuevo Usuario" class="modal ">
+    <form id="frmUsers">
+        <div id="msg-user"></div>
+        <div class="">
+            <div class="left half">
+                @Html.Label("Nombre usuario:", new { @class = "label" })
+                @Html.EditorFor(x => x.UserName, new { @class = "input", maxLength = "56" })
+
+                @Html.Label("Contraseña:", new { @class = "label password" })
+                @Html.PasswordFor(x => x.Password, new { @class = "input" })
+
+                @Html.Label("Rol:", new { @class = "label" })
+                @Html.DropDownListFor(x => x.Role, new SelectList(Model.Roles, "RoleName", "RoleName"), "Seleccionar...", new { @class = "input" })
+            </div>
+            <div class="right half">
+                @Html.Label("Nombre:", new { @class = "label" })
+                @Html.TextBoxFor(x => x.Name, new { @class = "input", maxLength = "50" })
+
+                @Html.Label("Apellido:", new { @class = "label" })
+                @Html.TextBoxFor(x => x.LastName, new { @class = "input", maxLength = "50" })
+
+                <fieldset id="fsAccess">
+                    <legend>Acceso</legend>
+                    @Html.CheckBoxFor(x => x.IsEnabled, new { @class = "checkbox" })
+                    @Html.Label("Habilitado", new { @class = "", @for = "IsEnabled" })
+                </fieldset>
+            </div>
+        </div>
+        <div style="clear: both; padding-top:20px;" id="tabs-extended">
+            <ul id="">
+                <li id="tab-href-1"><a href="#tabs-1">EJES</a></li>
+                <li id="tab-href-2"><a href="#tabs-2">NIVELES</a></li>
+                <li id="tab-href-3"><a href="#tabs-3">PROVINCIAS</a></li>
+            </ul>
+            <div id="tabs-1" class="">
+                <div id="fsFields">
+                    @foreach (var field in Model.Fields)
+                    {
+                        <div>
+                            <input type="checkbox" id="chk_field_@field.Id" name="chk_field_@field.Id" class="checkbox" />
+                            <label for="chk_field_@field.Id">@field.Description</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div id="tabs-2" class="">
+                <div id="fsLevels">
+                    @foreach (var field in Model.Levels)
+                    {
+                        <div>
+                            <input type="checkbox" id="chk_level_@field.Id" name="chk_level_@field.Id" class="checkbox" />
+                            <label for="chk_level_@field.Id">@field.Name</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div id="tabs-3" class="">
+                <div id="fsProvinces">
+                    <div class="left half">
+                        <fieldset>
+                            <legend>Provincias disponibles</legend>
+                            <select name="from[]" id="provinces" class="doubleListSelect" style="color: #666666;" multiple="multiple">
+                                @foreach (var province in Model.Provinces)
+                                {
+                                    <option value="@province.Id">@province.Name</option>
+                                }
+                            </select>
+                            <div class="doubleListActions">
+                                <button type="button" id="provinces_rightSelected" class="dynamic-button">Seleccionados ></button>
+                                <button type="button" id="provinces_rightAll" class="dynamic-button">Todos >></button>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="right half">
+                        <fieldset>
+                            <legend>Provincias asignadas</legend>
+                            <select name="to[]" id="provinces_to" class="doubleListSelect" multiple="multiple"></select>
+                            <div class="doubleListActions">
+                                <button type="button" id="provinces_leftAll" class="dynamic-button" role="button"><< Todos</button>
+                                <button type="button" id="provinces_leftSelected" class="dynamic-button" role="button">< Seleccionados</button>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@Html.HiddenFor(x => x.CurrentUser)
+@Html.Partial("_MessageResult")

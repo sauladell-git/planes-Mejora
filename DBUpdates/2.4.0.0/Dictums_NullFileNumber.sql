@@ -1,0 +1,1 @@
+alter table Dictums ALTER COLUMN FileNumber nvarchar(50) NULL;

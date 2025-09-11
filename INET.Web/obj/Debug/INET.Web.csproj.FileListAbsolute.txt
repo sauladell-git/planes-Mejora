@@ -1,0 +1,294 @@
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\obj\Debug\INET.Web.csproj.CoreCompileInputs.cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\obj\Debug\INET.Web.csprojResolveAssemblyReference.cache
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20161130-01.xlsx
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20171230-02.xlsx
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20180302-03.xlsx
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20181101-04.xlsx
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Web.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Web.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Web.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Antlr3.Runtime.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ClosedXML.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportSource.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.Shared.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.Web.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DocumentFormat.OpenXml.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Elmah.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Elmah.Mvc.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\EntityFramework.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Core.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Data.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Services.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Utils.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\log4net.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Data.Edm.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Data.OData.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Newtonsoft.Json.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.Web.Common.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.Web.Mvc.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Net.Http.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Spatial.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Helpers.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Http.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Http.OData.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Mvc.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Optimization.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Razor.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.WebPages.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\WebActivator.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\WebGrease.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\WebMatrix.Data.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\WebMatrix.WebData.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\EntityFramework.Extended.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\itextsharp.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Excel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\itextsharp.xmlworker.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\OpenPop.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ExcelNumberFormat.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\FastMember.Signed.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\stdole.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Mono.Math.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Core.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Data.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Data.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Services.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Services.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Utils.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\INET.Utils.dll.config
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ClosedXML.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.Core.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\EntityFramework.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\log4net.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Data.Edm.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Data.OData.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Newtonsoft.Json.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.Web.Common.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.Web.Common.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.Web.Mvc.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Ninject.Web.Mvc.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Net.Http.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Spatial.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Helpers.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Http.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Http.OData.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Mvc.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.Razor.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.WebPages.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\WebMatrix.Data.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\WebMatrix.WebData.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\EntityFramework.Extended.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\itextsharp.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Excel.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ExcelNumberFormat.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\Mono.Math.xml
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\de\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\es\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\fr\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\it\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ja\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ko\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\ru\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\obj\Debug\INET.Web.dll
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\obj\Debug\INET.Web.pdb
+C:\Users\AgusQuiroga\WorkspaceIndigo\Me_Apps\INET\INET.Web\bin\DocumentFormat.OpenXml.xml
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20161130-01.xlsx
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20171230-02.xlsx
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20180302-03.xlsx
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20181101-04.xlsx
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Web.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Web.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Web.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Core.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Data.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Services.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Utils.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\WebActivator.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\EntityFramework.Extended.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\itextsharp.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Excel.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\itextsharp.xmlworker.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\OpenPop.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\ICSharpCode.SharpZipLib.dll
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Core.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Data.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Services.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Utils.pdb
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Data.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Services.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Utils.dll.config
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csprojAssemblyReference.cache
+C:\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CopyComplete
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20161130-01.xlsx
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20171230-02.xlsx
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20180302-03.xlsx
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20181101-04.xlsx
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Web.dll.config
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Web.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Web.pdb
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Core.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Data.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Services.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Utils.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\WebActivator.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\EntityFramework.Extended.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\itextsharp.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\Excel.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\itextsharp.xmlworker.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\OpenPop.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Core.pdb
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Data.pdb
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Data.dll.config
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Services.pdb
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Services.dll.config
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Utils.pdb
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\bin\INET.Utils.dll.config
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.AssemblyReference.cache
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CoreCompileInputs.cache
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CopyComplete
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.dll
+C:\Users\me\Desktop\Backup\disco c\Guillermo\Fuentes\PLAN DE MEJORAS\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.pdb
+C:\GIT\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20161130-01.xlsx
+C:\GIT\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20171230-02.xlsx
+C:\GIT\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20180302-03.xlsx
+C:\GIT\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20181101-04.xlsx
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Web.dll.config
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Web.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Web.pdb
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Core.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Data.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Services.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Utils.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\WebActivator.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\EntityFramework.Extended.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\itextsharp.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\Excel.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\itextsharp.xmlworker.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\OpenPop.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\ICSharpCode.SharpZipLib.dll
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Core.pdb
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Data.pdb
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Data.dll.config
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Services.pdb
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Services.dll.config
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Utils.pdb
+C:\GIT\INET_Full_20190623\INET.Web\bin\INET.Utils.dll.config
+C:\GIT\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csprojAssemblyReference.cache
+C:\GIT\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CoreCompileInputs.cache
+C:\GIT\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CopyComplete
+C:\GIT\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.dll
+C:\GIT\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20161130-01.xlsx
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20171230-02.xlsx
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20180302-03.xlsx
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\Content\planillas\PLANILLA_CARGA_SOLICITADOS.20181101-04.xlsx
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Web.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Web.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Web.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Core.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Data.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Services.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Utils.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\WebActivator.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\EntityFramework.Extended.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\itextsharp.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\Excel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.Shared.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportSource.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\itextsharp.xmlworker.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\OpenPop.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\ICSharpCode.SharpZipLib.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\stdole.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Core.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Data.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Data.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Services.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Services.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Utils.pdb
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\bin\INET.Utils.dll.config
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csprojAssemblyReference.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CoreCompileInputs.cache
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.csproj.CopyComplete
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.dll
+C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Web\obj\Debug\INET.Web.pdb

@@ -1,0 +1,94 @@
+﻿@model INET.Services.DTO.DictumDTO
+
+@using INET.Core.Constants
+@using INET.Utils.Helpers
+@using INET.Utils.Helpers.Permissions
+
+<div id="delete-confirm-dictum" title="Eliminar">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea borrar el dictamen seleccionado?</p>
+</div>
+
+<div id="block-confirm-dictum" title="Anular Dictamen">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>¿Desea anular el Dictamen seleccionado?</p>
+</div>
+
+<div id="new-dictum" title="Dictamen" class="modal">
+    <div id="msg-dictum"></div>
+    <div id="dictum-tabs">
+        <ul>
+            <li id="li-solicitudes"><a href="#document-tab1">Solicitados</a></li>
+            <li id="li-body-dictum"><a href="#document-tab2">Dictamen</a></li>
+            <li id="li-preview"><a href="#document-tab3">Previsualizar</a></li>
+            <li id="li-eligibility"><a href="#document-tab4">Elegibilidad</a></li>
+            <li id="li-sign" class="@(SessionHelper.CurrentUserRoles.Select(x => "role-" + x.ToLower()).Aggregate((x, t) => x + t))"><a href="#document-tab5">Firma</a></li>
+        </ul>
+        <div id="document-tab1">
+            <form id="frmDictum">
+                <div class="dictum-header">
+                    <div class="left half">
+                        @Html.Label("Tipo de Plantilla:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.TemplateTypeId, new SelectList(Model.TemplatesTypes, "Id", "Description"), "Seleccionar...", new { id = "DocumentDTO_DictumDTO_TemplateTypeId", @class = "input" })
+
+                        @Html.Label("Estado:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.StatusId, Enumerable.Empty<SelectListItem>(), "Seleccionar...", new { id = "DocumentDTO_DictumDTO_StatusId", @class = "input" })
+                    </div>
+                    <div class="right half">
+                        @Html.Label("Plantilla:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.TemplateId, new SelectList(Model.Templates, "Id", "Description"), "Seleccionar...", new { id = "DocumentDTO_DictumDTO_TemplateId", @class = "input" })
+
+                        @Html.Label("Expediente:", new { @class = "label" })
+                        @Html.DropDownListFor(x => Model.FileNumber, new SelectList(Model.FileNumbers, "Key", "Value"), "Seleccionar...", new { id = "DocumentDTO_DictumDTO_FileNumber", @class = "input" })
+                    </div>
+                </div>
+
+                <div id="solicitude-selector">
+                    @Html.Partial("_SolicitudesSelector", new List<INET.Data.Solicitude>())
+                </div>
+                <div class="ammounts">
+                    <label class="label">Total <span id="dictum-ammount">$0,00</span></label>
+                </div>
+                <div class="left solicitudes-all-selectors">Seleccionar: <a href="#" class="select_all_solicitudes_in_dictum">todos</a>, <a href="#" class="select_none_solicitudes_in_dictum">ninguno.</a></div>
+                <input id="CurrentTemplateId" type="hidden" />
+            </form>
+        </div>
+        <div id="document-tab2">
+            <div id="msg-emit-dictum"></div>
+            <form id="frmEmitDictum">
+                <textarea id="dictum-tinymce" name="dictum-tinymce"></textarea>
+            </form>
+        </div>
+        <div id="document-tab3">
+            <p>Por favor, haga click en el botón previsualizar para descargar una vista previa del dictamen.</p>
+            <div id="dictum-preview" class="div-button preview">Previsualizar</div>
+        </div>
+        <div id="document-tab4">
+            <form id="frmEligibility">
+                @Html.Label("Número de Dictamen Externo:")
+                @Html.TextBoxFor(x => Model.ExternalNumber, new { @class = "input inline-input", maxLength = "50", required = "required" })
+
+                @Html.Label("Entidad Externa Emisora:")
+                @Html.TextBoxFor(x => Model.ExternalEntity, new { @class = "input inline-input", maxLength = "100", required = "required" })
+            </form>
+        </div>
+        <div id="document-tab5">
+            <div class="dictum-header">
+                @using (Html.BeginForm("SignDictum", "Plan", FormMethod.Post, new { id = "frmSign", enctype = "multipart/form-data" }))
+                {
+                    <div class="left half">
+                        @Html.Label("Fecha de Firma", new { @class = "label" })
+                        @Html.TextBoxFor(x => Model.SignDate, new { id = "DocumentDTO_DictumDTO_SignDate", @class = "input" })
+                    </div>
+                    <div class="right half">
+                        <label class="label">Documento Firmado Digitalmente</label>
+                        <div id="signedDocumentDiv-link" style="margin: 10px 0px;">
+                            <a href="#" id="signedDocument-link" data-urlbase="./Docs/@ConfigConstants.SIGNED_DICTUMS_PATH/" target="_blank">Descargar Documento</a>
+                        </div>
+                        <div id="signedDocumentDiv-input">
+                            <input type="file" id="signedDocument" name="signedDocument" required="required" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

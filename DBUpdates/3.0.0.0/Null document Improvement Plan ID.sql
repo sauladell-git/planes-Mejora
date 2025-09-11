@@ -1,0 +1,1 @@
+alter table Documents alter column ImprovementPlanId int null;

@@ -1,0 +1,11 @@
+﻿@model IList<INET.Data.Comment>
+@foreach (var comment in Model.OrderByDescending(x => x.Date).ToList())
+{
+    <li>
+        <div class="user"><span class="celeste">Usuario:</span> @comment.UserProfile.FullName</div>
+        <div class="date"><span class="celeste">Fecha:</span> @comment.Date.ToString("dd/MM/yyyy")</div>
+        <div class="message"><span class="celeste">Comentario:</span>
+            <p>@comment.Text</p>
+        </div>
+    </li>                                                
+}

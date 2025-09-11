@@ -1,0 +1,25 @@
+﻿@model INET.Data.ImprovementPlan
+@using INET.Core.Constants
+@using INET.Utils.Helpers
+@using INET.Core.Enums
+
+<a href="@Url.Action("Details", "Plan", new { id = Model.Id })"><img src='Img/icons/icon-view.png' title='Ver'></a>
+
+@if (Model.StatusId != StageStatusEnum.Anulado.ToInt())
+{
+
+    if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.EDIT, Model.StatusId))
+    {
+        <a href="@Url.Action("Editor", "Plan", new { id = Model.Id })"><img src='Img/icons/icon-edit.png' title='Editar'></a>
+        if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.CREATE))
+        {
+            <a href="@Url.Action("Copy", "Plan", new { id = Model.Id })"><img src='Img/icons/icon-duplicate.png' title='Copiar Plan'></a>
+        }
+    }
+
+    if (SessionHelper.HasPermission(PermissionConstants.ImprovementPlan.DELETE, Model.StatusId))
+    {
+        <img src='Img/icons/icon-delete.png' title='Eliminar' class='delete'>
+    }
+
+}
