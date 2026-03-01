@@ -51,3 +51,14 @@ C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.C
 C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.csproj.CopyComplete
 C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.dll
 C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Core\obj\Debug\INET.Core.pdb
+C:\GIT\planes_2025\INET.Core\bin\Debug\INET.Core.dll
+C:\GIT\planes_2025\INET.Core\bin\Debug\INET.Core.pdb
+C:\GIT\planes_2025\INET.Core\bin\Debug\EntityFramework.dll
+C:\GIT\planes_2025\INET.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\GIT\planes_2025\INET.Core\bin\Debug\EntityFramework.xml
+C:\GIT\planes_2025\INET.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\GIT\planes_2025\INET.Core\obj\Debug\INET.Core.csproj.AssemblyReference.cache
+C:\GIT\planes_2025\INET.Core\obj\Debug\INET.Core.csproj.CoreCompileInputs.cache
+C:\GIT\planes_2025\INET.Core\obj\Debug\INET.Core.csproj.Up2Date
+C:\GIT\planes_2025\INET.Core\obj\Debug\INET.Core.dll
+C:\GIT\planes_2025\INET.Core\obj\Debug\INET.Core.pdb

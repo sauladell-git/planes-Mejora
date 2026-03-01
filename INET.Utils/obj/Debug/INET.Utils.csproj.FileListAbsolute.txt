@@ -66,3 +66,16 @@ C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Utils\obj\Debug\INET.
 C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Utils\obj\Debug\INET.Utils.csproj.CopyComplete
 C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Utils\obj\Debug\INET.Utils.dll
 C:\GIT\Planes_Mejora\planes_mejora\INET_Full_20190623\INET.Utils\obj\Debug\INET.Utils.pdb
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Utils.dll.config
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Utils.dll
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Utils.pdb
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Core.dll
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Data.dll
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Core.pdb
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Data.pdb
+C:\GIT\planes_2025\INET.Utils\bin\Debug\INET.Data.dll.config
+C:\GIT\planes_2025\INET.Utils\obj\Debug\INET.Utils.csproj.AssemblyReference.cache
+C:\GIT\planes_2025\INET.Utils\obj\Debug\INET.Utils.csproj.CoreCompileInputs.cache
+C:\GIT\planes_2025\INET.Utils\obj\Debug\INET.Utils.csproj.Up2Date
+C:\GIT\planes_2025\INET.Utils\obj\Debug\INET.Utils.dll
+C:\GIT\planes_2025\INET.Utils\obj\Debug\INET.Utils.pdb
