@@ -1697,141 +1697,249 @@ OPTION(RECOMPILE)";
                 heads_row_range.Style.Font.FontColor = XLColor.White;
                 heads_row_range.Style.Fill.BackgroundColor = XLColor.Aurometalsaurus;
 
-                // CONTENIDO
-                string sql = @"SELECT p.Id Id,
-    isNull(p.Articulator,(select isnull(articulator,'')
-	 from improvementplans as Art where Art.id=p.ParentId) )as Articulador
-   , prov.NAME as Provincia
-	,p.ReceptionDate as FechaDeIngreso
-	,TipoDePlan = (SELECT pt.Description FROM ImprovementPlansTypes AS pt WHERE pt.Id = p.ImprovementPlanTypeId)
-    ,Axis = (select f.Code from Fields as f where f.Id = p.FieldId)
-    ,Lines =  STUFF((SELECT ', ' + lc.CODE FROM Solicitudes AS lc_sol INNER JOIN Lines AS lc ON lc.Id = lc_sol.LineId WHERE lc_sol.ImprovementPlanId = p.Id GROUP BY lc.CODE FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-    ,(Case len(P.Summary) When 0 then (select S.Code+'.' + L.Code from Lines_22 L inner join SubFields S on L.SubFieldId=S.Id  and L.id=P.Line_22_Id )  else  P.Summary End) as Summary
-	,p.CUE as CUE
-    ,p.InstitutionLevel as InstitutionLevel
-	,p.InstitutionName as Institucion
-	,p.Department as Departamento
-	,p.Location as Localidad
-	,p.Identifier as CodPlan
-	,Estado = (SELECT ps.Description FROM STATUS AS ps WHERE ps.Id = p.StatusId)
-	,subp.totalSolicitado as TotalSolicitado
-    ,subp.totalSolicitadoCapital as TotalSolicitadoCapital
-    ,subp.totalSolicitadoCorriente as TotalSolicitadoCorriente
-	,Expedientes = STUFF((SELECT ', ' + solFN.FileNumber FROM (SELECT DISTINCT (solFN_.FileNumber) AS FileNumber FROM Solicitudes AS solFN_ WHERE solFN_.ImprovementPlanId = p.Id) AS solFN FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-	,p.FieldDate as FechaIngresoCampo
-    , CONCAT(usu.Name, ' ', usu.LastName) as evaluatorName
-	,FechaDictamenes = STUFF((SELECT ', ' + CONVERT(VARCHAR, dctSD.SignatureDate, 103) FROM (SELECT DISTINCT (dctSD_.SignatureDate) AS SignatureDate FROM Dictums AS dctSD_D INNER JOIN Documents AS dctSD_ ON dctSD_D.Id = dctSD_.Id AND dctSD_.ImprovementPlanId = p.Id ) AS dctSD FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-	,NroDictamenes = STUFF((SELECT ', ' + dctNum_.DictumNumber FROM Dictums AS dctNum_ INNER JOIN Documents AS dctNum_D ON dctNum_D.Id = dctNum_.Id WHERE dctNum_D.ImprovementPlanId = p.Id FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-	,subp.totalDictaminado
-    ,subp.totalDictaminadoCapital as totalDictaminadoCapital
-    ,subp.totalDictaminadoCorriente as totalDictaminadoCorriente
-    ,subp.totalAprobado
-    ,subp.TotalAprobadoCapital
-    ,subp.TotalAprobadoCorriente
-	,subp.totalDesestimado
-	,subp.totalAnulado
-	,subp.totalRechazado
-	,subp.totalElegible
-    ,FechaResoluciones = STUFF((SELECT ', ' + CONVERT(VARCHAR, rd_rdd.SignatureDate, 103) FROM Resolutions as rd_r INNER JOIN Documents as rd_rdd ON rd_rdd.Id = rd_r.Id INNER JOIN ResolutionDictums AS rd_rd ON rd_r.Id = rd_rd.ResolutionId inner join Documents as rd_dd on rd_dd.Id = rd_rd.DictumId and rd_dd.ImprovementPlanId = p.Id where rd_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-    ,FechaAnexoResoluciones = STUFF((SELECT ', ' + CONVERT(VARCHAR, rad_r.AnnexSignatureDate, 103) FROM Resolutions as rad_r INNER JOIN Documents as rad_rdd ON rad_rdd.Id = rad_r.Id INNER JOIN ResolutionDictums AS rad_rd ON rad_r.Id = rad_rd.ResolutionId inner join Documents as rad_dd on rad_dd.Id = rad_rd.DictumId and rad_dd.ImprovementPlanId = p.Id where rad_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-	,Resoluciones = STUFF((SELECT ', ' + rn_r.ResolutionNumber FROM Resolutions as rn_r INNER JOIN Documents as rn_rdd ON rn_rdd.Id = rn_r.Id INNER JOIN ResolutionDictums AS rn_rd ON rn_r.Id = rn_rd.ResolutionId inner join Documents as rn_dd on rn_dd.Id = rn_rd.DictumId and rn_dd.ImprovementPlanId = p.Id where rn_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
-    ,subp.totalSinDictamen
-	,subp.totalSinResolucion
-	,p.Id
-    ,subp.totalSolicitadoBienesServicios
-    ,subp.totalSolicitadoViaticos
-    ,subp.totalSolicitadoRRHH
-    ,subp.totalAprobadoBienesServicios
-    ,subp.totalAprobadoViaticos
-    ,subp.totalAprobadoRRHH
-    ,subp.totalRendidoBys
-    ,subp.totalRendidoPyv
-    ,subp.totalRendidoRrhh
-    ,(subp.totalRendidoBys + subp.totalRendidoPyv +subp.totalRendidoRrhh) as TotalRendido
-FROM (
-	SELECT prep.Id
-		,totalAprobado = ISNULL(prep.totalAprobado, 0)
-        ,totalAprobadoCapital = ISNULL(prep.totalAprobadoCapital, 0)
-        ,totalAprobadoCorriente = ISNULL(prep.totalAprobadoCorriente, 0)
-		,totalDesestimado = ISNULL(prep.totalDesestimado, 0)
-		,totalDictaminado = ISNULL(prep.totalDictaminado, 0)
-        ,totalDictaminadoCapital = ISNULL(prep.totalDictaminadoCapital, 0)
-        ,totalDictaminadoCorriente = ISNULL(prep.totalDictaminadoCorriente, 0)
-        ,totalSinDictamen = ISNULL(prep.totalSinDictamen, 0)
-		,totalSinResolucion = ISNULL(prep.totalSinResolucion, 0)
-		,totalSolicitado = SUM(sol.RequestedAmount * sol.RequestedPriceUnit)
-        ,totalSolicitadoCapital = sum(CASE WHEN sol.ExpenditureTypeId = @inventariable THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-        ,totalSolicitadoCorriente = sum(CASE WHEN sol.ExpenditureTypeId = @noInventariable THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-     
-		,totalAnulado = sum(CASE WHEN sol.StatusId = @solicitudeStatusAnulado THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-		,totalRechazado = sum(CASE WHEN sol.StatusId = @solicitudeStatusRechazado THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-		,totalElegible = sum(CASE WHEN sol.StatusId = @solicitudeStatusElegible THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-        ,totalSolicitadoBienesServicios=  sum(CASE WHEN  sol.ExpenditureObjectTypeId=1 THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-        ,totalSolicitadoViaticos=  sum(CASE WHEN  sol.ExpenditureObjectTypeId=2 THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-        ,totalSolicitadoRRHH=  sum(CASE WHEN  sol.ExpenditureObjectTypeId=3 THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
-        ,totalAprobadoBienesServicios=ISNULL(prep.totalAprobadoBienesServicios, 0)
-        ,totalAprobadoViaticos=ISNULL(prep.totalAprobadoViaticos, 0)
-        ,totalAprobadoRRHH=ISNULL(prep.totalAprobadoRRHH, 0)
-        ,totalRendidoBys =ISNULL(prep.totalRendidoBys, 0)
-        ,totalRendidoPyv =ISNULL(prep.totalRendidoPyv, 0)
-        ,totalRendidoRrhh =ISNULL(prep.totalRendidoRrhh, 0)
-        
-	FROM (
-		SELECT p1.id
-            ,totalAprobado          = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-			,totalAprobadoCapital   = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @inventariable) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalAprobadoCorriente = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalAprobadoBienesServicios =  sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=1)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalAprobadoViaticos =  sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=2)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalAprobadoRRHH =  sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=3)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalDesestimado = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) THEN (sol1.RequestedAmount * sol1.RequestedPriceUnit) - sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalDictaminado = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalDictaminadoCapital = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and sol1.ExpenditureTypeId = @inventariable THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalDictaminadoCorriente = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and sol1.ExpenditureTypeId = @noInventariable THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-			,totalSinDictamen = sum(CASE WHEN dt1.Id IS NULL AND sol1.StatusId = @solicitudeStatusAprobado THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-			,totalSinResolucion = sum(CASE WHEN dt1.Id IS NOT NULL AND d1.StatusId NOT IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
-            ,totalRendidoBys    = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and  ac.AccountingRenderingID is not null and ac.ExpenditureObjectTypeID=1 THEN ac.aprovedAmount ELSE 0 END)
-		    ,totalRendidoPyv    = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and  ac.AccountingRenderingID is not null and ac.ExpenditureObjectTypeID=2 THEN ac.aprovedAmount ELSE 0 END)
-            ,totalRendidoRrhh    = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and  ac.AccountingRenderingID is not null and ac.ExpenditureObjectTypeID=3 THEN ac.aprovedAmount ELSE 0 END)	
-FROM ImprovementPlans AS p1
-		LEFT JOIN Solicitudes AS sol1 ON sol1.ImprovementPlanId = p1.Id
-		LEFT JOIN Dictums_Solicitudes AS ds1 ON ds1.SolicitudeId = sol1.Id
-		LEFT JOIN Documents AS dt1 ON ds1.DictumId = dt1.Id
-		LEFT JOIN ResolutionDictums AS rs1 ON rs1.DictumId = ds1.DictumId
-		LEFT JOIN Documents AS d1 ON d1.id = rs1.ResolutionId
-        LEFT JOIN Resolutions as r on d1.Id = r.Id
-        LEFT JOIN AccountRendering ac on ac.DictumId=dt1.Id
-        WHERE p1.SchoolYearId = @schoolYearId AND p1.ImprovementPlanTypeId IN ({0}) AND SUBSTRING(p1.CUE, 1, 2) IN ({1}) AND (ISNULL(@CUE, 0) = 0 OR p1.CUE = @CUE)
-        AND ((@dependenceNational = 0 AND (NOT (p1.Dependence LIKE '%Nacional%') OR p1.Dependence is null)) OR (@dependenceNational = 1 AND p1.Dependence LIKE '%Nacional%'))
-		GROUP BY p1.Id
-		) AS prep
-	LEFT JOIN Solicitudes AS sol ON sol.ImprovementPlanId = prep.Id 
-	GROUP BY prep.Id
-		,prep.totalAprobado
-        ,prep.totalAprobadoCapital
-        ,prep.totalAprobadoCorriente
-		,prep.totalDesestimado
-        ,prep.totalDictaminado
-        ,prep.totalDictaminadoCapital
-        ,prep.totalDictaminadoCorriente
-		,prep.totalSinDictamen
-		,prep.totalSinResolucion
-        ,prep.totalAprobadoBienesServicios
-        ,prep.totalAprobadoViaticos
-        ,prep.totalAprobadoRRHH
-        ,prep.totalRendidoBys
-        ,prep.totalRendidoPyv
-        ,prep.TotalRendidoRrhh
-        
-	) AS subp
-INNER JOIN ImprovementPlans AS p ON p.id = subp.Id
-LEFT JOIN Provinces AS prov ON prov.Number = SUBSTRING(p.CUE, 1, 2)
-left join UserProfile as usu on usu.UserId = p.EvaluatorUserId
+                    string sql = @"
+;WITH TotalesSolicitados AS (
+    SELECT 
+        ImprovementPlanId,
+        SUM(RequestedAmount * RequestedPriceUnit) as totalSolicitado,
+        SUM(CASE WHEN ExpenditureTypeId = @inventariable THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalSolicitadoCapital,
+        SUM(CASE WHEN ExpenditureTypeId = @noInventariable THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalSolicitadoCorriente,
+        SUM(CASE WHEN StatusId = @solicitudeStatusAnulado THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalAnulado,
+        SUM(CASE WHEN StatusId = @solicitudeStatusRechazado THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalRechazado,
+        SUM(CASE WHEN StatusId = @solicitudeStatusElegible THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalElegible,
+        SUM(CASE WHEN ExpenditureObjectTypeId = 1 THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalSolicitadoBienesServicios,
+        SUM(CASE WHEN ExpenditureObjectTypeId = 2 THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalSolicitadoViaticos,
+        SUM(CASE WHEN ExpenditureObjectTypeId = 3 THEN RequestedAmount * RequestedPriceUnit ELSE 0 END) as totalSolicitadoRRHH
+    FROM Solicitudes
+    GROUP BY ImprovementPlanId
+),
+TotalesAprobadosDictaminados AS (
+    SELECT 
+        sol1.ImprovementPlanId,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalAprobado,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND (((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND sol1.ExpenditureTypeId = @inventariable) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as TotalAprobadoCapital,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND (((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND sol1.ExpenditureTypeId = @noinventariable) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as TotalAprobadoCorriente,
+        SUM(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalDictaminado,
+        SUM(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and sol1.ExpenditureTypeId = @inventariable THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalDictaminadoCapital,
+        SUM(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and sol1.ExpenditureTypeId = @noInventariable THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalDictaminadoCorriente,
+        SUM(CASE WHEN dt1.Id IS NULL AND sol1.StatusId = @solicitudeStatusAprobado THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalSinDictamen,
+        SUM(CASE WHEN dt1.Id IS NOT NULL AND d1.StatusId NOT IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalSinResolucion,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) THEN (sol1.RequestedAmount * sol1.RequestedPriceUnit) - (sol1.ApprovedAmount * sol1.ApprovedPriceUnit) ELSE 0 END) as totalDesestimado,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND (((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=1) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalAprobadoBienesServicios,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND (((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=2) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalAprobadoViaticos,
+        SUM(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND (((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=3) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END) as totalAprobadoRRHH
+    FROM Solicitudes AS sol1
+    LEFT JOIN Dictums_Solicitudes AS ds1 ON ds1.SolicitudeId = sol1.Id
+    LEFT JOIN Documents AS dt1 ON ds1.DictumId = dt1.Id
+    LEFT JOIN ResolutionDictums AS rs1 ON rs1.DictumId = ds1.DictumId
+    LEFT JOIN Documents AS d1 ON d1.id = rs1.ResolutionId
+    GROUP BY sol1.ImprovementPlanId
+),
+TotalesRendidos AS (
+    SELECT 
+        doc.ImprovementPlanId,
+        SUM(CASE WHEN ac.ExpenditureObjectTypeID = 1 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoBys,
+        SUM(CASE WHEN ac.ExpenditureObjectTypeID = 2 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoPyv,
+        SUM(CASE WHEN ac.ExpenditureObjectTypeID = 3 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoRrhh
+    FROM AccountRendering ac
+    INNER JOIN Documents doc ON ac.DictumId = doc.Id
+    GROUP BY doc.ImprovementPlanId
+)
+SELECT 
+    p.Id,
+    Articulador = isNull(p.Articulator,(select isnull(articulator,'') from improvementplans as Art where Art.id=p.ParentId) ),
+    prov.NAME as Provincia,
+    p.ReceptionDate as FechaDeIngreso,
+    TipoDePlan = (SELECT pt.Description FROM ImprovementPlansTypes AS pt WHERE pt.Id = p.ImprovementPlanTypeId),
+    Axis = (select f.Code from Fields as f where f.Id = p.FieldId),
+    Lines = STUFF((SELECT ', ' + lc.CODE FROM Solicitudes AS lc_sol INNER JOIN Lines AS lc ON lc.Id = lc_sol.LineId WHERE lc_sol.ImprovementPlanId = p.Id GROUP BY lc.CODE FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    Summary = (Case len(p.Summary) When 0 then (select S.Code+'.' + L.Code from Lines_22 L inner join SubFields S on L.SubFieldId=S.Id and L.id=P.Line_22_Id ) else P.Summary End),
+    p.FieldDate as FechaIngresoCampo,
+    p.CUE,
+    p.InstitutionName as Institucion,
+    p.Identifier as CodPlan,
+    ts.totalSolicitado,
+    ts.totalSolicitadoCapital,
+    ts.totalSolicitadoCorriente,
+    ts.totalSolicitadoBienesServicios,
+    ts.totalSolicitadoViaticos,
+    ts.totalSolicitadoRRHH,
+    ta.totalDictaminado,
+    ta.totalDictaminadoCapital,
+    ta.totalDictaminadoCorriente,
+    ta.totalAprobado,
+    ta.TotalAprobadoCapital,
+    ta.TotalAprobadoCorriente,
+    ta.totalDesestimado,
+    ts.totalAnulado,
+    ts.totalRechazado,
+    ts.totalElegible,
+    ta.totalSinDictamen,
+    ta.totalSinResolucion,
+    ta.totalAprobadoBienesServicios,
+    ta.totalAprobadoViaticos,
+    ta.totalAprobadoRRHH,
+    FechaResoluciones = STUFF((SELECT ', ' + CONVERT(VARCHAR, rd_rdd.SignatureDate, 103) FROM Resolutions as rd_r INNER JOIN Documents as rd_rdd ON rd_rdd.Id = rd_r.Id INNER JOIN ResolutionDictums AS rd_rd ON rd_r.Id = rd_rd.ResolutionId inner join Documents as rd_dd on rd_dd.Id = rd_rd.DictumId and rd_dd.ImprovementPlanId = p.Id where rd_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    FechaAnexoResoluciones = STUFF((SELECT ', ' + CONVERT(VARCHAR, rad_r.AnnexSignatureDate, 103) FROM Resolutions as rad_r INNER JOIN Documents as rad_rdd ON rad_rdd.Id = rad_r.Id INNER JOIN ResolutionDictums AS rad_rd ON rad_r.Id = rad_rd.ResolutionId inner join Documents as rad_dd on rad_dd.Id = rad_rd.DictumId and rad_dd.ImprovementPlanId = p.Id where rad_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    Resoluciones = STUFF((SELECT ', ' + rn_r.ResolutionNumber FROM Resolutions as rn_r INNER JOIN Documents as rn_rdd ON rn_rdd.Id = rn_r.Id INNER JOIN ResolutionDictums AS rn_rd ON rn_r.Id = rn_rd.ResolutionId inner join Documents as rn_dd on rn_dd.Id = rn_rd.DictumId and rn_dd.ImprovementPlanId = p.Id where rn_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    ISNULL(tr.totalRendidoBys, 0) as totalRendidoBys,
+    ISNULL(tr.totalRendidoPyv, 0) as totalRendidoPyv,
+    ISNULL(tr.totalRendidoRrhh, 0) as totalRendidoRrhh,
+    FechaDictamenes = STUFF((SELECT ', ' + CONVERT(VARCHAR, dctSD.SignatureDate, 103) FROM (SELECT DISTINCT (dctSD_.SignatureDate) AS SignatureDate FROM Dictums AS dctSD_D INNER JOIN Documents AS dctSD_ ON dctSD_D.Id = dctSD_.Id AND dctSD_.ImprovementPlanId = p.Id ) AS dctSD FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    NroDictamenes = STUFF((SELECT ', ' + dctNum_.DictumNumber FROM Dictums AS dctNum_ INNER JOIN Documents AS dctNum_D ON dctNum_D.Id = dctNum_.Id WHERE dctNum_D.ImprovementPlanId = p.Id FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    TotalRendido = (ISNULL(tr.totalRendidoBys, 0) + ISNULL(tr.totalRendidoPyv, 0) + ISNULL(tr.totalRendidoRrhh, 0)),
+    Expedientes = STUFF((SELECT ', ' + solFN.FileNumber FROM (SELECT DISTINCT FileNumber FROM Solicitudes WHERE ImprovementPlanId = p.Id) AS solFN FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
+    evaluatorName = usu.Name + ' ' + usu.LastName
+FROM ImprovementPlans p
+LEFT JOIN TotalesSolicitados ts ON p.Id = ts.ImprovementPlanId
+LEFT JOIN TotalesAprobadosDictaminados ta ON p.Id = ta.ImprovementPlanId
+LEFT JOIN TotalesRendidos tr ON p.Id = tr.ImprovementPlanId
+LEFT JOIN Provinces prov ON prov.Number = SUBSTRING(p.CUE, 1, 2)
+LEFT JOIN UserProfile usu ON usu.UserId = p.EvaluatorUserId
+WHERE p.SchoolYearId = @schoolYearId 
+  AND p.ImprovementPlanTypeId IN ({0})
+  AND SUBSTRING(p.CUE, 1, 2) IN ({1})
 ORDER BY p.id DESC
 OPTION(RECOMPILE)";
 
-                sql = String.Format(sql, planTypes, string.Join(",", provNumbers.Select(x => "'" + x + "'")));
-                var plans = Context.Database.SqlQuery<ImprovementPlanReportDTO>(sql, new object[] {
+                    // CONTENIDO
+                    //                    string sql = @"SELECT p.Id Id,
+                    //    isNull(p.Articulator,(select isnull(articulator,'')
+                    //	 from improvementplans as Art where Art.id=p.ParentId) )as Articulador
+                    //   , prov.NAME as Provincia
+                    //	,p.ReceptionDate as FechaDeIngreso
+                    //	,TipoDePlan = (SELECT pt.Description FROM ImprovementPlansTypes AS pt WHERE pt.Id = p.ImprovementPlanTypeId)
+                    //    ,Axis = (select f.Code from Fields as f where f.Id = p.FieldId)
+                    //    ,Lines =  STUFF((SELECT ', ' + lc.CODE FROM Solicitudes AS lc_sol INNER JOIN Lines AS lc ON lc.Id = lc_sol.LineId WHERE lc_sol.ImprovementPlanId = p.Id GROUP BY lc.CODE FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //    ,(Case len(P.Summary) When 0 then (select S.Code+'.' + L.Code from Lines_22 L inner join SubFields S on L.SubFieldId=S.Id  and L.id=P.Line_22_Id )  else  P.Summary End) as Summary
+                    //	,p.CUE as CUE
+                    //    ,p.InstitutionLevel as InstitutionLevel
+                    //	,p.InstitutionName as Institucion
+                    //	,p.Department as Departamento
+                    //	,p.Location as Localidad
+                    //	,p.Identifier as CodPlan
+                    //	,Estado = (SELECT ps.Description FROM STATUS AS ps WHERE ps.Id = p.StatusId)
+                    //	,subp.totalSolicitado as TotalSolicitado
+                    //    ,subp.totalSolicitadoCapital as TotalSolicitadoCapital
+                    //    ,subp.totalSolicitadoCorriente as TotalSolicitadoCorriente
+                    //	,Expedientes = STUFF((SELECT ', ' + solFN.FileNumber FROM (SELECT DISTINCT (solFN_.FileNumber) AS FileNumber FROM Solicitudes AS solFN_ WHERE solFN_.ImprovementPlanId = p.Id) AS solFN FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //	,p.FieldDate as FechaIngresoCampo
+                    //    , CONCAT(usu.Name, ' ', usu.LastName) as evaluatorName
+                    //	,FechaDictamenes = STUFF((SELECT ', ' + CONVERT(VARCHAR, dctSD.SignatureDate, 103) FROM (SELECT DISTINCT (dctSD_.SignatureDate) AS SignatureDate FROM Dictums AS dctSD_D INNER JOIN Documents AS dctSD_ ON dctSD_D.Id = dctSD_.Id AND dctSD_.ImprovementPlanId = p.Id ) AS dctSD FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //	,NroDictamenes = STUFF((SELECT ', ' + dctNum_.DictumNumber FROM Dictums AS dctNum_ INNER JOIN Documents AS dctNum_D ON dctNum_D.Id = dctNum_.Id WHERE dctNum_D.ImprovementPlanId = p.Id FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //	,subp.totalDictaminado
+                    //    ,subp.totalDictaminadoCapital as totalDictaminadoCapital
+                    //    ,subp.totalDictaminadoCorriente as totalDictaminadoCorriente
+                    //    ,subp.totalAprobado
+                    //    ,subp.TotalAprobadoCapital
+                    //    ,subp.TotalAprobadoCorriente
+                    //	,subp.totalDesestimado
+                    //	,subp.totalAnulado
+                    //	,subp.totalRechazado
+                    //	,subp.totalElegible
+                    //    ,FechaResoluciones = STUFF((SELECT ', ' + CONVERT(VARCHAR, rd_rdd.SignatureDate, 103) FROM Resolutions as rd_r INNER JOIN Documents as rd_rdd ON rd_rdd.Id = rd_r.Id INNER JOIN ResolutionDictums AS rd_rd ON rd_r.Id = rd_rd.ResolutionId inner join Documents as rd_dd on rd_dd.Id = rd_rd.DictumId and rd_dd.ImprovementPlanId = p.Id where rd_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //    ,FechaAnexoResoluciones = STUFF((SELECT ', ' + CONVERT(VARCHAR, rad_r.AnnexSignatureDate, 103) FROM Resolutions as rad_r INNER JOIN Documents as rad_rdd ON rad_rdd.Id = rad_r.Id INNER JOIN ResolutionDictums AS rad_rd ON rad_r.Id = rad_rd.ResolutionId inner join Documents as rad_dd on rad_dd.Id = rad_rd.DictumId and rad_dd.ImprovementPlanId = p.Id where rad_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //	,Resoluciones = STUFF((SELECT ', ' + rn_r.ResolutionNumber FROM Resolutions as rn_r INNER JOIN Documents as rn_rdd ON rn_rdd.Id = rn_r.Id INNER JOIN ResolutionDictums AS rn_rd ON rn_r.Id = rn_rd.ResolutionId inner join Documents as rn_dd on rn_dd.Id = rn_rd.DictumId and rn_dd.ImprovementPlanId = p.Id where rn_rdd.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
+                    //    ,subp.totalSinDictamen
+                    //	,subp.totalSinResolucion
+                    //	,p.Id
+                    //    ,subp.totalSolicitadoBienesServicios
+                    //    ,subp.totalSolicitadoViaticos
+                    //    ,subp.totalSolicitadoRRHH
+                    //    ,subp.totalAprobadoBienesServicios
+                    //    ,subp.totalAprobadoViaticos
+                    //    ,subp.totalAprobadoRRHH
+                    //    ,subp.totalRendidoBys
+                    //    ,subp.totalRendidoPyv
+                    //    ,subp.totalRendidoRrhh
+                    //    ,(subp.totalRendidoBys + subp.totalRendidoPyv +subp.totalRendidoRrhh) as TotalRendido
+                    //FROM (
+                    //	SELECT prep.Id
+                    //		,totalAprobado = ISNULL(prep.totalAprobado, 0)
+                    //        ,totalAprobadoCapital = ISNULL(prep.totalAprobadoCapital, 0)
+                    //        ,totalAprobadoCorriente = ISNULL(prep.totalAprobadoCorriente, 0)
+                    //		,totalDesestimado = ISNULL(prep.totalDesestimado, 0)
+                    //		,totalDictaminado = ISNULL(prep.totalDictaminado, 0)
+                    //        ,totalDictaminadoCapital = ISNULL(prep.totalDictaminadoCapital, 0)
+                    //        ,totalDictaminadoCorriente = ISNULL(prep.totalDictaminadoCorriente, 0)
+                    //        ,totalSinDictamen = ISNULL(prep.totalSinDictamen, 0)
+                    //		,totalSinResolucion = ISNULL(prep.totalSinResolucion, 0)
+                    //		,totalSolicitado = SUM(sol.RequestedAmount * sol.RequestedPriceUnit)
+                    //        ,totalSolicitadoCapital = sum(CASE WHEN sol.ExpenditureTypeId = @inventariable THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //        ,totalSolicitadoCorriente = sum(CASE WHEN sol.ExpenditureTypeId = @noInventariable THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+
+                    //		,totalAnulado = sum(CASE WHEN sol.StatusId = @solicitudeStatusAnulado THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //		,totalRechazado = sum(CASE WHEN sol.StatusId = @solicitudeStatusRechazado THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //		,totalElegible = sum(CASE WHEN sol.StatusId = @solicitudeStatusElegible THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //        ,totalSolicitadoBienesServicios=  sum(CASE WHEN  sol.ExpenditureObjectTypeId=1 THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //        ,totalSolicitadoViaticos=  sum(CASE WHEN  sol.ExpenditureObjectTypeId=2 THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //        ,totalSolicitadoRRHH=  sum(CASE WHEN  sol.ExpenditureObjectTypeId=3 THEN sol.RequestedAmount * sol.RequestedPriceUnit ELSE 0 END)
+                    //        ,totalAprobadoBienesServicios=ISNULL(prep.totalAprobadoBienesServicios, 0)
+                    //        ,totalAprobadoViaticos=ISNULL(prep.totalAprobadoViaticos, 0)
+                    //        ,totalAprobadoRRHH=ISNULL(prep.totalAprobadoRRHH, 0)
+                    //        ,totalRendidoBys =ISNULL(prep.totalRendidoBys, 0)
+                    //        ,totalRendidoPyv =ISNULL(prep.totalRendidoPyv, 0)
+                    //        ,totalRendidoRrhh =ISNULL(prep.totalRendidoRrhh, 0)
+
+                    //	FROM (
+                    //		SELECT p1.id
+                    //            ,totalAprobado          = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //			,totalAprobadoCapital   = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @inventariable) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalAprobadoCorriente = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalAprobadoBienesServicios =  sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=1)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalAprobadoViaticos =  sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=2)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalAprobadoRRHH =  sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND  ( ( (@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) AND  sol1.ExpenditureTypeId = @noinventariable AND sol1.ExpenditureObjectTypeId=3)  THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalDesestimado = sum(CASE WHEN d1.StatusId IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) AND ((@budgetYearId > 0 AND sol1.SchoolYearId = @budgetYearId) OR @budgetYearId = 0) THEN (sol1.RequestedAmount * sol1.RequestedPriceUnit) - sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalDictaminado = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalDictaminadoCapital = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and sol1.ExpenditureTypeId = @inventariable THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalDictaminadoCorriente = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and sol1.ExpenditureTypeId = @noInventariable THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //			,totalSinDictamen = sum(CASE WHEN dt1.Id IS NULL AND sol1.StatusId = @solicitudeStatusAprobado THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //			,totalSinResolucion = sum(CASE WHEN dt1.Id IS NOT NULL AND d1.StatusId NOT IN (@resoEmitidoStatus,@resoFirmadoStatus,@resoProtocolizadoStatus) THEN sol1.ApprovedAmount * sol1.ApprovedPriceUnit ELSE 0 END)
+                    //            ,totalRendidoBys    = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and  ac.AccountingRenderingID is not null and ac.ExpenditureObjectTypeID=1 THEN ac.aprovedAmount ELSE 0 END)
+                    //		    ,totalRendidoPyv    = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and  ac.AccountingRenderingID is not null and ac.ExpenditureObjectTypeID=2 THEN ac.aprovedAmount ELSE 0 END)
+                    //            ,totalRendidoRrhh    = sum(CASE WHEN dt1.Id IS NOT NULL AND (dt1.StatusId = @dictumEmitido OR dt1.StatusId = @dictumSigned) and  ac.AccountingRenderingID is not null and ac.ExpenditureObjectTypeID=3 THEN ac.aprovedAmount ELSE 0 END)	
+                    //FROM ImprovementPlans AS p1
+                    //		LEFT JOIN Solicitudes AS sol1 ON sol1.ImprovementPlanId = p1.Id
+                    //		LEFT JOIN Dictums_Solicitudes AS ds1 ON ds1.SolicitudeId = sol1.Id
+                    //		LEFT JOIN Documents AS dt1 ON ds1.DictumId = dt1.Id
+                    //		LEFT JOIN ResolutionDictums AS rs1 ON rs1.DictumId = ds1.DictumId
+                    //		LEFT JOIN Documents AS d1 ON d1.id = rs1.ResolutionId
+                    //        LEFT JOIN Resolutions as r on d1.Id = r.Id
+                    //        LEFT JOIN AccountRendering ac on ac.DictumId=dt1.Id
+                    //        WHERE p1.SchoolYearId = @schoolYearId AND p1.ImprovementPlanTypeId IN ({0}) AND SUBSTRING(p1.CUE, 1, 2) IN ({1}) AND (ISNULL(@CUE, 0) = 0 OR p1.CUE = @CUE)
+                    //        AND ((@dependenceNational = 0 AND (NOT (p1.Dependence LIKE '%Nacional%') OR p1.Dependence is null)) OR (@dependenceNational = 1 AND p1.Dependence LIKE '%Nacional%'))
+                    //		GROUP BY p1.Id
+                    //		) AS prep
+                    //	LEFT JOIN Solicitudes AS sol ON sol.ImprovementPlanId = prep.Id 
+                    //	GROUP BY prep.Id
+                    //		,prep.totalAprobado
+                    //        ,prep.totalAprobadoCapital
+                    //        ,prep.totalAprobadoCorriente
+                    //		,prep.totalDesestimado
+                    //        ,prep.totalDictaminado
+                    //        ,prep.totalDictaminadoCapital
+                    //        ,prep.totalDictaminadoCorriente
+                    //		,prep.totalSinDictamen
+                    //		,prep.totalSinResolucion
+                    //        ,prep.totalAprobadoBienesServicios
+                    //        ,prep.totalAprobadoViaticos
+                    //        ,prep.totalAprobadoRRHH
+                    //        ,prep.totalRendidoBys
+                    //        ,prep.totalRendidoPyv
+                    //        ,prep.TotalRendidoRrhh
+
+                    //	) AS subp
+                    //INNER JOIN ImprovementPlans AS p ON p.id = subp.Id
+                    //LEFT JOIN Provinces AS prov ON prov.Number = SUBSTRING(p.CUE, 1, 2)
+                    //left join UserProfile as usu on usu.UserId = p.EvaluatorUserId
+                    //ORDER BY p.id DESC
+                    //OPTION(RECOMPILE)";
+
+
+
+                    sql = String.Format(sql, planTypes, string.Join(",", provNumbers.Select(x => "'" + x + "'")));
+            
+                    var plans = Context.Database.SqlQuery<ImprovementPlanReportDTO>(sql, new object[] {
                         new SqlParameter("@schoolYearId", schoolYearId),
                         new SqlParameter("@dependenceNational", dependenceNational ? 1 : 0),
                         new SqlParameter("@budgetYearId", budgetYearId),
@@ -2044,6 +2152,7 @@ OPTION(RECOMPILE)";
     ,Axis = (select f.Code from Fields as f where f.Id = p.FieldId)
     ,Lines =  STUFF((SELECT ', ' + lc.CODE FROM Solicitudes AS lc_sol INNER JOIN Lines AS lc ON lc.Id = lc_sol.LineId WHERE lc_sol.ImprovementPlanId = p.Id GROUP BY lc.CODE FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, '')
     ,p.Summary
+    ,p.ReceptionDate as FechaDeIngreso
 	,subp.CUE as CUE
     ,subp.Level as Level
 	,p.InstitutionName as Institucion
