@@ -72,5 +72,6 @@ namespace INET.Services.DTO
 
         public decimal? totalRendido { get; set; }
 
+        public string ultimaFechaRendido { get; set; } 
     }
 }

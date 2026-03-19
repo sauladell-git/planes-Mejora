@@ -1674,18 +1674,18 @@ OPTION(RECOMPILE)";
 
                 table_heads.Add("Total Rendido ");
                 ws.Column(table_heads.Count).Style.NumberFormat.Format = "$ #,##0.00";
+                table_heads.Add("Ultima Fecha Rendicion");
 
 
+                    //table_heads.Add("Nivel");
+                    //table_heads.Add("Inst./Juris.");
+                    //table_heads.Add("Departamento");
+                    //table_heads.Add("Localidad");
+                    //table_heads.Add("Código de Plan");
+                    //table_heads.Add("Estado del Plan");
+                    //table_heads.Add("ID Sistema");
 
-                //table_heads.Add("Nivel");
-                //table_heads.Add("Inst./Juris.");
-                //table_heads.Add("Departamento");
-                //table_heads.Add("Localidad");
-                //table_heads.Add("Código de Plan");
-                //table_heads.Add("Estado del Plan");
-                //table_heads.Add("ID Sistema");
-
-                var heads_row = new List<String[]>();
+                    var heads_row = new List<String[]>();
                 heads_row.Add(table_heads.ToArray());
                 var heads_row_range = ws.Cell(1, 1).InsertData(heads_row.ToArray());
 
@@ -1740,7 +1740,8 @@ TotalesRendidos AS (
         doc.ImprovementPlanId,
         SUM(CASE WHEN ac.ExpenditureObjectTypeID = 1 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoBys,
         SUM(CASE WHEN ac.ExpenditureObjectTypeID = 2 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoPyv,
-        SUM(CASE WHEN ac.ExpenditureObjectTypeID = 3 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoRrhh
+        SUM(CASE WHEN ac.ExpenditureObjectTypeID = 3 THEN ac.aprovedAmount ELSE 0 END) as totalRendidoRrhh,
+        CONVERT(VARCHAR, MAX(ac.Date), 103) AS Fecha
     FROM AccountRendering ac
     INNER JOIN Documents doc ON ac.DictumId = doc.Id
     GROUP BY doc.ImprovementPlanId
@@ -1785,6 +1786,7 @@ SELECT
     ISNULL(tr.totalRendidoBys, 0) as totalRendidoBys,
     ISNULL(tr.totalRendidoPyv, 0) as totalRendidoPyv,
     ISNULL(tr.totalRendidoRrhh, 0) as totalRendidoRrhh,
+    ISNULL(tr.Fecha, '') as ultimaFechaRendido,
     FechaDictamenes = STUFF((SELECT ', ' + CONVERT(VARCHAR, dctSD.SignatureDate, 103) FROM (SELECT DISTINCT (dctSD_.SignatureDate) AS SignatureDate FROM Dictums AS dctSD_D INNER JOIN Documents AS dctSD_ ON dctSD_D.Id = dctSD_.Id AND dctSD_.ImprovementPlanId = p.Id ) AS dctSD FOR XML PATH(''),TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
     NroDictamenes = STUFF((SELECT ', ' + dctNum_.DictumNumber FROM Dictums AS dctNum_ INNER JOIN Documents AS dctNum_D ON dctNum_D.Id = dctNum_.Id WHERE dctNum_D.ImprovementPlanId = p.Id FOR XML PATH('') ,TYPE).value('.', 'VARCHAR(MAX)'), 1, 1, ''),
     TotalRendido = (ISNULL(tr.totalRendidoBys, 0) + ISNULL(tr.totalRendidoPyv, 0) + ISNULL(tr.totalRendidoRrhh, 0)),
@@ -1997,8 +1999,8 @@ OPTION(RECOMPILE)";
                     i.totalRendidoBys,
                     i.totalRendidoPyv,
                     i.totalRendidoRrhh,
-                    i.totalRendido
-
+                    i.totalRendido,
+                    i.ultimaFechaRendido
                   
                 }).AsEnumerable());
 
